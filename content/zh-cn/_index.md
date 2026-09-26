@@ -370,31 +370,30 @@ fetch('/data/trance_mixing_slogans.txt')
 </div>
 <div style="height: 2px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
 <h2 id="核心身份">核心身份</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 60px 0;">
-  <div style="background: rgba(255,255,255,0.05); padding: 25px 30px; border-radius: 8px; border-left: 3px solid #f2f2f2; min-width: 200px; text-align: center;">
-    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">Trance 制作人</h3>
-    <p style="color: #d9d9d9; margin: 0; font-size: 14px;">Uplifting / Tech Trance 为主</p>
+<div class="id-card-row">
+  <div class="id-card">
+    <h3>Trance 制作人</h3>
+    <p>Uplifting / Tech Trance 为主</p>
   </div>
-  <div style="background: rgba(255,255,255,0.05); padding: 25px 30px; border-radius: 8px; border-left: 3px solid #f2f2f2; min-width: 200px; text-align: center;">
-    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">母带工程师</h3>
-    <p style="color: #d9d9d9; margin: 0; font-size: 14px;">上百首榜单Trance作品专业母带处理</p>
+  <div class="id-card">
+    <h3>母带工程师</h3>
+    <p>上百首榜单Trance作品专业母带处理</p>
   </div>
-  <div style="background: rgba(255,255,255,0.05); padding: 25px 30px; border-radius: 8px; border-left: 3px solid #e0e0e0; min-width: 200px; text-align: center;">
-    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">厂牌 A&R</h3>
-    <p style="color: #d9d9d9; margin: 0; font-size: 14px;">Cooperation Trance 联合创始人</p>
+  <div class="id-card">
+    <h3>厂牌 A&amp;R</h3>
+    <p>Cooperation Trance 联合创始人</p>
   </div>
-  <div style="background: rgba(255,255,255,0.05); padding: 25px 30px; border-radius: 8px; border-left: 3px solid #f2f2f2; min-width: 200px; text-align: center;">
-    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">厂牌 A&R</h3>
-    <p style="color: #d9d9d9; margin: 0; font-size: 14px;">Polar Impact 团队策划</p>
+  <div class="id-card">
+    <h3>厂牌 A&amp;R</h3>
+    <p>Polar Impact 团队策划</p>
   </div>
 </div>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
 <h2 id="国内外认可--合作背书">国内外认可 · 合作背书</h2>
-<div style="max-width: 1200px; margin: 60px auto;">
-  <div style="display: flex; gap: 40px; justify-content: center; align-items: stretch; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 300px; max-width: 300px;">
-      <h3 style="color: #fff; font-size: 18px; text-align: center; margin-bottom: 20px;">独家报道</h3>
-      <div style="position: relative; width: 100%; height: 300px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.2);">
+<div class="cred-wrap">
+    <div class="cred-col">
+      <h3 class="cred-title">独家报道</h3>
+      <div class="cred-frame">
         <div id="slider" style="position: relative; width: 100%; height: 100%;">
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
             <img src="/images/1.webp" loading="lazy" decoding="async" alt="独家报道1" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
@@ -411,19 +410,45 @@ fetch('/data/trance_mixing_slogans.txt')
         </div>
       </div>
     </div>
-    <div style="flex: 1.5; min-width: 450px; max-width: 600px;">
-      <h3 style="color: #fff; font-size: 18px; text-align: center; margin-bottom: 20px;">AFTERHOURS 国际电台特邀</h3>
-      <div style="width: 100%; height: 300px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.2);">
-        <div style="display: flex; height: 100%; gap: 0; margin: 0; padding: 0; align-items: stretch;">
-          <img src="/images/Takeover1.webp" loading="lazy" decoding="async" alt="Takeover 1" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
-          <img src="/images/Takeover2.webp" loading="lazy" decoding="async" alt="Takeover 2" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
-          <img src="/images/Takeover3.webp" loading="lazy" decoding="async" alt="Takeover 3" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
-          <img src="/images/Takeover4.webp" loading="lazy" decoding="async" alt="Takeover 4" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
+    <div class="cred-col cred-col-wide">
+      <h3 class="cred-title">AFTERHOURS 国际电台特邀</h3>
+      <div class="cred-frame cred-frame-wide">
+        <div class="takeover-strip">
+          <img src="/images/Takeover1.webp" loading="lazy" decoding="async" alt="Takeover 1" class="takeover-img">
+          <img src="/images/Takeover2.webp" loading="lazy" decoding="async" alt="Takeover 2" class="takeover-img">
+          <img src="/images/Takeover3.webp" loading="lazy" decoding="async" alt="Takeover 3" class="takeover-img">
+          <img src="/images/Takeover4.webp" loading="lazy" decoding="async" alt="Takeover 4" class="takeover-img">
         </div>
       </div>
     </div>
   </div>
 </div>
+<style>
+  /* ===== 核心身份卡片：网格布局（2026-09-27 重排版） ===== */
+  .id-card-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1100px; margin: 60px auto; }
+  .id-card { background: rgba(255,255,255,0.05); padding: 25px 20px; border-radius: 8px; border-left: 3px solid #f2f2f2; text-align: center; }
+  .id-card h3 { color: #fff; margin: 0 0 10px 0; font-size: 20px; }
+  .id-card p { color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6; }
+  /* ===== 认可背书：桌面双栏与旧版视觉一致（300 + 600） ===== */
+  .cred-wrap { max-width: 940px; margin: 60px auto; display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: stretch; }
+  .cred-title { color: #fff; font-size: 18px; text-align: center; margin: 0 0 20px 0; }
+  .cred-frame { position: relative; width: 100%; height: 300px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.2); box-sizing: border-box; }
+  .takeover-strip { display: flex; height: 100%; gap: 0; margin: 0; padding: 0; align-items: stretch; }
+  .takeover-img { height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease; }
+  @media (max-width: 768px) {
+    /* 核心身份：2×2 等宽，任何屏宽下稳定 */
+    .id-card-row { grid-template-columns: 1fr 1fr; gap: 12px; max-width: none; margin: 30px 0; }
+    .id-card { padding: 16px 10px; border-left: none; border-top: 3px solid #f2f2f2; }
+    .id-card h3 { font-size: 16px; margin-bottom: 6px; }
+    .id-card p { font-size: 12px; }
+    /* 认可背书：纵向堆叠； slider 方框随屏宽等比缩放； 四图改 2×2 不再细条 */
+    .cred-wrap { grid-template-columns: 1fr; gap: 28px; margin: 30px 0; }
+    .cred-frame { height: auto; aspect-ratio: 1 / 1; }
+    .cred-frame-wide { aspect-ratio: auto; }
+    .takeover-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; height: auto; }
+    .takeover-img { width: 100%; height: auto; aspect-ratio: 1 / 1; }
+  }
+</style>
 <script>
   const slides = document.querySelectorAll('#slider .slide');
   let currentIndex = 0;
@@ -489,11 +514,6 @@ fetch('/data/trance_mixing_slogans.txt')
     article { padding-left: 14px !important; padding-right: 14px !important; }
     article h2:not(.fw1) { font-size: 1.4em !important; }
     article h3[style*="font-size: 22px"] { font-size: 17px !important; }
-    /* 认可区块：解除死宽度，纵向占满 */
-    div[style*="min-width: 450px"] { min-width: 0 !important; width: 100% !important; max-width: 100% !important; }
-    div[style*="min-width: 300px"] { min-width: 0 !important; width: 100% !important; }
-    /* 核心身份卡片 */
-    div[style*="min-width: 200px"] { min-width: 140px !important; flex: 1 1 140px; padding: 18px 12px !important; }
     /* 服务/作品网格：单列 */
     div[style*="minmax(280px, 1fr)"] { grid-template-columns: 1fr !important; }
     div[style*="minmax(350px, 1fr)"] { grid-template-columns: 1fr !important; }
