@@ -1,6 +1,6 @@
 ---
 title: "Eonun"
-body_class: "ma0 avenir bg-near-white development is-section is-section"
+body_class: "ma0 avenir bg-near-white development is-section is-section page-about"
 ---
 <header class="about-header" style="position:relative; overflow:hidden; background-image: url('../images/MyBio.webp'); background-size: cover; background-position: center center; background-repeat:no-repeat; min-height:520px;">
     <div class="pb3-m pb6-l bg-black" style="background:none; padding-top:140px; ">
