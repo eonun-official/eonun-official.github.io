@@ -180,42 +180,20 @@
   var saved = null;
   try { saved = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
   if (document.body.classList.contains('is-home')) {
-    /* 主页：视频真正开播后，颜色渐变跟随视频播放进度（前 4 秒），已存配色优先，否则随机色 */
+    /* 主页：所有组件加载完毕后，从灰渐变到目标色（已存配色优先，否则随机色），4 秒 */
     var target = (saved && saved.hex) ? { hex: saved.hex, i: saved.i || 25 } : { hex: randomHomeHex(), i: 50 };
     picker.value = target.hex;
     slider.value = target.i;
-    var fired = false;
     function startHomeTint() {
-      if (fired) return;
-      fired = true;
-      var root = document.documentElement, body = document.body;
-      var c2 = adjacent(target.hex);
-      function paint(e) {
-        root.style.setProperty('--trance-purple', target.hex);
-        root.style.setProperty('--trance-blue', c2);
-        root.style.setProperty('--glow-color', alpha(target.hex, (0.38 * e).toFixed(3)));
-        var a = (0.05 + 0.20 * ((target.i * e) / 100)).toFixed(3);
-        body.style.setProperty('background-image',
-          'linear-gradient(160deg, ' + alpha(target.hex, a) + ' 0%, rgba(0,0,0,0) 45%, ' + alpha(c2, a) + ' 100%)', 'important');
-      }
-      /* 渐变进度 = 视频当前播放时间 / 4s：视频缓冲卡顿则颜色同步停住，不偷跑时间 */
-      function onTime() {
-        var p = Math.min(hv.currentTime / 4, 1);
-        paint(1 - Math.pow(1 - p, 3));
-        if (p >= 1) hv.removeEventListener('timeupdate', onTime);
-      }
-      paint(0);
-      hv.addEventListener('timeupdate', onTime);
-      /* 兜底：视频长期卡死时，10 秒后强制到位 */
-      setTimeout(function () { paint(1); hv.removeEventListener('timeupdate', onTime); }, 10000);
-    }
-    var hv = document.getElementById('header-video');
-    if (hv) {
-      if (!hv.paused && hv.readyState >= 2) startHomeTint(); /* 已在播放（缓存命中） */
-      hv.addEventListener('playing', startHomeTint);
-    } else {
+      /* 先上标题渐变字用变量，再启动背景 4 秒淡入，最后补标题光晕 */
+      var root = document.documentElement;
+      root.style.setProperty('--trance-purple', target.hex);
+      root.style.setProperty('--trance-blue', adjacent(target.hex));
       animateFromZero(target.hex, target.i, 4000);
+      setTimeout(function () { root.style.setProperty('--glow-color', alpha(target.hex, 0.38)); }, 4000);
     }
+    if (document.readyState === 'complete') startHomeTint();
+    else window.addEventListener('load', startHomeTint);
   } else if (saved && saved.hex) {
     picker.value = saved.hex;
     slider.value = saved.i || 25;
