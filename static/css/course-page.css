@@ -692,12 +692,7 @@
   font-size: 5.5rem;
   letter-spacing: 0.12em;
   line-height: 1;
-  color: var(--trance-purple, #b9a8ff);
-  background: linear-gradient(180deg,
-    var(--trance-purple, #b9a8ff) 0%,
-    color-mix(in srgb, var(--trance-purple, #b9a8ff) 45%, #4d7dff) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: var(--trance-purple, #ffffff);
   opacity: 0;
   transition: opacity 0.8s ease;
   pointer-events: none;
