@@ -461,7 +461,7 @@ fetch('/data/trance_mixing_slogans.txt')
 <p style="text-align: center; color: #d9d9d9; font-size: 1.3rem; margin-bottom: 40px;"><strong>学员身份严格保密，绑定课程独立编号搭载 ECC 数字签名，官网凭专属序列号可查进度。</strong></p>
 <div class="course-grid">
 <!-- 初级课程 -->
-<div class="course-card long-term-course">
+<div class="course-card long-term-course basic-ink">
 <span class="course-level beginner">初级</span>
 <h3>Trance 创作核心认知课（直播互动）</h3>
 <div class="price-tag small">¥1,500</div>
