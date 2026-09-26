@@ -54,58 +54,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-con
     }
   </style>
 </nav>
-      </div><!-- 移动端汉堡菜单：小屏收起导航，点开全屏展开 -->
-<button id="nav-burger" aria-label="Menu" style="display:none; position:fixed; top:14px; right:14px; z-index:100001; background:rgba(10,10,10,0.75); border:1px solid rgba(255,255,255,0.55); color:#fff; width:42px; height:42px; border-radius:10px; font-size:19px; line-height:1; cursor:pointer;">☰</button>
-<div id="nav-overlay" style="display:none; position:fixed; inset:0; z-index:100000; background:rgba(8,8,8,0.98); flex-direction:column; align-items:center; justify-content:center; gap:6px;">
-  <a class="mnav-link" href="/shop/index.html">Shop</a>
-  <a class="mnav-link" href="/music-services/index.html">Music Services</a>
-  <a class="mnav-link" href="/instructions/index.html">Instructions</a>
-  <a class="mnav-link" href="/about/index.html">About</a>
-  <a class="mnav-link" href="/contact/index.html">Contact</a>
-  <div style="margin-top:36px; color:#666; font-size:12px; letter-spacing:3px;">EONUN · TRANCE</div>
-</div>
-<style>
-  .mnav-link {
-    color: #f2f2f2;
-    text-decoration: none;
-    font-size: clamp(17px, 5vw, 26px);
-    white-space: nowrap;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    font-family: edix, 'microsoft yahei', sans-serif;
-    letter-spacing: 1px;
-    padding: 12px 20px;
-    opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 0.35s ease, transform 0.35s ease, color 0.2s ease;
-  }
-  .mnav-link:hover { color: #fff; text-shadow: 0 0 12px rgba(255,255,255,0.6); }
-  #nav-overlay.open .mnav-link { opacity: 1; transform: translateY(0); }
-  #nav-overlay.open .mnav-link:nth-child(1) { transition-delay: 0.05s; }
-  #nav-overlay.open .mnav-link:nth-child(2) { transition-delay: 0.12s; }
-  #nav-overlay.open .mnav-link:nth-child(3) { transition-delay: 0.19s; }
-  #nav-overlay.open .mnav-link:nth-child(4) { transition-delay: 0.26s; }
-  #nav-overlay.open .mnav-link:nth-child(5) { transition-delay: 0.33s; }
-  @media (max-width: 768px) {
-    /* 小屏：隐藏横排导航，显示汉堡键 */
-    #scroll-nav ul { display: none !important; }
-    #scroll-nav div.flex-l.items-center:not(.justify-between) { display: none !important; }
-    #nav-burger { display: block !important; }
-  }
-</style>
-<script>
-(function () {
-  var burger = document.getElementById('nav-burger');
-  var overlay = document.getElementById('nav-overlay');
-  if (!burger || !overlay) return;
-  function openNav() { overlay.style.display = 'flex'; requestAnimationFrame(function(){ overlay.classList.add('open'); }); burger.textContent = '✕'; document.body.style.overflow = 'hidden'; }
-  function closeNav() { overlay.classList.remove('open'); overlay.style.display = 'none'; burger.textContent = '☰'; document.body.style.overflow = ''; }
-  burger.addEventListener('click', function () { overlay.classList.contains('open') ? closeNav() : openNav(); });
-  var links = overlay.querySelectorAll('.mnav-link');
-  Array.prototype.forEach.call(links, function (l) { l.addEventListener('click', closeNav); });
-})();
-</script>
+      </div>
       <div id="about-frost" class="about-frost-overlay" aria-hidden="true" style="opacity:0; position:absolute; inset:0;"></div>
       <div class="tc-l pv6 ph3 ph4-ns">
         <div class="mb0 lh-title" style="max-width: 800px; margin: 0 auto; position: relative; background: transparent !important;">
