@@ -370,20 +370,20 @@ fetch('/data/trance_mixing_slogans.txt')
 </div>
 <div style="height: 2px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
 <h2 id="核心身份">核心身份</h2>
-<div class="id-card-row">
-  <div class="id-card">
+<div class="identity-strip">
+  <div class="identity-item">
     <h3>Trance 制作人</h3>
     <p>Uplifting / Tech Trance 为主</p>
   </div>
-  <div class="id-card">
+  <div class="identity-item">
     <h3>母带工程师</h3>
     <p>上百首榜单Trance作品专业母带处理</p>
   </div>
-  <div class="id-card">
+  <div class="identity-item">
     <h3>厂牌 A&amp;R</h3>
     <p>Cooperation Trance 联合创始人</p>
   </div>
-  <div class="id-card">
+  <div class="identity-item">
     <h3>厂牌 A&amp;R</h3>
     <p>Polar Impact 团队策划</p>
   </div>
@@ -424,11 +424,12 @@ fetch('/data/trance_mixing_slogans.txt')
   </div>
 </div>
 <style>
-  /* ===== 核心身份卡片：网格布局（2026-09-27 重排版） ===== */
-  .id-card-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1100px; margin: 60px auto; }
-  .id-card { background: rgba(255,255,255,0.05); padding: 25px 20px; border-radius: 8px; border-left: 3px solid #f2f2f2; text-align: center; }
-  .id-card h3 { color: #fff; margin: 0 0 10px 0; font-size: 20px; }
-  .id-card p { color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6; }
+  /* ===== 核心身份：署名条设计（2026-09-27 v2，credit strip 取代卡片盒） ===== */
+  .identity-strip { max-width: 900px; margin: 50px auto; border-top: 1px solid rgba(255, 255, 255, 0.18); border-bottom: 1px solid rgba(255, 255, 255, 0.18); display: flex; }
+  .identity-item { flex: 1; padding: 30px 18px; text-align: center; }
+  .identity-item + .identity-item { border-left: 1px solid rgba(255, 255, 255, 0.12); }
+  .identity-item h3 { color: #fff; margin: 0 0 8px 0; font-size: 18px; font-weight: 600; letter-spacing: 1px; }
+  .identity-item p { color: #999999; margin: 0; font-size: 13px; line-height: 1.7; }
   /* ===== 认可背书：桌面双栏与旧版视觉一致（300 + 600） ===== */
   .cred-wrap { max-width: 940px; margin: 60px auto; display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: stretch; }
   .cred-title { color: #fff; font-size: 18px; text-align: center; margin: 0 0 20px 0; }
@@ -436,11 +437,14 @@ fetch('/data/trance_mixing_slogans.txt')
   .takeover-strip { display: flex; height: 100%; gap: 0; margin: 0; padding: 0; align-items: stretch; }
   .takeover-img { height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease; }
   @media (max-width: 768px) {
-    /* 核心身份：2×2 等宽，任何屏宽下稳定 */
-    .id-card-row { grid-template-columns: 1fr 1fr; gap: 12px; max-width: none; margin: 30px 0; }
-    .id-card { padding: 16px 10px; border-left: none; border-top: 3px solid #f2f2f2; }
-    .id-card h3 { font-size: 16px; margin-bottom: 6px; }
-    .id-card p { font-size: 12px; }
+    /* 核心身份：2×2 井字分隔，任何屏宽下稳定对称 */
+    .identity-strip { display: grid; grid-template-columns: 1fr 1fr; margin: 30px 0; }
+    .identity-item { padding: 22px 10px; }
+    .identity-item + .identity-item { border-left: none; }
+    .identity-item:nth-child(odd) { border-right: 1px solid rgba(255, 255, 255, 0.12); }
+    .identity-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+    .identity-item h3 { font-size: 15px; margin-bottom: 6px; }
+    .identity-item p { font-size: 12px; }
     /* 认可背书：纵向堆叠； slider 方框随屏宽等比缩放； 四图改 2×2 不再细条 */
     .cred-wrap { grid-template-columns: 1fr; gap: 28px; margin: 30px 0; }
     .cred-frame { height: auto; aspect-ratio: 1 / 1; }
