@@ -163,7 +163,7 @@ body_class: "ma0 avenir bg-near-white development is-home"
           ">A young life, devoted to the art of Trance</p>
         </div>
         <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt4 mb4">
-          欢迎来到 Eonun 领域：Trance 制作、风格设计、母带工程、美学与概念
+          Welcome to the world of Eonun: Trance production, style design, mastering, aesthetics and concept
         </h2>
       </div>
     </div>
