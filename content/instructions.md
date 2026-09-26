@@ -744,8 +744,8 @@ button.classList.remove('active');
 });
 var hint = document.getElementById('select-hint');
 if (hint) hint.style.display = 'none';
-var TINTS = { 'one-on-one': '#5900ff', 'long-term': '#00ff59', 'booking': '#00ffcc' };
-if (window.eonunApplyTint && TINTS[sectionId]) window.eonunApplyTint(TINTS[sectionId], 50);
+var TINTS = { 'one-on-one': '#4dc3ff', 'long-term': '#00ff59', 'booking': '#00ffcc' };
+if (window.eonunApplyTint && TINTS[sectionId]) window.eonunApplyTint(TINTS[sectionId], 100);
 document.getElementById(sectionId).classList.add('active');
 event.target.classList.add('active');
 }
