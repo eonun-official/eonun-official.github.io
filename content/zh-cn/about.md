@@ -57,11 +57,11 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-abo
       </div><!-- 移动端汉堡菜单：小屏收起导航，点开全屏展开 -->
 <button id="nav-burger" aria-label="Menu" style="display:none; position:fixed; top:14px; right:14px; z-index:100001; background:rgba(10,10,10,0.75); border:1px solid rgba(255,255,255,0.55); color:#fff; width:42px; height:42px; border-radius:10px; font-size:19px; line-height:1; cursor:pointer;">☰</button>
 <div id="nav-overlay" style="display:none; position:fixed; inset:0; z-index:100000; background:rgba(8,8,8,0.98); flex-direction:column; align-items:center; justify-content:center; gap:6px;">
-  <a class="mnav-link" href="shop/index.html">Shop</a>
-  <a class="mnav-link" href="music-services/index.html">Music Services</a>
-  <a class="mnav-link" href="instructions/index.html">Instructions</a>
-  <a class="mnav-link" href="about/index.html">About</a>
-  <a class="mnav-link" href="contact/index.html">Contact</a>
+  <a class="mnav-link" href="/shop/index.html">Shop</a>
+  <a class="mnav-link" href="/music-services/index.html">Music Services</a>
+  <a class="mnav-link" href="/instructions/index.html">Instructions</a>
+  <a class="mnav-link" href="/about/index.html">About</a>
+  <a class="mnav-link" href="/contact/index.html">Contact</a>
   <div style="margin-top:36px; color:#666; font-size:12px; letter-spacing:3px;">EONUN · TRANCE</div>
 </div>
 <style>

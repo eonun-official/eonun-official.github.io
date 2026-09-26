@@ -27,19 +27,19 @@ body_class: "ma0 avenir bg-near-white development is-home"
         <ul class="pl0 mr3" 
             style="display: flex !important; list-style: none !important; margin: 0 !important; padding: 0 !important; gap: 20px !important;">
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="shop/index.html" title="Shop page">Shop</a>
+            <a class="hover-white white-90 no-underline" href="/shop/index.html" title="Shop page">Shop</a>
           </li>
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="music-services/index.html" title="Music Services page">Music Services</a>
+            <a class="hover-white white-90 no-underline" href="/music-services/index.html" title="Music Services page">Music Services</a>
           </li>
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="instructions/index.html" title="Instructions page">Instructions</a>
+            <a class="hover-white white-90 no-underline" href="/instructions/index.html" title="Instructions page">Instructions</a>
           </li>
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="about/index.html" title="About page">About</a>
+            <a class="hover-white white-90 no-underline" href="/about/index.html" title="About page">About</a>
           </li>
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="contact/index.html" title="Contact page">Contact</a>
+            <a class="hover-white white-90 no-underline" href="/contact/index.html" title="Contact page">Contact</a>
           </li>
         </ul>
       <div class="ananke-socials"></div>
@@ -60,11 +60,11 @@ body_class: "ma0 avenir bg-near-white development is-home"
 <!-- 移动端汉堡菜单：小屏收起导航，点开全屏展开 -->
 <button id="nav-burger" aria-label="Menu" style="display:none; position:fixed; top:14px; right:14px; z-index:100001; background:rgba(10,10,10,0.75); border:1px solid rgba(255,255,255,0.55); color:#fff; width:42px; height:42px; border-radius:10px; font-size:19px; line-height:1; cursor:pointer;">☰</button>
 <div id="nav-overlay" style="display:none; position:fixed; inset:0; z-index:100000; background:rgba(8,8,8,0.98); flex-direction:column; align-items:center; justify-content:center; gap:6px;">
-  <a class="mnav-link" href="shop/index.html">Shop</a>
-  <a class="mnav-link" href="music-services/index.html">Music Services</a>
-  <a class="mnav-link" href="instructions/index.html">Instructions</a>
-  <a class="mnav-link" href="about/index.html">About</a>
-  <a class="mnav-link" href="contact/index.html">Contact</a>
+  <a class="mnav-link" href="/shop/index.html">Shop</a>
+  <a class="mnav-link" href="/music-services/index.html">Music Services</a>
+  <a class="mnav-link" href="/instructions/index.html">Instructions</a>
+  <a class="mnav-link" href="/about/index.html">About</a>
+  <a class="mnav-link" href="/contact/index.html">Contact</a>
   <div style="margin-top:36px; color:#666; font-size:12px; letter-spacing:3px;">EONUN · TRANCE</div>
 </div>
 <style>
@@ -595,7 +595,7 @@ fetch('/data/trance_mixing_slogans.txt')
 <div style="max-width: 600px; margin: 60px auto; background: rgba(255,255,255,0.03); padding: 40px; border-radius: 8px; text-align: center;">
   <h3 style="color: #fff; font-size: 22px; margin: 0 0 20px 0;">混音需求 · 合作咨询 · DJ Booking</h3>
   <p style="color: #d9d9d9; margin: 0 0 30px 0; font-size: 14px;">欢迎 Trance 同好、制作人、活动方洽谈合作，让我们一起打造有力量的声波</p>
-  <a href="contact/index.html" style="background: #f2f2f2; color: #0a0a0a; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 16px; display: inline-block;">
+  <a href="/contact/index.html" style="background: #f2f2f2; color: #0a0a0a; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 16px; display: inline-block;">
     立即咨询
   </a>
 </div>
