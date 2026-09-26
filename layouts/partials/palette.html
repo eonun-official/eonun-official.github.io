@@ -152,41 +152,14 @@
   }
   /* 全局钩子：其他模块（如 instructions 分区导航）可直接驱动色彩系统，不写 localStorage */
   window.eonunApplyTint = function (hex, intensity) { apply(hex, intensity, false); };
-  /* 主页淡入：从黑白（浓度 0）缓动到目标色，duration 毫秒 */
-  function animateFromZero(hex, intensity, duration) {
-    var t0 = null;
-    function frame(ts) {
-      if (!t0) t0 = ts;
-      var p = Math.min((ts - t0) / duration, 1);
-      var e = 1 - Math.pow(1 - p, 3); /* easeOutCubic */
-      var root = document.documentElement, body = document.body;
-      var c2 = adjacent(hex);
-      root.style.setProperty('--trance-purple', hex);
-      root.style.setProperty('--trance-blue', c2);
-      root.style.setProperty('--glow-color', alpha(hex, (0.38 * e).toFixed(3)));
-      var a = (0.05 + 0.20 * ((intensity * e) / 100)).toFixed(3);
-      body.style.setProperty('background-image',
-        'linear-gradient(160deg, ' + alpha(hex, a) + ' 0%, rgba(0,0,0,0) 45%, ' + alpha(c2, a) + ' 100%)', 'important');
-      if (p < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  }
-  var HOME_DEFAULT = { hex: '#7637c3', i: 50 };
   var picker = document.getElementById('pp-picker');
   var slider = document.getElementById('pp-intensity');
   var saved = null;
   try { saved = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
-  var isHome = document.body.classList.contains('is-home');
   if (saved && saved.hex) {
     picker.value = saved.hex;
     slider.value = saved.i || 25;
-    if (isHome) animateFromZero(saved.hex, saved.i || 25, 2400);
-    else apply(saved.hex, saved.i || 25);
-  } else if (isHome) {
-    /* 主页默认色：首次打开从黑白淡入 #7637c3 @ 50% */
-    picker.value = HOME_DEFAULT.hex;
-    slider.value = HOME_DEFAULT.i;
-    animateFromZero(HOME_DEFAULT.hex, HOME_DEFAULT.i, 2400);
+    apply(saved.hex, saved.i || 25);
   }
   document.getElementById('palette-toggle').addEventListener('click', function () {
     document.getElementById('palette-panel').classList.toggle('open');
