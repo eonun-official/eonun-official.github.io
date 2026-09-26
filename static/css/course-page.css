@@ -473,102 +473,7 @@
 }
 
 
-/* 中级课程「master-ink」悬浮：白底黑字 + 竖排 Pro 大字（与大师卡黑底互为反色） */
-.course-card.master-ink::after {
-  content: 'Eonun';
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  writing-mode: vertical-rl;
-  font-family: edix, 'microsoft yahei', sans-serif;
-  font-weight: 800;
-  font-size: 5.5rem;
-  letter-spacing: 0.12em;
-  line-height: 1;
-  color: #ffffff;
-  mix-blend-mode: difference;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-  pointer-events: none;
-  z-index: 2;
-}
-.course-card.master-ink:hover::after {
-  opacity: 1;
-}
-.course-card.master-ink:hover {
-  background: #f5f5f5 !important;
-  border: 2px solid #0a0a0a !important;
-  box-shadow: 6px 6px 0 rgba(10, 10, 10, 0.9), 12px 12px 0 rgba(10, 10, 10, 0.12) !important;
-}
-.course-card.master-ink:hover::before {
-  background: #0a0a0a !important;
-  transform: scaleX(1) !important;
-}
-.course-card.master-ink:hover h3 {
-  background: none !important;
-  -webkit-background-clip: border-box !important;
-  background-clip: border-box !important;
-  color: #0a0a0a !important;
-  border-bottom-color: rgba(0, 0, 0, 0.25) !important;
-}
-.course-card.master-ink:hover .course-level.advanced {
-  background: #0a0a0a !important;
-  color: #f5f5f5 !important;
-  border: 1.5px solid #0a0a0a !important;
-}
-.course-card.master-ink:hover .price-tag {
-  background: #0a0a0a !important;
-  color: #f5f5f5 !important;
-  box-shadow: none !important;
-}
-.course-card.master-ink:hover .course-target {
-  background: rgba(0, 0, 0, 0.05) !important;
-  border-left-color: #0a0a0a !important;
-  color: #222222 !important;
-}
-.course-card.master-ink:hover .course-target strong {
-  color: #000000 !important;
-}
-.course-card.master-ink:hover .course-features li {
-  color: #333333 !important;
-  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
-}
-.course-card.master-ink:hover .course-features li::before {
-  color: #0a0a0a !important;
-}
-.course-card.master-ink:hover .course-notice {
-  background: rgba(0, 0, 0, 0.05) !important;
-  border-left-color: #0a0a0a !important;
-  color: #444444 !important;
-}
-.course-card.master-ink:hover .course-notice strong {
-  color: #000000 !important;
-}
-.course-card.master-ink:hover .course-benefit {
-  background: rgba(0, 0, 0, 0.05) !important;
-  border-color: rgba(0, 0, 0, 0.3) !important;
-  color: #222222 !important;
-}
-
-
-
-/* 中级课程「Pro」悬浮 v4：黑底白字机能风（2026-09-27 与高级卡方案互换迁入） */
-.course-card.pro-ink,
-.course-card.pro-ink h3,
-.course-card.pro-ink .price-tag,
-.course-card.pro-ink .course-target,
-.course-card.pro-ink .course-target strong,
-.course-card.pro-ink .course-features li,
-.course-card.pro-ink .course-features li::before,
-.course-card.pro-ink .course-notice,
-.course-card.pro-ink .course-notice strong,
-.course-card.pro-ink .course-benefit,
-.course-card.pro-ink .course-level.intermediate {
-  transition: color 0.6s ease, background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
-}
-
-/* 竖排大字：默认隐藏，悬停淡入；mix-blend-mode:difference 让它遇白则黑、遇黑则白 */
+/* 中级课程「Pro」悬浮 v5（2026-09-27 换回）：白底黑字 + 竖排 Pro 大字 */
 .course-card.pro-ink::after {
   content: 'Pro';
   position: absolute;
@@ -591,59 +496,154 @@
 .course-card.pro-ink:hover::after {
   opacity: 1;
 }
-
 .course-card.pro-ink:hover {
+  background: #f5f5f5 !important;
+  border: 2px solid #0a0a0a !important;
+  box-shadow: 6px 6px 0 rgba(10, 10, 10, 0.9), 12px 12px 0 rgba(10, 10, 10, 0.12) !important;
+}
+.course-card.pro-ink:hover::before {
+  background: #0a0a0a !important;
+  transform: scaleX(1) !important;
+}
+.course-card.pro-ink:hover h3 {
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  color: #0a0a0a !important;
+  border-bottom-color: rgba(0, 0, 0, 0.25) !important;
+}
+.course-card.pro-ink:hover .course-level.intermediate {
+  background: #0a0a0a !important;
+  color: #f5f5f5 !important;
+  border: 1.5px solid #0a0a0a !important;
+}
+.course-card.pro-ink:hover .price-tag {
+  background: #0a0a0a !important;
+  color: #f5f5f5 !important;
+  box-shadow: none !important;
+}
+.course-card.pro-ink:hover .course-target {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-left-color: #0a0a0a !important;
+  color: #222222 !important;
+}
+.course-card.pro-ink:hover .course-target strong {
+  color: #000000 !important;
+}
+.course-card.pro-ink:hover .course-features li {
+  color: #333333 !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+.course-card.pro-ink:hover .course-features li::before {
+  color: #0a0a0a !important;
+}
+.course-card.pro-ink:hover .course-notice {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-left-color: #0a0a0a !important;
+  color: #444444 !important;
+}
+.course-card.pro-ink:hover .course-notice strong {
+  color: #000000 !important;
+}
+.course-card.pro-ink:hover .course-benefit {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.3) !important;
+  color: #222222 !important;
+}
+
+
+
+/* 高级课程「Eonun Trance」黑白机能悬浮 v5（2026-09-27 换回）：黑底 + 竖排 Eonun 大字 */
+.course-card.master-ink,
+.course-card.master-ink h3,
+.course-card.master-ink .price-tag,
+.course-card.master-ink .course-target,
+.course-card.master-ink .course-target strong,
+.course-card.master-ink .course-features li,
+.course-card.master-ink .course-features li::before,
+.course-card.master-ink .course-notice,
+.course-card.master-ink .course-notice strong,
+.course-card.master-ink .course-benefit,
+.course-card.master-ink .course-level.advanced {
+  transition: color 0.6s ease, background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* 竖排大字：默认隐藏，悬停淡入；mix-blend-mode:difference 让它遇白则黑、遇黑则白 */
+.course-card.master-ink::after {
+  content: 'Eonun';
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  font-family: edix, 'microsoft yahei', sans-serif;
+  font-weight: 800;
+  font-size: 5.5rem;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.course-card.master-ink:hover::after {
+  opacity: 1;
+}
+
+.course-card.master-ink:hover {
   background: #0a0a0a;
   border: 2px solid #f2f2f2;
   box-shadow: 6px 6px 0 rgba(255, 255, 255, 0.14), 12px 12px 0 rgba(255, 255, 255, 0.05);
 }
-.course-card.pro-ink:hover::before {
+.course-card.master-ink:hover::before {
   background: #f2f2f2;
   transform: scaleX(1);
 }
 /* 标题：压掉 main.min.css 里带 !important 的全站渐变字 */
-.course-card.pro-ink:hover h3 {
+.course-card.master-ink:hover h3 {
   background: none !important;
   -webkit-background-clip: border-box !important;
   background-clip: border-box !important;
   color: #f5f5f5 !important;
   border-bottom-color: rgba(255, 255, 255, 0.6);
 }
-.course-card.pro-ink:hover .course-level.intermediate {
+.course-card.master-ink:hover .course-level.advanced {
   background: #ffffff;
   color: #0a0a0a;
   border: 1.5px solid #0a0a0a;
 }
-.course-card.pro-ink:hover .price-tag {
+.course-card.master-ink:hover .price-tag {
   background: #ffffff;
   color: #0a0a0a;
   border: 1.5px solid #0a0a0a;
   box-shadow: none;
 }
-.course-card.pro-ink:hover .course-target {
+.course-card.master-ink:hover .course-target {
   background: rgba(255, 255, 255, 0.08);
   border-left-color: rgba(255, 255, 255, 0.7);
   color: #e8e8e8;
 }
-.course-card.pro-ink:hover .course-target strong {
+.course-card.master-ink:hover .course-target strong {
   color: #ffffff;
 }
-.course-card.pro-ink:hover .course-features li {
+.course-card.master-ink:hover .course-features li {
   color: #dddddd;
   border-bottom-color: rgba(255, 255, 255, 0.12);
 }
-.course-card.pro-ink:hover .course-features li::before {
+.course-card.master-ink:hover .course-features li::before {
   color: #ffffff;
 }
-.course-card.pro-ink:hover .course-notice {
+.course-card.master-ink:hover .course-notice {
   background: rgba(255, 255, 255, 0.08);
   border-left-color: rgba(255, 255, 255, 0.7);
   color: #cccccc;
 }
-.course-card.pro-ink:hover .course-notice strong {
+.course-card.master-ink:hover .course-notice strong {
   color: #ffffff;
 }
-.course-card.pro-ink:hover .course-benefit {
+.course-card.master-ink:hover .course-benefit {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.45);
   color: #eeeeee;
@@ -651,18 +651,18 @@
 
 
 /* 大师卡悬停最终态：置顶覆盖 MONO 默认与全局层 */
-.course-card.pro-ink:hover{background:#0a0a0a!important;border-color:#f2f2f2!important}
-.course-card.pro-ink:hover::before{background:#f2f2f2!important;transform:scaleX(1)!important}
-.course-card.pro-ink:hover h3{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;color:#f5f5f5!important;border-bottom-color:rgba(255,255,255,0.6)!important}
-.course-card.pro-ink:hover .course-level.intermediate{background:#ffffff!important;color:#0a0a0a!important;border-color:#0a0a0a!important}
-.course-card.pro-ink:hover .price-tag{background:#ffffff!important;color:#0a0a0a!important;border-color:#0a0a0a!important;box-shadow:none!important}
-.course-card.pro-ink:hover .course-target{background:rgba(255,255,255,0.08)!important;border-left-color:rgba(255,255,255,0.7)!important;color:#e8e8e8!important}
-.course-card.pro-ink:hover .course-target strong{color:#ffffff!important}
-.course-card.pro-ink:hover .course-features li{color:#dddddd!important;border-bottom-color:rgba(255,255,255,0.12)!important}
-.course-card.pro-ink:hover .course-features li::before{color:#ffffff!important}
-.course-card.pro-ink:hover .course-notice{background:rgba(255,255,255,0.08)!important;border-left-color:rgba(255,255,255,0.7)!important;color:#cccccc!important}
-.course-card.pro-ink:hover .course-notice strong{color:#ffffff!important}
-.course-card.pro-ink:hover .course-benefit{background:rgba(255,255,255,0.08)!important;border-color:rgba(255,255,255,0.45)!important;color:#eeeeee!important}
+.course-card.master-ink:hover{background:#0a0a0a!important;border-color:#f2f2f2!important}
+.course-card.master-ink:hover::before{background:#f2f2f2!important;transform:scaleX(1)!important}
+.course-card.master-ink:hover h3{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;color:#f5f5f5!important;border-bottom-color:rgba(255,255,255,0.6)!important}
+.course-card.master-ink:hover .course-level.advanced{background:#ffffff!important;color:#0a0a0a!important;border-color:#0a0a0a!important}
+.course-card.master-ink:hover .price-tag{background:#ffffff!important;color:#0a0a0a!important;border-color:#0a0a0a!important;box-shadow:none!important}
+.course-card.master-ink:hover .course-target{background:rgba(255,255,255,0.08)!important;border-left-color:rgba(255,255,255,0.7)!important;color:#e8e8e8!important}
+.course-card.master-ink:hover .course-target strong{color:#ffffff!important}
+.course-card.master-ink:hover .course-features li{color:#dddddd!important;border-bottom-color:rgba(255,255,255,0.12)!important}
+.course-card.master-ink:hover .course-features li::before{color:#ffffff!important}
+.course-card.master-ink:hover .course-notice{background:rgba(255,255,255,0.08)!important;border-left-color:rgba(255,255,255,0.7)!important;color:#cccccc!important}
+.course-card.master-ink:hover .course-notice strong{color:#ffffff!important}
+.course-card.master-ink:hover .course-benefit{background:rgba(255,255,255,0.08)!important;border-color:rgba(255,255,255,0.45)!important;color:#eeeeee!important}
 
 /* 初级课程「Basic」悬浮 v1（2026-09-27）：结构同中/高级（右侧竖排大字、淡入淡出），配色跟随全局调色盘变量 */
 .course-card.basic-ink,
@@ -696,7 +696,7 @@
   opacity: 0;
   transition: opacity 0.8s ease;
   pointer-events: none;
-  z-index: 2;
+  z-index: -1;
 }
 .course-card.basic-ink:hover::after {
   opacity: 1;
