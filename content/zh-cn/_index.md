@@ -424,6 +424,32 @@ fetch('/data/trance_mixing_slogans.txt')
   </div>
 </div>
 <style>
+  /* ===== 主页统一设计语言 v3（2026-09-27）：细线框 + 灰阶层级 + 字距标题 ===== */
+  .block-subtitle { color: #fff; font-size: 21px; text-align: center; margin: 0 0 36px 0; letter-spacing: 1px; }
+  .service-wrap { max-width: 940px; margin: 60px auto; }
+  .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .service-card { border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 10px; padding: 28px 26px; }
+  .service-card h4 { color: #fff; font-size: 17px; margin: 0 0 12px 0; letter-spacing: 0.5px; }
+  .service-card p { color: #999999; font-size: 13px; line-height: 1.75; margin: 0; }
+  .works-wrap { max-width: 1200px; margin: 60px auto; }
+  .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+  .work-embed { width: 100%; height: 352px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12); display: block; background: rgba(255,255,255,0.02); }
+  .work-note { color: #999999; text-align: center; margin-top: 14px; font-size: 13px; }
+  .work-note a { color: #ffffff; text-decoration: none; }
+  .contact-cta { max-width: 640px; margin: 60px auto 20px; padding: 50px 20px 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.18); }
+  .contact-cta h3 { color: #fff; font-size: 22px; margin: 0 0 18px 0; letter-spacing: 1px; }
+  .contact-cta > p { color: #999999; font-size: 14px; margin: 0 0 30px 0; line-height: 1.7; }
+  .cta-pill { background: #f2f2f2; color: #0a0a0a; padding: 12px 34px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 16px; display: inline-block; transition: background 0.25s ease, transform 0.25s ease; }
+  .cta-pill:hover { background: #ffffff; transform: translateY(-2px); }
+  .collab-block { max-width: 900px; margin: 60px auto; text-align: center; }
+  .collab-title { color: #fff; font-size: 20px; margin: 0 0 26px 0; letter-spacing: 1px; }
+  .collab-strip { display: flex; justify-content: center; flex-wrap: wrap; border-top: 1px solid rgba(255, 255, 255, 0.18); border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
+  .collab-item { padding: 16px 30px; font-size: 15px; color: #f2f2f2; }
+  .collab-item + .collab-item { border-left: 1px solid rgba(255, 255, 255, 0.12); }
+  .collab-item em { font-style: normal; color: #777777; font-size: 13px; }
+  .collab-desc { color: #999999; margin-top: 24px; font-size: 13px; line-height: 1.8; }
+</style>
+<style>
   /* ===== 核心身份：署名条设计（2026-09-27 v2，credit strip 取代卡片盒） ===== */
   .identity-strip { max-width: 900px; margin: 50px auto; border-top: 1px solid rgba(255, 255, 255, 0.18); border-bottom: 1px solid rgba(255, 255, 255, 0.18); display: flex; }
   .identity-item { flex: 1; padding: 30px 18px; text-align: center; }
@@ -432,8 +458,9 @@ fetch('/data/trance_mixing_slogans.txt')
   .identity-item p { color: #999999; margin: 0; font-size: 13px; line-height: 1.7; }
   /* ===== 认可背书：桌面双栏与旧版视觉一致（300 + 600） ===== */
   .cred-wrap { max-width: 940px; margin: 60px auto; display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: stretch; }
-  .cred-title { color: #fff; font-size: 18px; text-align: center; margin: 0 0 20px 0; }
-  .cred-frame { position: relative; width: 100%; height: 300px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.2); box-sizing: border-box; }
+  .cred-title { color: #f2f2f2; font-size: 15px; letter-spacing: 2px; font-weight: 600; text-align: center; margin: 0 0 20px 0; }
+  .cred-frame { position: relative; width: 100%; height: 300px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.15); box-sizing: border-box; transition: border-color 0.3s ease; }
+  .cred-frame:hover { border-color: rgba(255, 255, 255, 0.4); }
   .takeover-strip { display: flex; height: 100%; gap: 0; margin: 0; padding: 0; align-items: stretch; }
   .takeover-img { height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease; }
   @media (max-width: 768px) {
@@ -451,6 +478,16 @@ fetch('/data/trance_mixing_slogans.txt')
     .cred-frame-wide { aspect-ratio: auto; }
     .takeover-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; height: auto; }
     .takeover-img { width: 100%; height: auto; aspect-ratio: 1 / 1; }
+    /* 统一设计语言 v3 移动端 */
+    .block-subtitle { font-size: 18px; margin-bottom: 26px; }
+    .service-wrap, .works-wrap, .collab-block { margin: 30px 0; }
+    .service-grid { grid-template-columns: 1fr; gap: 14px; }
+    .service-card { padding: 22px 18px; }
+    .works-grid { grid-template-columns: 1fr; gap: 20px; }
+    .work-embed { height: 300px; }
+    .contact-cta { margin: 30px auto 10px; padding-top: 36px; }
+    .collab-item { padding: 13px 16px; font-size: 13px; }
+    .collab-item em { font-size: 11px; }
   }
 </style>
 <script>
@@ -478,16 +515,14 @@ fetch('/data/trance_mixing_slogans.txt')
     transition: transform 0.3s ease;
   }
 </style>
-<div style="max-width: 900px; margin: 60px auto; text-align: center;">
-  <h3 style="color: #fff; font-size: 22px; margin-bottom: 30px;">与世界级 Trance 力量并肩</h3>
-  <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; align-items: center;">
-    <span style="color: #d9d9d9; font-size: 16px;">Darren Porter (UK)</span>
-    <span style="color: #d9d9d9;">•</span>
-    <span style="color: #d9d9d9; font-size: 16px;">Pinkque (AU)</span>
-    <span style="color: #d9d9d9;">•</span>
-    <span style="color: #d9d9d9; font-size: 16px;">RIIR Music (UK)</span>
+<div class="collab-block">
+  <h3 class="collab-title">与世界级 Trance 力量并肩</h3>
+  <div class="collab-strip">
+    <span class="collab-item">Darren Porter <em>(UK)</em></span>
+    <span class="collab-item">Pinkque <em>(AU)</em></span>
+    <span class="collab-item">RIIR Music <em>(UK)</em></span>
   </div>
-  <p style="color: #d9d9d9; margin-top: 20px; font-size: 14px; line-height: 1.6;">作品以及艺人采访入选厂牌专题报道，第一个用实力征服国际厂牌开启独家专访的中国Trance制作人。<br><br>与此同时也是首个被厂牌邀请在该国际电台上参与活动的国人</p>
+  <p class="collab-desc">作品以及艺人采访入选厂牌专题报道，第一个用实力征服国际厂牌开启独家专访的中国Trance制作人。<br><br>与此同时也是首个被厂牌邀请在该国际电台上参与活动的国人</p>
 </div>
 <style>
   a[href*="r2rmusic.com"] div:hover img {
@@ -518,13 +553,6 @@ fetch('/data/trance_mixing_slogans.txt')
     article { padding-left: 14px !important; padding-right: 14px !important; }
     article h2:not(.fw1) { font-size: 1.4em !important; }
     article h3[style*="font-size: 22px"] { font-size: 17px !important; }
-    /* 服务/作品网格：单列 */
-    div[style*="minmax(280px, 1fr)"] { grid-template-columns: 1fr !important; }
-    div[style*="minmax(350px, 1fr)"] { grid-template-columns: 1fr !important; }
-    /* 卡片内边距 */
-    div[style*="padding: 30px"][style*="border-radius: 8px"] { padding: 20px 16px !important; }
-    /* 联系区块 */
-    div[style*="max-width: 600px"][style*="padding: 40px"] { padding: 24px 16px !important; }
     /* 段落分隔线边距 */
     div[style*="height: 1px"][style*="margin: 40px 0"] { margin: 24px 0 !important; }
     /* 语言切换器与调色盘不挡内容 */
@@ -535,46 +563,44 @@ fetch('/data/trance_mixing_slogans.txt')
 </style>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
 <h2 id="核心服务">核心服务</h2>
-<div style="max-width: 900px; margin: 60px auto;">
-  <h3 style="color: #fff; font-size: 22px; text-align: center; margin-bottom: 40px;">从 Demo 到发行，全链路支持</h3>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-    <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); padding: 30px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
-      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">Trance 音乐工程</h4>
-      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">机能、史诗与氛围感，解决频域冲突、动态失衡、声场扁平，打造具备行业一流的混音，突出 Trance 核心张力。</p>
+<div class="service-wrap">
+  <h3 class="block-subtitle">从 Demo 到发行，全链路支持</h3>
+  <div class="service-grid">
+    <div class="service-card">
+      <h4>Trance 音乐工程</h4>
+      <p>机能、史诗与氛围感，解决频域冲突、动态失衡、声场扁平，打造具备行业一流的混音，突出 Trance 核心张力。</p>
     </div>
-    <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); padding: 30px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
-      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">专业母带处理</h4>
-      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">提升响度、优化频谱平衡、增强总线粘合度，适配各大流媒体平台（Spotify/Beatport）。</p>
+    <div class="service-card">
+      <h4>专业母带处理</h4>
+      <p>提升响度、优化频谱平衡、增强总线粘合度，适配各大流媒体平台（Spotify/Beatport）。</p>
     </div>
-    <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); padding: 30px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
-      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">教学与发行指导</h4>
-      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">通过一对四或一对一指导助力优质 Trance 作品走向全球市场。坚持无圈子化原则，确保艺人隐私全程提供单线服务与信息保密。</p>
+    <div class="service-card">
+      <h4>教学与发行指导</h4>
+      <p>通过一对四或一对一指导助力优质 Trance 作品走向全球市场。坚持无圈子化原则，确保艺人隐私全程提供单线服务与信息保密。</p>
     </div>
   </div>
 </div>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
 <h2 id="近期作品--声波现场">近期作品 · 声波现场</h2>
-<div style="max-width: 1200px; margin: 60px auto;">
-  <h3 style="color: #fff; font-size: 22px; text-align: center; margin-bottom: 40px;">Listen to the Sound</h3>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; justify-items: center;">
+<div class="works-wrap">
+  <h3 class="block-subtitle">Listen to the Sound</h3>
+  <div class="works-grid">
     <div style="width: 100%;">
-      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/7ok2w55yMiwbUvrlVn9mBW?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <p style="color: #d9d9d9; text-align: center; margin-top: 15px; font-size: 14px;">更多作品 → <a href="https://open.spotify.com/artist/7ok2w55yMiwbUvrlVn9mBW" target="_blank" style="color: #ffffff; text-decoration: none;">Spotify</a></p>
+      <iframe data-testid="embed-iframe" class="work-embed" src="https://open.spotify.com/embed/artist/7ok2w55yMiwbUvrlVn9mBW?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <p class="work-note">更多作品 → <a href="https://open.spotify.com/artist/7ok2w55yMiwbUvrlVn9mBW" target="_blank" style="color: #ffffff; text-decoration: none;">Spotify</a></p>
     </div>
     <div style="width: 100%;">
-      <iframe src="https://music.163.com/outchain/player?type=0&id=17739007625&auto=0&height=430" loading="lazy" width="100%" height="352" frameborder="no" marginwidth="0" marginheight="0" style="border-radius:12px"></iframe>
-      <p style="color: #d9d9d9; text-align: center; margin-top: 15px; font-size: 14px;">更多作品 → <a href="https://music.163.com/playlist?id=17739007625" target="_blank" style="color: #ffffff; text-decoration: none;">网易云音乐</a></p>
+      <iframe class="work-embed" src="https://music.163.com/outchain/player?type=0&id=17739007625&auto=0&height=430" loading="lazy" frameborder="no" marginwidth="0" marginheight="0"></iframe>
+      <p class="work-note">更多作品 → <a href="https://music.163.com/playlist?id=17739007625" target="_blank" style="color: #ffffff; text-decoration: none;">网易云音乐</a></p>
     </div>
   </div>
 </div>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
 <h2 id="联系我--共创-trance-能量">联系我 · 共创 Trance 能量</h2>
-<div style="max-width: 600px; margin: 60px auto; background: rgba(255,255,255,0.03); padding: 40px; border-radius: 8px; text-align: center;">
-  <h3 style="color: #fff; font-size: 22px; margin: 0 0 20px 0;">混音需求 · 合作咨询 · DJ Booking</h3>
-  <p style="color: #d9d9d9; margin: 0 0 30px 0; font-size: 14px;">欢迎 Trance 同好、制作人、活动方洽谈合作，让我们一起打造有力量的声波</p>
-  <a href="/contact/index.html" style="background: #f2f2f2; color: #0a0a0a; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 16px; display: inline-block;">
-    立即咨询
-  </a>
+<div class="contact-cta">
+  <h3>混音需求 · 合作咨询 · DJ Booking</h3>
+  <p>欢迎 Trance 同好、制作人、活动方洽谈合作，让我们一起打造有力量的声波</p>
+  <a class="cta-pill" href="/contact/index.html">立即咨询</a>
 </div>
   </article>
       </main>
