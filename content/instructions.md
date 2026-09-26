@@ -453,7 +453,7 @@ fetch('../data/trance_mixing_slogans.txt')
 <div class="course-card long-term-course master-ink">
 <span class="course-level advanced">高级</span>
 <h3>Eonun Trance（限量）</h3>
-<div class="price-tag small">没空，暂不招生</div>
+<div class="price-tag small">排期满，可咨询</div>
 <div class="course-target">
 <strong>适合人群：</strong> 有多年制作经验，追求顶级质感与最新审美趋势，渴望彻底突破瓶颈的资深制作人——目标是以职业为导向的舞曲制作人身份（一般爱好者不推荐）
 </div>
