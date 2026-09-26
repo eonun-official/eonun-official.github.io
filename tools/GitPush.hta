@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Eonun 网站发布工具</title>
+<style>
+body { background:#1e1e2e; color:#e8e8f0; font-family:"Microsoft YaHei",sans-serif; margin:0; padding:12px; font-size:12px; }
+h1 { font-size:1.35em; margin:0 0 4px 0; color:#89b4fa; display:inline-block; }
+.sub { font-size:1em; color:#a6adc8; margin-bottom:8px; }
+.group { border:1px solid #45475a; border-radius:8px; padding:8px 10px; margin-bottom:8px; }
+.group-title { font-size:1.1em; color:#f9e2af; margin-bottom:6px; font-weight:bold; }
+button { background:#45475a; color:#fff; border:none; border-radius:6px; padding:.5em .9em; margin:2px 3px; font-size:1.05em; cursor:pointer; font-family:inherit; }
+button:hover { background:#585b70; }
+button.primary { background:#8839ef; font-weight:bold; }
+button.primary:hover { background:#9d5cff; }
+button.warn { background:#f38ba8; }
+button.ok { background:#40a02b; }
+button.mini { padding:.3em .7em; font-size:.95em; }
+#summary { font-size:1em; color:#cdd6f4; background:#11111b; border:1px solid #45475a; border-radius:6px; padding:5px 8px; margin-bottom:8px; }
+#summary b { color:#f9e2af; }
+#preview { font-size:1em; border-radius:6px; padding:6px 8px; margin-bottom:8px; background:#11111b; border:1px solid #45475a; color:#a6adc8; }
+#preview .add { color:#a6e3a1; }
+#preview .del { color:#f38ba8; }
+#preview .upd { color:#f9e2af; }
+table.panes { width:100%; border-collapse:collapse; table-layout:fixed; }
+td.pane { vertical-align:top; }
+td.paneL { width:54%; padding-right:6px; }
+td.paneR { width:46%; padding-left:6px; }
+.panebox { height:32em; overflow-y:auto; overflow-x:auto; background:#11111b; border:1px solid #45475a; border-radius:6px; padding:5px; font-size:.98em; }
+.panebar { margin-bottom:5px; }
+.panebar .cap { font-size:1em; color:#f9e2af; font-weight:bold; margin-right:4px; }
+.panebar .hint { font-size:.92em; color:#6c7086; }
+.filerow { display:block; color:#cdd6f4; padding:1px 0; white-space:nowrap; }
+.filerow.off { color:#6c7086; }
+.folderrow { display:block; color:#e8e8f0; padding:1px 0; white-space:nowrap; font-weight:bold; }
+.tgl { cursor:pointer; color:#89b4fa; display:inline-block; width:1.3em; font-family:Consolas,monospace; }
+.st { font-size:.9em; padding:0 5px; border-radius:4px; margin-left:6px; }
+.st.sync  { background:#20301c; color:#a6e3a1; }
+.st.new   { background:#1c2430; color:#89b4fa; }
+.st.dirty { background:#30281c; color:#f9e2af; }
+.st.local { background:#262626; color:#9ca0b0; }
+.st.diff  { background:#2c1c30; color:#cba6f7; }
+.st.ronly { background:#301c1c; color:#f38ba8; }
+.st.unknown { background:#262626; color:#6c7086; }
+#log { width:100%; height:10em; background:#11111b; color:#a6e3a1; border:1px solid #45475a; border-radius:6px; font-family:Consolas,monospace; font-size:.98em; padding:6px; box-sizing:border-box; }
+.info { font-size:.95em; color:#a6adc8; margin-top:4px; }
+input[type=text] { background:#313244; color:#fff; border:1px solid #45475a; border-radius:6px; padding:.45em .6em; font-size:1em; width:16em; font-family:inherit; }
+.conn-ok { color:#a6e3a1; }
+.conn-bad { color:#f38ba8; }
+#fontctl { float:right; }
+#fontpct { color:#f9e2af; font-weight:bold; display:inline-block; min-width:3.2em; text-align:center; }
+</style>
+</head>
+<body>
+<h1>Eonun 网站发布工具</h1>
+<span id="fontctl">
+  <button class="mini" onclick="fontStep(-1)">字体-</button><span id="fontpct">100%</span><button class="mini" onclick="fontStep(1)">字体+</button>
+</span>
+<div class="sub">项目根目录：<span id="root"></span> ｜ Git：<span id="gitpath"></span> ｜ 代理：<span id="proxystate">检测中...</span> ｜ 远端连接：<span id="connstate">未测试</span></div>
+
+<div id="summary">读取中...</div>
+
+<table class="panes"><tr>
+<td class="pane paneL">
+  <div class="panebar">
+    <span class="cap">本地文件</span>
+    <button class="mini" onclick="setAll(true)">全选</button>
+    <button class="mini" onclick="setAll(false)">全不选</button>
+    <button class="mini" onclick="expandAll(true)">展开</button>
+    <button class="mini" onclick="expandAll(false)">收起</button>
+    <button class="mini" onclick="refreshAll()">刷新</button>
+    <div class="hint">勾选 = 传到线上。每次打开默认勾选 = 约定清单（已固化的 39 个文件）+ 已在仓库的文件。</div>
+  </div>
+  <div class="panebox" id="treebox"></div>
+</td>
+<td class="pane paneR">
+  <div class="panebar">
+    <span class="cap">线上仓库（GitHub 实况）</span>
+    <button class="mini" onclick="setRightAll(true)">全选</button>
+    <button class="mini" onclick="setRightAll(false)">全不选</button>
+    <button class="mini" onclick="refreshAll()">刷新</button>
+    <div class="hint">勾选 = 保留在线上。取消勾选再点下方「提交并推送」= 把它从线上删除（本地保留）。</div>
+  </div>
+  <div class="panebox" id="remotebox"></div>
+</td>
+</tr></table>
+
+<div id="preview" style="margin-top:8px;">尚无变更。</div>
+
+<div class="group">
+<div class="group-title">发布</div>
+<label>提交说明：</label><input type="text" id="msg" value="更新网站">
+<button class="primary" onclick="doCommitPush()">提交并推送</button>
+<button onclick="doPush()">仅推送已提交的改动</button>
+<button onclick="doStatus()">查看状态</button>
+</div>
+
+<div class="group">
+<div class="group-title">远端与网络（本工具和你手动敲命令用同一个 git、同一份代理配置）</div>
+<button onclick="testConn()">测试远端连接</button>
+<button onclick="doPull()">拉取远端更新</button>
+<button class="warn" onclick="doForcePush()">强制推送（覆盖远端）</button>
+<button class="ok" onclick="setProxy(true)">开代理（127.0.0.1:3067）</button>
+<button onclick="setProxy(false)">关代理</button>
+</div>
+
+<div class="group">
+<div class="group-title">本地测试 / 快捷打开</div>
+<button onclick="doBuild()">重新生成网页（hugo 构建）</button>
+<button onclick="doServer()">启动本地服务器（1313）</button>
+<button onclick="openURL('https://eonun-official.github.io/')">线上网站</button>
+<button onclick="openURL('https://github.com/eonun-official/eonun-official.github.io')">GitHub 仓库</button>
+</div>
+
+<textarea id="log" readonly></textarea>
+
+<script language="JScript">
+var fso = new ActiveXObject("Scripting.FileSystemObject");
+var shell = new ActiveXObject("WScript.Shell");
+var ROOT = fso.GetParentFolderName(fso.GetParentFolderName(unescape(location.pathname).replace(/\//g,"\\").replace(/^\\/,"")));
+
+var EXCLUDE_DIRS = { ".git":1, "public":1, "backups":1 };
+var EXCLUDE_FILES = { "Thumbs.db":1, ".DS_Store":1, "desktop.ini":1, "GitPush_selection.txt":1, "GitPush_tmp.txt":1 };
+
+/* 约定清单：每次打开默认勾选的文件（与仓库实际跟踪一致，2026-09-24 固化） */
+var AGREED = {
+".github/workflows/hugo.yml":1, ".gitignore":1, "README.md":1,
+"content/_index.md":1, "content/about.md":1, "content/contact.md":1,
+"content/instructions.md":1, "content/music-services.md":1, "content/shop.md":1,
+"hugo.toml":1,
+"layouts/404.html":1, "layouts/_default/baseof.html":1, "layouts/_default/single.html":1,
+"layouts/index.html":1, "layouts/partials/404-body.html":1, "layouts/partials/head.html":1,
+"static/css/course-page.css":1, "static/css/main.min.css":1, "static/css/shop-page.css":1,
+"static/data/trance_mixing_slogans.txt":1,
+"static/fonts/AlimamaShuHeiTi-Bold.3df4abd1fb6a0f809118b7287720b116f3ced4330805315953e14c92915a9fe3.otf":1,
+"static/fonts/EDIX.otf":1,
+"static/images/1.webp":1, "static/images/2.webp":1, "static/images/3.webp":1, "static/images/4.webp":1,
+"static/images/MyBio.webp":1, "static/images/Never back Again.png":1,
+"static/images/Takeover1.webp":1, "static/images/Takeover2.webp":1,
+"static/images/Takeover3.webp":1, "static/images/Takeover4.webp":1,
+"static/images/apple-touch-icon.png":1, "static/images/background.webp":1,
+"static/images/eonun2www.png":1, "static/images/favicon-32.png":1,
+"static/videos/THEME-poster.jpg":1, "static/videos/THEME.mp4":1,
+"tools/scripts/make_relative.py":1
+};
+
+function findGit() {
+  var cands = [
+    "C:\\Users\\Eonun\\AppData\\Roaming\\kimi-desktop\\daimon-bundle\\runtime\\git\\cmd\\git.exe",
+    "C:\\Program Files\\Git\\cmd\\git.exe",
+    "C:\\Program Files (x86)\\Git\\cmd\\git.exe"
+  ];
+  for (var i=0;i<cands.length;i++) { if (fso.FileExists(cands[i])) return "\"" + cands[i] + "\""; }
+  return "git";
+}
+var GIT = findGit();
+var TMP = ROOT + "\\tools\\GitPush_tmp.txt";
+
+/* ---------- 字号：70/80/90/100/115/130/145/160/175/190 ---------- */
+var FONT_STEPS = [70,80,90,100,115,130,145,160,175,190];
+var fontIdx = 3;
+function applyFont() {
+  document.body.style.fontSize = (12 * FONT_STEPS[fontIdx] / 100) + "px";
+  document.getElementById("fontpct").innerText = FONT_STEPS[fontIdx] + "%";
+}
+function fontStep(d) {
+  fontIdx += d;
+  if (fontIdx < 0) fontIdx = 0;
+  if (fontIdx >= FONT_STEPS.length) fontIdx = FONT_STEPS.length - 1;
+  applyFont();
+}
+
+function log(t) {
+  var el = document.getElementById("log");
+  el.value += t + "\r\n";
+  el.scrollTop = el.scrollHeight;
+}
+
+function runSilent(cmd) {
+  var code = shell.Run('cmd /c cd /d "' + ROOT + '" && ' + cmd + ' > "' + TMP + '" 2>&1', 0, true);
+  var out = "";
+  if (fso.FileExists(TMP)) {
+    var f = fso.OpenTextFile(TMP, 1);
+    if (!f.AtEndOfStream) out = f.ReadAll();
+    f.Close();
+    fso.DeleteFile(TMP);
+  }
+  return { code: code, out: out };
+}
+
+function run(desc, cmd, done) {
+  log("== " + desc + " ==");
+  log("执行命令: " + cmd);
+  try {
+    var full = 'cmd /c cd /d "' + ROOT + '" && ' + cmd + ' > "' + TMP + '" 2>&1';
+    var code = shell.Run(full, 0, true);
+    if (fso.FileExists(TMP)) {
+      var f = fso.OpenTextFile(TMP, 1);
+      if (!f.AtEndOfStream) log(f.ReadAll());
+      f.Close();
+      fso.DeleteFile(TMP);
+    }
+    log("-- 结束，返回码 " + code + (code==0?"（成功）":"（失败）") + " --\r\n");
+    if (done) done(code);
+  } catch(e) {
+    log("出错：" + e.message + "\r\n");
+  }
+}
+
+/* ---------- 数据收集 ---------- */
+var paths = [];
+var localSet = {};
+var tracked = {};
+var remote = {};
+var dirty = {};
+var diffFiles = {};
+var remoteKnown = false;
+var aheadCount = 0;
+
+function scanDir(folder, prefix) {
+  var sub = new Enumerator(folder.SubFolders);
+  for (; !sub.atEnd(); sub.moveNext()) {
+    var n = sub.item().Name;
+    if (EXCLUDE_DIRS[n]) continue;
+    if (prefix === "tools/" && (n === "hugo" || n === "ffmpeg")) continue;
+    scanDir(sub.item(), prefix + n + "/");
+  }
+  var fs = new Enumerator(folder.Files);
+  for (; !fs.atEnd(); fs.moveNext()) {
+    var fn = fs.item().Name;
+    if (EXCLUDE_FILES[fn]) continue;
+    if (fn === ".gitignore" && prefix !== "") continue;
+    paths.push(prefix + fn);
+  }
+}
+
+function splitLines(s) {
+  var raw = s.split(/\r?\n/), out = [];
+  for (var i=0;i<raw.length;i++) if (raw[i]) out.push(raw[i]);
+  return out;
+}
+
+function gather() {
+  tracked = {}; remote = {}; dirty = {}; diffFiles = {}; aheadCount = 0;
+  var r = runSilent(GIT + ' -c http.lowSpeedLimit=1000 -c http.lowSpeedTime=8 fetch origin -q');
+  remoteKnown = (r.code === 0);
+  var lines = splitLines(runSilent(GIT + ' ls-files').out);
+  for (var i=0;i<lines.length;i++) tracked[lines[i]] = 1;
+  if (remoteKnown) {
+    lines = splitLines(runSilent(GIT + ' ls-tree -r --name-only origin/main').out);
+    for (var i=0;i<lines.length;i++) remote[lines[i]] = 1;
+    lines = splitLines(runSilent(GIT + ' diff --name-only HEAD origin/main').out);
+    for (var i=0;i<lines.length;i++) diffFiles[lines[i]] = 1;
+    var cnt = runSilent(GIT + ' rev-list --count origin/main..HEAD').out.replace(/\s/g,'');
+    aheadCount = parseInt(cnt, 10); if (isNaN(aheadCount)) aheadCount = 0;
+  }
+  lines = splitLines(runSilent(GIT + ' -c core.quotepath=false status --porcelain').out);
+  for (var i=0;i<lines.length;i++) {
+    var line = lines[i];
+    var p = line.substring(3);
+    if (p.charAt(0) === '"') p = p.replace(/^"|"$/g, '');
+    if (!p) continue;
+    if (line.substring(0,2) === "??") continue;
+    dirty[p] = line.substring(0,2);
+  }
+}
+
+function defaultChecked(p) {
+  if (AGREED[p]) return true;
+  if (tracked[p]) return true;
+  return false;
+}
+
+function stateOf(p) {
+  if (!tracked[p] && remote[p]) return { cls:"ronly", txt:"仅线上存在" };
+  if (!tracked[p]) return { cls:"local", txt:"未入库" };
+  if (!remoteKnown) return { cls:"unknown", txt:"已入库" };
+  if (diffFiles[p]) return { cls:"diff", txt:"线上版本不同" };
+  if (dirty[p]) return { cls:"dirty", txt:"有未提交改动" };
+  if (!remote[p]) return { cls:"new", txt:"待推送" };
+  return { cls:"sync", txt:"已同步" };
+}
+
+/* ---------- 左栏：树形本地文件 ---------- */
+var fileCbs = [];      // {id, path}
+var folderCbs = [];    // {id, childDivId}
+
+function makeBadge(st) {
+  var s = document.createElement("span");
+  s.className = "st " + st.cls;
+  s.innerText = st.txt;
+  return s;
+}
+
+function renderTreeNode(node, container) {
+  var d, row, tgl, cb, name, i, p;
+  for (var dn in node.dirs) {
+    d = node.dirs[dn];
+    var childDiv = document.createElement("div");
+    childDiv.style.marginLeft = "1.4em";
+    var rowId = "dr_" + folderCbs.length;
+    row = document.createElement("span");
+    row.className = "folderrow";
+    tgl = document.createElement("span");
+    tgl.className = "tgl";
+    tgl.innerText = "[-]";
+    tgl.onclick = new Function("var d=document.getElementById('" + rowId + "'); if(d.style.display=='none'){d.style.display='';this.innerText='[-]';}else{d.style.display='none';this.innerText='[+]';}");
+    row.appendChild(tgl);
+    cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.id = "fcb_" + folderCbs.length;
+    cb.onclick = new Function("onFolderClick('" + cb.id + "','" + rowId + "')");
+    row.appendChild(cb);
+    name = document.createElement("span");
+    name.innerText = " " + dn;
+    row.appendChild(name);
+    container.appendChild(row);
+    folderCbs.push({ id: cb.id, childDivId: rowId });
+    renderTreeNode(d, childDiv);
+    childDiv.id = rowId;
+    container.appendChild(childDiv);
+  }
+  for (i=0;i<node.files.length;i++) {
+    p = node.files[i];
+    row = document.createElement("label");
+    row.className = "filerow";
+    cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.id = "fcb_f" + fileCbs.length;
+    cb.setAttribute("data-path", p.path);
+    cb.onclick = new Function("onFileClick()");
+    row.appendChild(cb);
+    row.appendChild(document.createTextNode(" " + p.name));
+    row.appendChild(makeBadge(stateOf(p.path)));
+    container.appendChild(row);
+    fileCbs.push({ id: cb.id, path: p.path });
+  }
+}
+
+function isFileCbId(id) { return id.indexOf("fcb_f") === 0; }
+
+function onFileClick() {
+  // 逐文件夹向上汇总勾选状态（半选 = 夹内部分勾选）
+  for (var fi=0; fi<folderCbs.length; fi++) {
+    var div = document.getElementById(folderCbs[fi].childDivId);
+    var cbs = div.getElementsByTagName("input");
+    var total=0, on=0;
+    for (var ci=0; ci<cbs.length; ci++) {
+      if (!isFileCbId(cbs[ci].id)) continue;
+      total++;
+      if (cbs[ci].checked) on++;
+    }
+    var fcb = document.getElementById(folderCbs[fi].id);
+    fcb.checked = (on === total && total > 0);
+    fcb.indeterminate = (on > 0 && on < total);
+  }
+  updatePreview();
+}
+
+function onFolderClick(fid, divId) {
+  var fcb = document.getElementById(fid);
+  var div = document.getElementById(divId);
+  var cbs = div.getElementsByTagName("input");
+  for (var ci=0; ci<cbs.length; ci++) {
+    cbs[ci].checked = fcb.checked;
+    cbs[ci].indeterminate = false;
+    var pn = cbs[ci].parentNode;
+    if (pn && pn.className.indexOf("filerow") === 0) pn.className = fcb.checked ? "filerow" : "filerow off";
+  }
+  fcb.indeterminate = false;
+  onFileClick();
+}
+
+function buildTree() {
+  var tree = { dirs:{}, files:[] };
+  for (var i=0;i<paths.length;i++) {
+    var p = paths[i];
+    var segs = p.split("/");
+    var node = tree;
+    for (var s=0;s<segs.length-1;s++) {
+      if (!node.dirs[segs[s]]) node.dirs[segs[s]] = { dirs:{}, files:[] };
+      node = node.dirs[segs[s]];
+    }
+    node.files.push({ path:p, name:segs[segs.length-1] });
+  }
+  return tree;
+}
+
+function renderLeft() {
+  fileCbs = []; folderCbs = [];
+  var box = document.getElementById("treebox");
+  while (box.firstChild) box.removeChild(box.firstChild);
+  renderTreeNode(buildTree(), box);
+  // 默认勾选：约定清单 + 已跟踪
+  for (var i=0;i<fileCbs.length;i++) {
+    var cb = document.getElementById(fileCbs[i].id);
+    var p = fileCbs[i].path;
+    cb.checked = defaultChecked(p);
+    cb.parentNode.className = cb.checked ? "filerow" : "filerow off";
+  }
+  onFileClick(); // 汇总文件夹勾选态
+}
+
+function setAll(v) {
+  for (var i=0;i<fileCbs.length;i++) {
+    var cb = document.getElementById(fileCbs[i].id);
+    cb.checked = v;
+    cb.parentNode.className = v ? "filerow" : "filerow off";
+  }
+  for (var i=0;i<folderCbs.length;i++) {
+    var fcb = document.getElementById(folderCbs[i].id);
+    fcb.checked = v; fcb.indeterminate = false;
+  }
+  updatePreview();
+}
+
+function expandAll(v) {
+  for (var i=0;i<folderCbs.length;i++) {
+    var div = document.getElementById(folderCbs[i].childDivId);
+    div.style.display = v ? "" : "none";
+    var fcb = document.getElementById(folderCbs[i].id);
+    var row = fcb.parentNode;
+    var tgl = row.childNodes[0];
+    tgl.innerText = v ? "[-]" : "[+]";
+  }
+}
+
+/* ---------- 右栏：线上仓库 ---------- */
+var rightCbs = [];  // {id, path}
+
+function renderRight() {
+  rightCbs = [];
+  var box = document.getElementById("remotebox");
+  while (box.firstChild) box.removeChild(box.firstChild);
+  if (!remoteKnown) {
+    var d = document.createElement("div");
+    d.className = "filerow off";
+    d.innerText = "连不上 GitHub，线上状态未知。开代理后点「刷新」。";
+    box.appendChild(d);
+    return;
+  }
+  var list = [];
+  for (var rp in remote) list.push(rp);
+  list.sort();
+  for (var i=0;i<list.length;i++) {
+    var p = list[i];
+    var row = document.createElement("label");
+    row.className = "filerow";
+    var cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.id = "rcb_" + rightCbs.length;
+    cb.checked = true;
+    cb.onclick = updatePreview;
+    row.appendChild(cb);
+    row.appendChild(document.createTextNode(" " + p));
+    var st;
+    if (!localSet[p] && !tracked[p]) st = { cls:"ronly", txt:"本地不存在" };
+    else if (diffFiles[p]) st = { cls:"diff", txt:"线上不同" };
+    else st = { cls:"sync", txt:"一致" };
+    row.appendChild(makeBadge(st));
+    box.appendChild(row);
+    rightCbs.push({ id: cb.id, path: p });
+  }
+}
+
+function setRightAll(v) {
+  for (var i=0;i<rightCbs.length;i++) {
+    var cb = document.getElementById(rightCbs[i].id);
+    cb.checked = v;
+    cb.parentNode.className = v ? "filerow" : "filerow off";
+  }
+  updatePreview();
+}
+
+/* ---------- 汇总 / 预览 ---------- */
+function renderSummary() {
+  var nSync=0,nLocal=0,nDirty=0,nNew=0,nDiff=0,i,p;
+  for (i=0;i<paths.length;i++) {
+    p = paths[i];
+    var st = stateOf(p).cls;
+    if (st==="sync") nSync++; else if (st==="local") nLocal++;
+    else if (st==="dirty") nDirty++; else if (st==="new") nNew++;
+    else if (st==="diff") nDiff++;
+  }
+  var html = "本地 " + paths.length + " 个文件 ｜ 线上 " + (remoteKnown ? rightCbs.length : "?") + " 个";
+  html += " ｜ <span class='st sync'>已同步 " + nSync + "</span>";
+  if (nNew) html += " ｜ <span class='st new'>待推送 " + nNew + "</span>";
+  if (nDirty) html += " ｜ <span class='st dirty'>有改动 " + nDirty + "</span>";
+  if (nDiff) html += " ｜ <span class='st diff'>线上不同 " + nDiff + "</span>";
+  if (nLocal) html += " ｜ <span class='st local'>未入库 " + nLocal + "</span>";
+  if (remoteKnown) html += " ｜ <b>未推送提交 " + aheadCount + " 个</b>";
+  else html += " ｜ <span class='st unknown'>线上状态未知（连不上 GitHub）</span>";
+  document.getElementById("summary").innerHTML = html;
+}
+
+function updatePreview() {
+  var adds = [], dels = [], ups = [];
+  var seen = {};
+  var i, p;
+  for (i=0;i<fileCbs.length;i++) {
+    var cb = document.getElementById(fileCbs[i].id);
+    p = fileCbs[i].path;
+    cb.parentNode.className = cb.checked ? "filerow" : "filerow off";
+    if (cb.checked) {
+      if (!tracked[p]) adds.push(p);
+      else if (dirty[p] || diffFiles[p]) ups.push(p);
+    } else if (tracked[p]) { dels.push(p); seen[p] = 1; }
+  }
+  if (remoteKnown) {
+    for (i=0;i<rightCbs.length;i++) {
+      var rcb = document.getElementById(rightCbs[i].id);
+      rcb.parentNode.className = rcb.checked ? "filerow" : "filerow off";
+      if (!rcb.checked && !seen[rightCbs[i].path]) { dels.push(rightCbs[i].path); seen[rightCbs[i].path] = 1; }
+    }
+  }
+  var el = document.getElementById("preview");
+  if (!adds.length && !dels.length && !ups.length) {
+    el.innerHTML = "无增删改动。" + ((remoteKnown && aheadCount>0) ? "本地还有 <span class='upd'>" + aheadCount + " 个历史提交</span>未推送，点「仅推送已提交的改动」发出。" : "");
+    return;
+  }
+  var html = "";
+  if (adds.length) html += "<div class='add'>新增入仓 " + adds.length + " 个：" + adds.join("、") + "</div>";
+  if (ups.length) html += "<div class='upd'>更新改动 " + ups.length + " 个：" + ups.join("、") + "</div>";
+  if (dels.length) html += "<div class='del'>从线上移除 " + dels.length + " 个（本地保留）：" + dels.join("、") + "</div>";
+  if (remoteKnown && aheadCount>0) html += "<div class='upd'>另有 " + aheadCount + " 个历史提交将一并推送</div>";
+  if (!remoteKnown) html += "<div class='del'>注意：连不上 GitHub，推送会失败。</div>";
+  el.innerHTML = html;
+}
+
+function refreshAll() {
+  paths = []; localSet = {};
+  scanDir(fso.GetFolder(ROOT), "");
+  paths.sort();
+  for (var i=0;i<paths.length;i++) localSet[paths[i]] = 1;
+  renderLeft();
+  renderRight();
+  renderSummary();
+  updatePreview();
+}
+
+/* ---------- 发布动作 ---------- */
+function doCommitPush() {
+  updatePreview();
+  var msg = document.getElementById("msg").value || "更新网站";
+  var adds = [], ups = [], rmMap = {}, rmList = [], i, p;
+  for (i=0;i<fileCbs.length;i++) {
+    var cb = document.getElementById(fileCbs[i].id);
+    p = fileCbs[i].path;
+    if (cb.checked) {
+      if (!tracked[p]) adds.push(p);
+      else if (dirty[p] || diffFiles[p]) ups.push(p);
+    } else if (tracked[p]) rmMap[p] = 1;
+  }
+  if (remoteKnown) {
+    for (i=0;i<rightCbs.length;i++) {
+      var rcb = document.getElementById(rightCbs[i].id);
+      if (!rcb.checked) rmMap[rightCbs[i].path] = 1;
+    }
+  }
+  for (p in rmMap) rmList.push(p);
+  var checked = [];
+  for (i=0;i<fileCbs.length;i++) if (document.getElementById(fileCbs[i].id).checked) checked.push(fileCbs[i].path);
+  if (!checked.length) { log("左侧没有勾选任何文件，中止（全不选 = 清空整个仓库，不允许）。\r\n"); return; }
+  var tip = "确认推送？\n\n新增 " + adds.length + " 个\n更新 " + ups.length + " 个\n从线上移除 " + rmList.length + " 个（本地保留）\n提交说明：" + msg;
+  if (remoteKnown && aheadCount>0) tip += "\n另有 " + aheadCount + " 个历史提交将一并推送";
+  if (!remoteKnown) tip += "\n\n警告：连不上 GitHub，大概率失败。";
+  if (!confirm(tip)) { log("已取消推送。\r\n"); return; }
+  var parts = [];
+  if (checked.length) parts.push(GIT + " add -- " + q(checked));
+  if (rmList.length) parts.push(GIT + " rm --cached --ignore-unmatch -- " + q(rmList));
+  var cmd = parts.join(" && ") + ' && (' + GIT + ' commit -m "' + msg + '" || echo 没有新改动) && ' + GIT + ' push';
+  run("提交并推送", cmd, function(code){ refreshAll(); });
+}
+
+function q(arr) {
+  var out = [];
+  for (var i=0;i<arr.length;i++) out.push('"' + arr[i] + '"');
+  return out.join(" ");
+}
+
+function doPush()   { run("推送到 GitHub", GIT + " push", function(){ refreshAll(); }); }
+function doPull()   { run("拉取远端更新", GIT + " pull", function(){ refreshAll(); }); }
+function doStatus() { run("查看状态", GIT + ' -c core.quotepath=false status -sb'); }
+function doForcePush(){
+  if (!confirm("确定要强制推送吗？会用本地历史覆盖 GitHub 上的历史，远端多出来的提交会丢。")) return;
+  run("强制推送", GIT + " push --force", function(){ refreshAll(); });
+}
+function setProxy(on) {
+  if (on) run("开启代理", GIT + " config --global http.proxy http://127.0.0.1:3067 && " + GIT + " config --global https.proxy http://127.0.0.1:3067", refreshProxy);
+  else run("关闭代理", GIT + " config --global --unset http.proxy && " + GIT + " config --global --unset https.proxy", refreshProxy);
+}
+function refreshProxy() {
+  run("检测代理状态", GIT + " config --global --get http.proxy", function(code){
+    var el = document.getElementById("proxystate");
+    el.innerText = (code==0) ? "已开启 (127.0.0.1:3067)" : "已关闭";
+    el.style.color = (code==0) ? "#a6e3a1" : "#f38ba8";
+  });
+}
+function testConn() {
+  var el = document.getElementById("connstate");
+  el.innerText = "测试中..."; el.className = "";
+  run("测试远端连接（8 秒超时）", GIT + ' ls-remote origin HEAD', function(code){
+    if (code==0) { el.innerText = "正常，可以推送"; el.className = "conn-ok"; }
+    else { el.innerText = "连不上 GitHub，请开代理后重试"; el.className = "conn-bad"; }
+    refreshAll();
+  });
+}
+function doBuild() {
+  var hugo = ROOT + "\\tools\\hugo\\hugo.exe";
+  run("重新生成网页", '"' + hugo + '" --disableKinds taxonomy,term && python tools\\scripts\\make_relative.py');
+}
+function doServer() { run("启动本地服务器", "start cmd /k .\\start-server.bat"); }
+function openURL(u) { shell.Run('cmd /c start "" "' + u + '"'); }
+
+document.getElementById("root").innerText = ROOT;
+document.getElementById("gitpath").innerText = GIT.replace(/\"/g,"");
+applyFont();
+refreshProxy();
+refreshAll();
+log("就绪。左栏本地、右栏线上；两边勾好后点「提交并推送」。每次打开默认勾选 = 约定清单。\r\n");
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站启动器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn-secondary {
+            background-color: #008CBA;
+        }
+        .btn-secondary:hover {
+            background-color: #007bb5;
+        }
+        .info {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+        .success {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            color: #155724;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>网站启动器</h1>
+        
+        <div class="success">
+            <strong>成功修复！</strong>所有HTML文件中的资源引用已修改为相对路径。为了解决随机标语加载问题，建议使用本地服务器访问。
+        </div>
+        
+        <div style="background-color: #e3f2fd; border: 1px solid #bbdefb; border-radius: 5px; padding: 15px; margin: 20px 0;">
+            <h3 style="color: #1976d2; margin-top: 0;">🔧 启动 Hugo 服务器（推荐）</h3>
+            <p><strong>需要 Hugo 环境</strong> - 为了确保随机标语正常加载，请按照以下步骤操作：</p>
+            <ol style="text-align: left; margin-left: 20px;">
+                <li>确保已安装 Hugo 环境（下载地址：<a href="https://gohugo.io/getting-started/install/" style="color: #1976d2;">https://gohugo.io/getting-started/install/</a>）</li>
+                <li>双击运行 <strong>start-server.bat</strong> 文件</li>
+                <li>在浏览器中访问 <a href="http://localhost:1313" style="color: #1976d2;">http://localhost:1313</a>（如果端口被占用，Hugo会自动分配其他端口，请查看命令窗口中的实际地址）</li>
+                <li>现在所有资源都能正常加载，包括随机标语</li>
+            </ol>
+            <p style="margin-bottom: 0;"><small>⚠️ 服务器启动后请勿关闭命令窗口，按 Ctrl+C 停止服务器。</small></p>
+        </div>
+        
+        <h3>直接访问（备选）</h3>
+        <p>如果您不想使用服务器，也可以直接访问以下页面：</p>
+        
+        <a href="public/index.html" class="btn">主页</a>
+        <a href="public/about/index.html" class="btn btn-secondary">关于我</a>
+        <a href="public/contact/index.html" class="btn btn-secondary">联系我们</a>
+        <a href="public/shop/index.html" class="btn btn-secondary">商店</a>
+        <a href="public/music-services/index.html" class="btn btn-secondary">音乐服务</a>
+        <a href="public/instructions/index.html" class="btn btn-secondary">使用说明</a>
+        
+        <p style="color: #ff9800; margin-top: 15px;"><small>⚠️ 直接访问时随机标语可能无法正常加载（浏览器安全限制）</small></p>
+        
+        <div class="info">
+            <h3>使用说明</h3>
+            <p>1. 双击此文件（start.html）在浏览器中打开</p>
+            <p>2. 点击上面的按钮访问各个页面</p>
+            <p>3. 现在所有资源（CSS、图片、JavaScript等）都能正确加载</p>
+            <p>4. 排版和样式都能正常显示</p>
+            
+            <h3>技术说明</h3>
+            <p>已修改的路径类型：</p>
+            <ul style="text-align: left; margin-left: 20px;">
+                <li>CSS文件引用</li>
+                <li>图片文件引用</li>
+                <li>JavaScript文件引用</li>
+                <li>字体文件引用</li>
+                <li>数据文件引用</li>
+            </ul>
+            
+            <p>修改方法：</p>
+            <ul style="text-align: left; margin-left: 20px;">
+                <li>根目录文件：将 <code>/images/</code> 改为 <code>images/</code></li>
+                <li>子目录文件：将 <code>/images/</code> 改为 <code>../images/</code></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

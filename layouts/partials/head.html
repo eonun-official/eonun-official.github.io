@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{{ .Title }}</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+{{ with .Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+{{/* ===== 字体优先：EDIX 是左上角 Eonun logo 的字体，必须最先加载 ===== */}}
+<link rel="preload" href="{{ "fonts/EDIX.otf" | relURL }}" as="font" type="font/otf" crossorigin>
+{{ if .IsHome }}
+{{/* 主页：大 logo 图片同样优先；顺手预载各分页背景，点过去秒开 */}}
+<link rel="preload" href="{{ "images/eonun2www.png" | relURL }}" as="image">
+<link rel="prefetch" href="{{ "images/MyBio.webp" | relURL }}">
+<link rel="prefetch" href="{{ "images/background.webp" | relURL }}">
+{{ end }}
+{{/* 字体门控：EDIX 就绪前只显示深色背景，不露出未渲染内容 */}}
+<style>
+  html.fg-gate, html.fg-gate body { background: #121212 !important; }
+  html.fg-gate body > * { visibility: hidden !important; }
+</style>
+<script>
+(function () {
+  var el = document.documentElement;
+  el.className += ' fg-gate';
+  function openGate() {
+    el.className = el.className.replace(/\bfg-gate\b/g, '');
+  }
+  if (document.fonts && document.fonts.load) {
+    Promise.race([
+      document.fonts.load('20px EDIX'),
+      new Promise(function (r) { setTimeout(r, 2500); })
+    ]).then(openGate, openGate);
+  } else {
+    setTimeout(openGate, 300);
+  }
+})();
+</script>
+<link rel="stylesheet" href="{{ "css/main.min.css" | relURL }}">
+{{ range .Params.extra_css }}<link rel="stylesheet" href="{{ . | relURL }}">{{ end }}
+<link rel="icon" href="{{ "images/favicon-32.png" | relURL }}" type="image/png" sizes="32x32">
+<link rel="shortcut icon" href="{{ "images/favicon-32.png" | relURL }}" type="image/png">
+<link rel="apple-touch-icon" href="{{ "images/apple-touch-icon.png" | relURL }}">
+{{ with .OutputFormats.Get "RSS" }}<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}">{{ end }}

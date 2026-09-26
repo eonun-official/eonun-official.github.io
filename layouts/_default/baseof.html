@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="{{ .Params.body_class | default "ma0 avenir bg-near-white" }}">
+    {{ block "main" . }}{{ end }}
+    {{ partial "palette.html" . }}
+  </body>
+</html>

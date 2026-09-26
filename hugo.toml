@@ -1,0 +1,32 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'zh-CN'
+title = 'Eonun'
+
+# 原始 HTML 直接写入 Markdown 内容（content/*.md 中为整页 HTML）
+[markup.goldmark.renderer]
+unsafe = true
+
+# 本站不用分类/标签，禁止生成 categories/、tags/ 空目录
+disableKinds = ['taxonomy', 'term']
+relativeURLs = true
+
+[[menu.main]]
+  name = "Shop"
+  url = "/shop/"
+  weight = 1
+[[menu.main]]
+  name = "Music Services"
+  url = "/music-services/"
+  weight = 2
+[[menu.main]]
+  name = "Instructions"
+  url = "/instructions/"
+  weight = 3
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 4
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 5

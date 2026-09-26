@@ -1,0 +1,22 @@
+# ---- 不上传 GitHub 的内容 ----
+
+# 历史备份（~130MB）
+backups/
+
+# Hugo 程序本体（~60MB 二进制，仓库只存源码）
+tools/hugo/
+
+# 构建产物（由 GitHub Actions 自动生成并部署，无需入仓）
+public/
+
+# 系统垃圾
+Thumbs.db
+.DS_Store
+desktop.ini
+tools/ffmpeg/
+.hugo_build.lock
+
+# GitPush 勾选状态文件（只存在本地，不入仓）
+tools/GitPush_selection.txt
+project-maintenance-log.md
+给AI的项目说明.md

@@ -1,0 +1,664 @@
+/* ===== 课程页面专业设计 CSS ===== */
+
+/* 课程导航区域 */
+.course-nav {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  padding: 30px 40px;
+  border-radius: 16px;
+  margin-bottom: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.nav-title {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, #f2f2f2, #909090);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.course-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.course-nav-link {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.course-nav-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.course-nav-link.active {
+  background: linear-gradient(90deg, #f2f2f2, #909090);
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+}
+
+/* 课程主标题区域 */
+.course-hero {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  background: linear-gradient(90deg, #f2f2f2, #909090);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-subtitle p {
+  color: #d9d9d9;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+/* 高亮文本 */
+.highlight-name {
+  background: linear-gradient(90deg, #f2f2f2, #909090);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  position: relative;
+}
+
+.highlight-price {
+  color: #e8e8e8;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.highlight-aesthetic {
+  color: #f2f2f2;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+
+/* 课程卡片网格 */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+/* 课程卡片 */
+.course-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border-radius: 16px;
+  padding: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f2f2f2, #909090);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.course-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* 课程卡片标题 */
+.course-card h3 {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 价格标签 */
+.price-tag {
+  display: inline-block;
+  background: linear-gradient(90deg, #f2f2f2, #909090);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+}
+
+.price-tag.small {
+  font-size: 1.1rem;
+  padding: 8px 20px;
+}
+
+/* 课程特色列表 */
+.course-features {
+  margin: 20px 0;
+}
+
+.course-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.course-features li {
+  color: #d9d9d9;
+  padding: 12px 0;
+  padding-left: 30px;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.course-features li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #f2f2f2;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* 课程适合人群 */
+.course-target {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border-left: 4px solid #f2f2f2;
+}
+
+.course-target strong {
+  color: #f2f2f2;
+  font-weight: 600;
+}
+
+/* 注意事项 */
+.course-notice {
+  background: rgba(255, 255, 255, 0.16);
+  color: #e8e8e8;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border-left: 4px solid #ffffff;
+}
+
+.course-notice strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* CTA按钮 */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(90deg, #f2f2f2, #909090);
+  color: #fff;
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.6);
+}
+
+/* 长期课程特殊样式 */
+.long-term-course {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+}
+
+.long-term-course .course-card h3 {
+  color: #f2f2f2;
+}
+
+/* 课程级别标签 */
+.course-level {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.course-level.beginner {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.course-level.intermediate {
+  background: rgba(255, 152, 0, 0.3);
+}
+
+.course-level.advanced {
+  background: rgba(244, 67, 54, 0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .course-nav {
+    padding: 20px;
+  }
+
+  .course-nav-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .course-nav-link {
+    text-align: center;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card {
+    padding: 25px;
+  }
+
+  .course-hero h1 {
+    font-size: 2rem;
+  }
+
+  .course-hero p {
+    font-size: 1rem;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.course-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.course-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.course-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.course-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* 预约方式区域 */
+.booking-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+  padding: 40px;
+  border-radius: 16px;
+  margin-top: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.booking-section h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.booking-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.booking-step {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.booking-step-number {
+  display: inline-block;
+  background: linear-gradient(90deg, #f2f2f2, #909090);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.booking-step h4 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.booking-step p {
+  color: #d9d9d9;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 联系信息区域 */
+.contact-section {
+  text-align: center;
+  margin-top: 40px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.contact-section h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  color: #d9d9d9;
+  margin-bottom: 20px;
+}
+
+/* 内容区域样式 */
+.content-container {
+  position: relative;
+}
+
+.content-section {
+  display: none;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.content-section.active {
+  display: block;
+}
+
+/* 确保内容区域内的所有元素保持原有样式 */
+.content-section h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.content-section p {
+  color: #d9d9d9;
+  line-height: 1.8;
+}
+
+/* 分隔线 */
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  margin: 60px 0;
+}
+
+
+/* 高级课程「Eonun Trance」黑白机能悬浮（2026-09-25 v3）：黑底 + 竖排 Eonun 大字(difference 反色) + 透明小框 */
+.course-card.master-ink,
+.course-card.master-ink h3,
+.course-card.master-ink .price-tag,
+.course-card.master-ink .course-target,
+.course-card.master-ink .course-target strong,
+.course-card.master-ink .course-features li,
+.course-card.master-ink .course-features li::before,
+.course-card.master-ink .course-notice,
+.course-card.master-ink .course-notice strong,
+.course-card.master-ink .course-benefit,
+.course-card.master-ink .course-level.advanced {
+  transition: color 0.6s ease, background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* 竖排大字：默认隐藏，悬停淡入；mix-blend-mode:difference 让它遇白则黑、遇黑则白 */
+.course-card.master-ink::after {
+  content: 'Eonun';
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  font-family: edix, 'microsoft yahei', sans-serif;
+  font-weight: 800;
+  font-size: 5.5rem;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.course-card.master-ink:hover::after {
+  opacity: 1;
+}
+
+.course-card.master-ink:hover {
+  background: #0a0a0a;
+  border: 2px solid #f2f2f2;
+  box-shadow: 6px 6px 0 rgba(255, 255, 255, 0.14), 12px 12px 0 rgba(255, 255, 255, 0.05);
+}
+.course-card.master-ink:hover::before {
+  background: #f2f2f2;
+  transform: scaleX(1);
+}
+/* 标题：压掉 main.min.css 里带 !important 的全站渐变字 */
+.course-card.master-ink:hover h3 {
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  color: #f5f5f5 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+.course-card.master-ink:hover .course-level.advanced {
+  background: #ffffff;
+  color: #0a0a0a;
+  border: 1.5px solid #0a0a0a;
+}
+.course-card.master-ink:hover .price-tag {
+  background: #ffffff;
+  color: #0a0a0a;
+  border: 1.5px solid #0a0a0a;
+  box-shadow: none;
+}
+.course-card.master-ink:hover .course-target {
+  background: rgba(255, 255, 255, 0.08);
+  border-left-color: rgba(255, 255, 255, 0.7);
+  color: #e8e8e8;
+}
+.course-card.master-ink:hover .course-target strong {
+  color: #ffffff;
+}
+.course-card.master-ink:hover .course-features li {
+  color: #dddddd;
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+.course-card.master-ink:hover .course-features li::before {
+  color: #ffffff;
+}
+.course-card.master-ink:hover .course-notice {
+  background: rgba(255, 255, 255, 0.08);
+  border-left-color: rgba(255, 255, 255, 0.7);
+  color: #cccccc;
+}
+.course-card.master-ink:hover .course-notice strong {
+  color: #ffffff;
+}
+.course-card.master-ink:hover .course-benefit {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #eeeeee;
+}
+
+
+/* 大师卡悬停最终态：置顶覆盖 MONO 默认与全局层 */
+.course-card.master-ink:hover{background:#0a0a0a!important;border-color:#f2f2f2!important}
+.course-card.master-ink:hover::before{background:#f2f2f2!important;transform:scaleX(1)!important}
+.course-card.master-ink:hover h3{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;color:#f5f5f5!important;border-bottom-color:rgba(255,255,255,0.6)!important}
+.course-card.master-ink:hover .course-level.advanced{background:#ffffff!important;color:#0a0a0a!important;border-color:#0a0a0a!important}
+.course-card.master-ink:hover .price-tag{background:#ffffff!important;color:#0a0a0a!important;border-color:#0a0a0a!important;box-shadow:none!important}
+.course-card.master-ink:hover .course-target{background:rgba(255,255,255,0.08)!important;border-left-color:rgba(255,255,255,0.7)!important;color:#e8e8e8!important}
+.course-card.master-ink:hover .course-target strong{color:#ffffff!important}
+.course-card.master-ink:hover .course-features li{color:#dddddd!important;border-bottom-color:rgba(255,255,255,0.12)!important}
+.course-card.master-ink:hover .course-features li::before{color:#ffffff!important}
+.course-card.master-ink:hover .course-notice{background:rgba(255,255,255,0.08)!important;border-left-color:rgba(255,255,255,0.7)!important;color:#cccccc!important}
+.course-card.master-ink:hover .course-notice strong{color:#ffffff!important}
+.course-card.master-ink:hover .course-benefit{background:rgba(255,255,255,0.08)!important;border-color:rgba(255,255,255,0.45)!important;color:#eeeeee!important}
+
+
+/* 中级课程「pro-ink」悬浮：白底黑字 + 竖排 Pro 大字（与大师卡黑底互为反色） */
+.course-card.pro-ink::after {
+  content: 'Pro';
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  font-family: edix, 'microsoft yahei', sans-serif;
+  font-weight: 800;
+  font-size: 5.5rem;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.course-card.pro-ink:hover::after {
+  opacity: 1;
+}
+.course-card.pro-ink:hover {
+  background: #f5f5f5 !important;
+  border: 2px solid #0a0a0a !important;
+  box-shadow: 6px 6px 0 rgba(10, 10, 10, 0.9), 12px 12px 0 rgba(10, 10, 10, 0.12) !important;
+}
+.course-card.pro-ink:hover::before {
+  background: #0a0a0a !important;
+  transform: scaleX(1) !important;
+}
+.course-card.pro-ink:hover h3 {
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  color: #0a0a0a !important;
+  border-bottom-color: rgba(0, 0, 0, 0.25) !important;
+}
+.course-card.pro-ink:hover .course-level.intermediate {
+  background: #0a0a0a !important;
+  color: #f5f5f5 !important;
+  border: 1.5px solid #0a0a0a !important;
+}
+.course-card.pro-ink:hover .price-tag {
+  background: #0a0a0a !important;
+  color: #f5f5f5 !important;
+  box-shadow: none !important;
+}
+.course-card.pro-ink:hover .course-target {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-left-color: #0a0a0a !important;
+  color: #222222 !important;
+}
+.course-card.pro-ink:hover .course-target strong {
+  color: #000000 !important;
+}
+.course-card.pro-ink:hover .course-features li {
+  color: #333333 !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+.course-card.pro-ink:hover .course-features li::before {
+  color: #0a0a0a !important;
+}
+.course-card.pro-ink:hover .course-notice {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-left-color: #0a0a0a !important;
+  color: #444444 !important;
+}
+.course-card.pro-ink:hover .course-notice strong {
+  color: #000000 !important;
+}
+.course-card.pro-ink:hover .course-benefit {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.3) !important;
+  color: #222222 !important;
+}

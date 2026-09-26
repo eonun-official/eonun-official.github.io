@@ -1,0 +1,165 @@
+      <header class="cover-top " style="position:relative; overflow:hidden; background-image: url('{{ "images/eonun2www.png" | relURL }}'); background-size: cover; background-position: center top; background-blend-mode: soft-light; background-color: rgba(255, 255, 255, 0.2); ">
+  <div class="bg-black-60" style="
+    background: linear-gradient(to bottom, 
+        rgba(18,18,18,0.7), 
+        rgba(18,18,18,0.8), 
+        rgba(18,18,18,0.9)) !important;
+    background-size: 100% 100%;">
+    <div class="nav-container" id="scroll-nav" style="position: fixed; top: -20px; left: 0; width: 100%; z-index: 9999; padding: 10px 20px; box-sizing: border-box;
+      transition: top 0.3s ease;">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+        <div class="flex-l center items-center justify-between">
+          <a href="{{ "/" | relURL }}" class="f3 fw2 hover-white white-90 dib no-underline" style="position: relative; top: -2px;">
+              <span style="
+                font-family: 'EDIX' !important;
+                color: #ffffff !important;
+                font-size: 1.2em !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.5ch !important;
+                text-shadow: 0 0 3px rgba(255,255,255,0.6) !important;
+                position: relative;
+                top: -1px;
+                display: inline-block;
+              ">Eonun</span>
+          </a>
+          <div class="flex-l items-center">
+              <ul class="pl0 mr3" style="display: flex !important; list-style: none !important; margin: 0 !important; padding: 0 !important; gap: 20px !important;">
+                <li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href="{{ "shop/" | relURL }}" title="Shop page" style="padding-top: 8px;">Shop</a></li>
+                <li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href="{{ "music-services/" | relURL }}" title="Music Services page" style="padding-top: 8px;">Music Services</a></li>
+                <li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href="{{ "instructions/" | relURL }}" title="Instructions page" style="padding-top: 8px;">Instructions</a></li>
+                <li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href="{{ "about/" | relURL }}" title="About page" style="padding-top: 8px;">About</a></li>
+                <li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href="{{ "contact/" | relURL }}" title="Contact page" style="padding-top: 8px;">Contact</a></li>
+              </ul>
+            <div class="ananke-socials"></div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="tc-l pv6 pv8-l ph3 ph4-ns" style="">
+      <h1 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt4 mb4" style="text-shadow: 0 1px 5px rgba(255, 255, 255, 0.5);">
+        404 Page not found
+      </h1>
+    </div>
+  </div>
+</header>
+<script>
+const scrollNav = document.getElementById('scroll-nav');
+let lastScrollTop = 0;
+let isScrollDown = false;
+window.addEventListener('mousemove', function(e) {
+  const scrollDistance = window.scrollY;
+  if (scrollDistance > 0 && isScrollDown) {
+    if (scrollNav) {
+      if (e.clientY < 50) {
+        scrollNav.style.top = '-20px';
+      } else {
+        scrollNav.style.top = '-100px';
+      }
+    }
+  }
+});
+window.addEventListener('scroll', function() {
+  const scrollDistance = window.scrollY;
+  if (scrollNav) {
+    if (scrollDistance === 0) {
+      scrollNav.style.top = '-20px';
+      isScrollDown = false;
+    } else if (scrollDistance > lastScrollTop) {
+      scrollNav.style.top = '-100px';
+      isScrollDown = true;
+    } else {
+      scrollNav.style.top = '-20px';
+      isScrollDown = false;
+    }
+  } else {
+    if (scrollDistance === 0) {
+      isScrollDown = false;
+    } else if (scrollDistance > lastScrollTop) {
+      isScrollDown = true;
+    } else {
+      isScrollDown = false;
+    }
+  }
+  lastScrollTop = scrollDistance;
+});
+</script>
+<style>
+</style>
+      <main class="pb7" role="main">
+    <article class="center cf pv5 measure-wide-l">
+      <h1>
+        BRO? Your page ain't here.
+        </p> 不是哥们？你找的页面跑了
+      </h1>
+      <div class="mb6 max-w-2xl mx-auto">
+        <p class="f4 lh-copy text-left">
+          Probably because your mix is so muddy it can't even find its own way home.
+        </p>
+        </p>
+        <ul class="f4 lh-copy list pl0 ml0">
+          <li class="flex items-center mb2">
+            <span class="f6 b ph2 pv1 bg-purple white br-pill mr3">🧟</span>
+            Did your mix get so muddy it swallowed the page?
+          </li>
+          <li class="flex items-center mb2">
+            <span class="f6 b ph2 pv1 bg-purple white br-pill mr3">💥</span>
+            Did your VU meters explode and take the page with them?
+          </li>
+          <li class="flex items-center mb2">
+            <span class="f6 b ph2 pv1 bg-purple white br-pill mr3">🤐</span>
+            Did you over-compress so hard you squashed the page out of existence?
+          </li>
+          <li class="flex items-center mb2">
+            <span class="f6 b ph2 pv1 bg-purple white br-pill mr3">🎚️</span>
+            Did you turn the gain up so high it fried the link?
+          </li>
+        </ul>
+        </p>
+        <p class="f4 lh-copy mt4 text-left">
+          Let's be real — you need to fix your mix before you fix this link.
+        </p>
+      </div>
+      <div class="mb6 max-w-2xl mx-auto">
+        <p class="f4 lh-copy text-left">
+          可能是因为你混音太糊了，连页面自己都找不到回家的路。
+        </p>
+        </p>
+        <ul class="f4 lh-copy list pl0 ml0">
+          <li class="flex items-center mb2">
+            <span class="f6 b ph2 pv1 bg-purple white br-pill mr3">🧟</span>
+            你混音是不是糊到把页面都吞了？
+          </li>
+          <li class="flex items-center mb2">
+            <span class="f6 b ph2 pv1 bg-purple white br-pill mr3">💥</span>
+            你UV表是不是爆了把页面也炸飞了？
+          </li>
+          <li class="flex items-center mb2">
+            <span class="f6 b ph2 pv1 bg-purple white br-pill mr3">🤐</span>
+            你是不是压缩加太狠把页面都压没了？
+          </li>
+          <li class="flex items-center mb2">
+            <span class="f6 b ph2 pv1 bg-purple white br-pill mr3">🎚️</span>
+            你是不是增益开太大把链接都烧了？
+          </li>
+        </ul>
+        </p>
+        <p class="f4 lh-copy mt4 text-left">
+          说实话，你先把混音调好再来管链接吧。
+        </p>
+      </div>
+      <div class="mt6 text-center">
+        <a href="{{ "/" | relURL }}" class="f5 link bg-purple white hover-bg-purple-dark no-underline pv2 ph4 br-pill ba b--purple">
+          Bro, Go Fix Your Mix / 回去调混音吧 😭
+        </a>
+      </div>
+    </article>
+      </main>
+      <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="{{ "/" | relURL }}" >
+    &copy;  Eonun 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
