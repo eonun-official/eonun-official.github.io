@@ -524,8 +524,8 @@ fetch('/data/trance_mixing_slogans.txt')
   /* ===== 移动端适配（≤768px 生效，桌面排版不变） ===== */
   @media (max-width: 768px) {
     /* 顶部导航：压缩间距、允许换行 */
-    #scroll-nav { padding: 6px 8px !important; }
-    #scroll-nav .flex-l { flex-wrap: wrap; justify-content: center; row-gap: 2px; }
+    #scroll-nav { padding: 10px 20px !important; }
+    #scroll-nav .flex-l { flex-wrap: wrap; row-gap: 2px; }
     #scroll-nav ul { gap: 6px !important; flex-wrap: wrap; justify-content: center; }
     #scroll-nav ul li a { font-size: 12px !important; padding: 3px 5px !important; }
     /* Hero：收紧上距、标语降字号 */
