@@ -1,7 +1,7 @@
 ---
 title: "教学 | Trance 指导服务 | Eonun"
 description: "从爱好者到国际舞台：以合理的价格实现知识最大化，进步立竿见影"
-body_class: "ma0 avenir bg-near-white development is-section is-section"
+body_class: "ma0 avenir bg-near-white development is-section is-section page-instructions"
 ---
 <header class="cover-top " style="position:relative; overflow:visible; background-color: rgba(255, 255, 255, 0.2); padding-bottom: 0;">
   <video autoplay muted loop playsinline preload="none" poster="../videos/THEME-poster.jpg" data-src="../videos/THEME.mp4" style="position:absolute; top:0; left:0; width:100%; height:113%; object-fit: cover; z-index:0;" id="header-video"></video>

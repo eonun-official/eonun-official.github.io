@@ -198,6 +198,7 @@
     /* 分页默认色：About=荧光绿@最低浓度，Contact=琥珀黄@45%；用户已存配色优先；不写 localStorage */
     var pageTint = document.body.classList.contains('page-about') ? { hex: '#bbff00', i: 5 }
                  : document.body.classList.contains('page-contact') ? { hex: '#ffae00', i: 45 }
+                 : document.body.classList.contains('page-instructions') ? { hex: '#ffb35c', i: 5 }
                  : null;
     if (pageTint) {
       picker.value = pageTint.hex;
