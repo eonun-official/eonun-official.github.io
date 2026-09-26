@@ -367,8 +367,8 @@ function cardTintOut() {
   try {
     var s = JSON.parse(localStorage.getItem('eonun-tint') || 'null');
     if (s && s.hex) window.eonunApplyTint(s.hex, s.i || 25);
-    else window.eonunApplyTint('', 25);
-  } catch (e) { window.eonunApplyTint('', 25); }
+    else window.eonunApplyTint('#ff2e2e', 20); /* 无已存配色时回到本页默认红 */
+  } catch (e) { window.eonunApplyTint('#ff2e2e', 20); }
 }
 function closeServiceModal() {
   const modal = document.getElementById('service-modal');
