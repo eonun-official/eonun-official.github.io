@@ -152,11 +152,53 @@
   }
   /* 全局钩子：其他模块（如 instructions 分区导航）可直接驱动色彩系统，不写 localStorage */
   window.eonunApplyTint = function (hex, intensity) { apply(hex, intensity, false); };
+  /* 从黑白（浓度 0）缓动渐变到目标色，duration 毫秒，不写 localStorage */
+  function animateFromZero(hex, intensity, duration) {
+    var t0 = null;
+    function frame(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / duration, 1);
+      var e = 1 - Math.pow(1 - p, 3); /* easeOutCubic */
+      var root = document.documentElement, body = document.body;
+      var c2 = adjacent(hex);
+      root.style.setProperty('--trance-purple', hex);
+      root.style.setProperty('--trance-blue', c2);
+      root.style.setProperty('--glow-color', alpha(hex, (0.38 * e).toFixed(3)));
+      var a = (0.05 + 0.20 * ((intensity * e) / 100)).toFixed(3);
+      body.style.setProperty('background-image',
+        'linear-gradient(160deg, ' + alpha(hex, a) + ' 0%, rgba(0,0,0,0) 45%, ' + alpha(c2, a) + ' 100%)', 'important');
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  /* 主页：视频真正开始播放时，从灰渐变到随机色（饱和度/明度取参考紫 #7637c3 的 HSL：54%/49%，浓度 50%，4 秒） */
+  function randomHomeHex() {
+    return hslToHex(Math.random() * 360, 54, 49);
+  }
   var picker = document.getElementById('pp-picker');
   var slider = document.getElementById('pp-intensity');
   var saved = null;
   try { saved = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
-  if (saved && saved.hex) {
+  if (document.body.classList.contains('is-home')) {
+    /* 主页：等视频真正开播后，从灰渐变到目标色（已存色优先，否则随机色），4 秒 */
+    var target = (saved && saved.hex) ? { hex: saved.hex, i: saved.i || 25 } : { hex: randomHomeHex(), i: 50 };
+    picker.value = target.hex;
+    slider.value = target.i;
+    var fired = false;
+    function startHomeTint() {
+      if (fired) return;
+      fired = true;
+      animateFromZero(target.hex, target.i, 4000);
+    }
+    var hv = document.getElementById('header-video');
+    if (hv) {
+      if (!hv.paused && hv.readyState >= 2) startHomeTint(); /* 已在播放（缓存命中） */
+      hv.addEventListener('playing', startHomeTint);
+      setTimeout(startHomeTint, 8000); /* 兜底：视频卡死也最多等 8 秒 */
+    } else {
+      startHomeTint();
+    }
+  } else if (saved && saved.hex) {
     picker.value = saved.hex;
     slider.value = saved.i || 25;
     apply(saved.hex, saved.i || 25);
