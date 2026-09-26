@@ -88,7 +88,7 @@ extra_css:
   @media (max-width: 768px) {
     /* 小屏：隐藏横排导航，显示汉堡键 */
     #scroll-nav ul { display: none !important; }
-    #scroll-nav .flex-l.items-center { display: none !important; }
+    #scroll-nav div.flex-l.items-center:not(.justify-between) { display: none !important; }
     #nav-burger { display: block !important; }
   }
 </style>
