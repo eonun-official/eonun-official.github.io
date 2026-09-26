@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>{{ .Title }}</title>
-<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 {{ with .Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 {{/* ===== 字体优先：EDIX 是左上角 Eonun logo 的字体，必须最先加载 ===== */}}
 <link rel="preload" href="{{ "fonts/EDIX.otf" | relURL }}" as="font" type="font/otf" crossorigin>

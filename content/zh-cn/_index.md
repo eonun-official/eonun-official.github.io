@@ -71,7 +71,11 @@ body_class: "ma0 avenir bg-near-white development is-home"
   .mnav-link {
     color: #f2f2f2;
     text-decoration: none;
-    font-size: 26px;
+    font-size: clamp(17px, 5vw, 26px);
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
     font-family: edix, 'microsoft yahei', sans-serif;
     letter-spacing: 1px;
     padding: 12px 20px;
