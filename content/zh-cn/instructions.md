@@ -812,3 +812,20 @@ event.target.classList.add('active');
 </div>
   </div>
 </footer>
+<script>
+/* 触屏悬浮：手指按下变色、抬起还原（绕过移动端 :hover 粘滞） */
+(function () {
+  function bind() {
+    Array.prototype.forEach.call(document.querySelectorAll('.course-card'), function (c) {
+      if (c.__touchInk) return;
+      c.__touchInk = 1;
+      c.addEventListener('touchstart', function () { c.classList.add('touch-hover'); }, { passive: true });
+      var off = function () { c.classList.remove('touch-hover'); };
+      c.addEventListener('touchend', off);
+      c.addEventListener('touchcancel', off);
+    });
+  }
+  if (document.readyState !== 'loading') bind();
+  else document.addEventListener('DOMContentLoaded', bind);
+})();
+</script>
