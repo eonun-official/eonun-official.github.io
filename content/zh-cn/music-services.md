@@ -86,6 +86,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-mus
   @media (max-width: 768px) {
     /* 小屏：隐藏横排导航，显示汉堡键 */
     #scroll-nav ul { display: none !important; }
+    #scroll-nav .flex-l.items-center { display: none !important; }
     #nav-burger { display: block !important; }
   }
 </style>
