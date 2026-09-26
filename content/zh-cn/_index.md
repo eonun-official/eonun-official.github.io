@@ -4,7 +4,7 @@ description: "欢迎来到 Eonun 领域：Trance 制作、风格设计、母带�
 body_class: "ma0 avenir bg-near-white development is-home"
 ---
 <header class="cover-top " style="position:relative; overflow:visible; background-color: rgba(255, 255, 255, 0.2); padding-bottom: 0;">
-  <video autoplay muted loop playsinline preload="none" poster="videos/THEME-poster.jpg" data-src="videos/THEME.mp4" style="position:absolute; top:0; left:0; width:100%; height:113%; object-fit: cover; z-index:0;" id="header-video"></video>
+  <video autoplay muted loop playsinline preload="none" poster="/videos/THEME-poster.jpg" data-src="/videos/THEME.mp4" style="position:absolute; top:0; left:0; width:100%; height:113%; object-fit: cover; z-index:0;" id="header-video"></video>
   <div id="video-fallback" style="position:absolute; top:0; left:0; width:100%; height:113%; background: linear-gradient(135deg, #121212 0%, #181818 25%, #1e1e1e 50%, #222222 75%, rgba(255, 255, 255, 0.1) 100%); z-index:-1; display:none;"></div>
   <div class="nav-container" id="scroll-nav" style="position: fixed; top: -20px; left: 0; width: 100%; z-index: 10000; padding: 10px 20px; box-sizing: border-box;
           transition: top 0.3s ease;">
@@ -138,7 +138,7 @@ body_class: "ma0 avenir bg-near-white development is-home"
     </style>
       <div class="tc-l pv6 pv8-l ph3 ph4-ns">
         <div class="mb0 lh-title" style="max-width: 800px; margin: 0 auto; position: relative; background: transparent !important; ">
-          <img id="header-logo" src="images/eonun2www.png" alt="Eonun | Trance 声波雕刻师" fetchpriority="high" decoding="async"
+          <img id="header-logo" src="/images/eonun2www.png" alt="Eonun | Trance 声波雕刻师" fetchpriority="high" decoding="async"
             style="width: 100%; height: auto;
                 margin-top: 100px !important; 
                 opacity: 1 !important;
@@ -277,7 +277,7 @@ window.addEventListener('scroll', function() {
   lastScrollTop = scrollDistance;
 });
 // 加载标语文件
-fetch('data/trance_mixing_slogans.txt')
+fetch('/data/trance_mixing_slogans.txt')
   .then(response => {
     if (!response.ok) throw new Error('标语文件加载失败: ' + response.status);
     return response.text();
@@ -306,7 +306,7 @@ fetch('data/trance_mixing_slogans.txt')
 <style>
 @font-face {
   font-family: 'IndexSloganFont';
-  src: url('fonts/AlimamaShuHeiTi-Bold.3df4abd1fb6a0f809118b7287720b116f3ced4330805315953e14c92915a9fe3.otf') format('opentype');
+  src: url('/fonts/AlimamaShuHeiTi-Bold.3df4abd1fb6a0f809118b7287720b116f3ced4330805315953e14c92915a9fe3.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
   font-display: block;
@@ -396,16 +396,16 @@ fetch('data/trance_mixing_slogans.txt')
       <div style="position: relative; width: 100%; height: 300px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.2);">
         <div id="slider" style="position: relative; width: 100%; height: 100%;">
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <img src="images/1.webp" loading="lazy" decoding="async" alt="独家报道1" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+            <img src="/images/1.webp" loading="lazy" decoding="async" alt="独家报道1" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
           </a>
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <img src="images/2.webp" loading="lazy" decoding="async" alt="独家报道2" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+            <img src="/images/2.webp" loading="lazy" decoding="async" alt="独家报道2" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
           </a>
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <img src="images/3.webp" loading="lazy" decoding="async" alt="独家报道3" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+            <img src="/images/3.webp" loading="lazy" decoding="async" alt="独家报道3" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
           </a>
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <img src="images/4.webp" loading="lazy" decoding="async" alt="独家报道4" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+            <img src="/images/4.webp" loading="lazy" decoding="async" alt="独家报道4" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
           </a>
         </div>
       </div>
@@ -414,10 +414,10 @@ fetch('data/trance_mixing_slogans.txt')
       <h3 style="color: #fff; font-size: 18px; text-align: center; margin-bottom: 20px;">AFTERHOURS 国际电台特邀</h3>
       <div style="width: 100%; height: 300px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.2);">
         <div style="display: flex; height: 100%; gap: 0; margin: 0; padding: 0; align-items: stretch;">
-          <img src="images/Takeover1.webp" loading="lazy" decoding="async" alt="Takeover 1" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
-          <img src="images/Takeover2.webp" loading="lazy" decoding="async" alt="Takeover 2" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
-          <img src="images/Takeover3.webp" loading="lazy" decoding="async" alt="Takeover 3" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
-          <img src="images/Takeover4.webp" loading="lazy" decoding="async" alt="Takeover 4" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
+          <img src="/images/Takeover1.webp" loading="lazy" decoding="async" alt="Takeover 1" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
+          <img src="/images/Takeover2.webp" loading="lazy" decoding="async" alt="Takeover 2" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
+          <img src="/images/Takeover3.webp" loading="lazy" decoding="async" alt="Takeover 3" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
+          <img src="/images/Takeover4.webp" loading="lazy" decoding="async" alt="Takeover 4" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
         </div>
       </div>
     </div>

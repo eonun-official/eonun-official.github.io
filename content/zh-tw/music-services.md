@@ -3,7 +3,7 @@ title: "Eonun"
 description: "专业音乐制作服务，包括混音、母带处理等"
 body_class: "ma0 avenir bg-near-white development is-section is-section page-music"
 ---
-<header class="about-header" style="position:relative; overflow:hidden; background-image: url('../images/background.webp'); background-size: cover; background-position: center center; background-repeat:no-repeat; min-height:520px;">
+<header class="about-header" style="position:relative; overflow:hidden; background-image: url('/images/background.webp'); background-size: cover; background-position: center center; background-repeat:no-repeat; min-height:520px;">
     <div class="pb3-m pb6-l bg-black" style="background:none; padding-top:140px; ">
       <div class="nav-container" id="scroll-nav" style="position: fixed; top: -20px; left: 0; width: 100%; z-index: 9999; padding: 10px 20px; box-sizing: border-box;
           transition: top 0.3s ease;">
@@ -96,7 +96,7 @@ window.addEventListener('scroll', function() {
     indexSlogan.style.setProperty('filter', `brightness(${brightness}) drop-shadow(0 2px 10px rgba(255,255,255,${shadowIntensity}))`, 'important');
   }
 });
-fetch('../data/trance_mixing_slogans.txt')
+fetch('/data/trance_mixing_slogans.txt')
   .then(response => {
     if (!response.ok) throw new Error('标语文件加载失败');
     return response.text();
@@ -138,7 +138,7 @@ fetch('../data/trance_mixing_slogans.txt')
 <style>
 @font-face {
   font-family: 'IndexSloganFont';
-  src: url('../fonts/AlimamaShuHeiTi-Bold.3df4abd1fb6a0f809118b7287720b116f3ced4330805315953e14c92915a9fe3.otf') format('opentype');
+  src: url('/fonts/AlimamaShuHeiTi-Bold.3df4abd1fb6a0f809118b7287720b116f3ced4330805315953e14c92915a9fe3.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
   font-display: block;

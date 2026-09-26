@@ -4,7 +4,7 @@ description: "从爱好者到国际舞台：以合理的价格实现知识最大
 body_class: "ma0 avenir bg-near-white development is-section is-section page-instructions"
 ---
 <header class="cover-top " style="position:relative; overflow:visible; background-color: rgba(255, 255, 255, 0.2); padding-bottom: 0;">
-  <video autoplay muted loop playsinline preload="none" poster="../videos/THEME-poster.jpg" data-src="../videos/THEME.mp4" style="position:absolute; top:0; left:0; width:100%; height:113%; object-fit: cover; z-index:0;" id="header-video"></video>
+  <video autoplay muted loop playsinline preload="none" poster="/videos/THEME-poster.jpg" data-src="/videos/THEME.mp4" style="position:absolute; top:0; left:0; width:100%; height:113%; object-fit: cover; z-index:0;" id="header-video"></video>
   <div id="video-fallback" style="position:absolute; top:0; left:0; width:100%; height:113%; background: linear-gradient(135deg, #121212 0%, #181818 25%, #1e1e1e 50%, #222222 75%, rgba(255, 255, 255, 0.1) 100%); z-index:-1; display:none;"></div>
   <div class="bg-black-60" style="
     background: linear-gradient(to bottom,
@@ -141,7 +141,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-ins
       </div>
       <div class="tc-l pv6 pv8-l ph3 ph4-ns">
         <div class="mb0 lh-title" style="max-width: 800px; margin: 0 auto; position: relative; background: transparent !important; ">
-          <img id="header-logo" src="../images/eonun2www.png" alt="教学 | Trance 指导服务" fetchpriority="high" decoding="async"
+          <img id="header-logo" src="/images/eonun2www.png" alt="教学 | Trance 指导服务" fetchpriority="high" decoding="async"
             style="width: 100%; height: auto;
                 margin-top: 100px !important;
                 opacity: 1 !important;
@@ -279,7 +279,7 @@ window.addEventListener('scroll', function() {
   }
   lastScrollTop = scrollDistance;
 });
-fetch('../data/trance_mixing_slogans.txt') 
+fetch('/data/trance_mixing_slogans.txt') 
   .then(response => {
     if (!response.ok) throw new Error('标语文件加载失败');
     return response.text();
@@ -307,7 +307,7 @@ fetch('../data/trance_mixing_slogans.txt')
 <style>
 @font-face {
   font-family: 'IndexSloganFont';
-  src: url('../fonts/AlimamaShuHeiTi-Bold.3df4abd1fb6a0f809118b7287720b116f3ced4330805315953e14c92915a9fe3.otf') format('opentype');
+  src: url('/fonts/AlimamaShuHeiTi-Bold.3df4abd1fb6a0f809118b7287720b116f3ced4330805315953e14c92915a9fe3.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
   font-display: block;
@@ -363,7 +363,7 @@ fetch('../data/trance_mixing_slogans.txt')
 </style>
       <main class="pb7" role="main">
   <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray">
-    <link rel="stylesheet" href="../css/course-page.css">
+    <link rel="stylesheet" href="/css/course-page.css">
 <!-- 课程主标题区域 -->
 <div class="course-hero">
 <div class="hero-content">
