@@ -1,0 +1,80 @@
+<!-- 多语言切换器 + 首次访问 IP 地区自动跳转 -->
+<style>
+#lang-switch {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 99999;
+  display: flex;
+  gap: 6px;
+  font-family: inherit;
+}
+#lang-switch button {
+  background: rgba(10, 10, 10, 0.85);
+  color: #bbb;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+#lang-switch button:hover { color: #fff; border-color: rgba(255, 255, 255, 0.8); }
+#lang-switch button.active { color: #fff; border-color: #fff; }
+</style>
+<div id="lang-switch">
+  <button data-lang="zh-cn" title="简体中文">简</button>
+  <button data-lang="zh-tw" title="繁體中文">繁</button>
+  <button data-lang="en" title="English">EN</button>
+  <button data-lang="de" title="Deutsch">DE</button>
+</div>
+<script>
+(function () {
+  var SUBLANGS = ['zh-tw', 'en', 'de'];
+  function currentLang() {
+    var p = location.pathname;
+    for (var i = 0; i < SUBLANGS.length; i++) {
+      if (p.indexOf('/' + SUBLANGS[i] + '/') === 0 || p === '/' + SUBLANGS[i]) return SUBLANGS[i];
+    }
+    return 'zh-cn';
+  }
+  function basePath() {
+    var p = location.pathname;
+    for (var i = 0; i < SUBLANGS.length; i++) {
+      if (p.indexOf('/' + SUBLANGS[i] + '/') === 0) return p.slice(SUBLANGS[i].length + 1);
+      if (p === '/' + SUBLANGS[i]) return '/';
+    }
+    return p;
+  }
+  function urlFor(lang) {
+    if (lang === 'zh-cn') return basePath();
+    var b = basePath();
+    return '/' + lang + (b.charAt(0) === '/' ? b : '/' + b);
+  }
+  function setLang(lang, navigate) {
+    try { localStorage.setItem('eonun-lang', lang); } catch (e) {}
+    if (navigate && urlFor(lang) !== location.pathname) location.href = urlFor(lang);
+  }
+  var cur = currentLang();
+  var btns = document.querySelectorAll('#lang-switch button');
+  Array.prototype.forEach.call(btns, function (b) {
+    if (b.getAttribute('data-lang') === cur) b.classList.add('active');
+    b.addEventListener('click', function () { setLang(this.getAttribute('data-lang'), true); });
+  });
+  /* 首次访问（无记录）：按 IP 地区跳转。德/瑞/奥→德语，港/台/澳→繁体，大陆→简体，其他→英语 */
+  var stored = null;
+  try { stored = localStorage.getItem('eonun-lang'); } catch (e) {}
+  if (!stored) {
+    var MAP = { DE: 'de', AT: 'de', CH: 'de', HK: 'zh-tw', TW: 'zh-tw', MO: 'zh-tw', CN: 'zh-cn' };
+    fetch('https://www.cloudflare.com/cdn-cgi/trace', { cache: 'no-store' })
+      .then(function (r) { return r.text(); })
+      .then(function (t) {
+        var m = t.match(/loc=([A-Z]{2})/);
+        var lang = m ? (MAP[m[1]] || 'en') : null;
+        if (lang && lang !== cur) setLang(lang, true);
+        else setLang(cur, false);
+      })
+      .catch(function () { setLang(cur, false); });
+  }
+})();
+</script>

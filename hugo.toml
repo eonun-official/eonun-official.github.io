@@ -1,6 +1,7 @@
 baseURL = 'http://localhost:1313/'
-languageCode = 'zh-CN'
 title = 'Eonun'
+defaultContentLanguage = 'zh-cn'
+defaultContentLanguageInSubdir = false
 
 # 原始 HTML 直接写入 Markdown 内容（content/*.md 中为整页 HTML）
 [markup.goldmark.renderer]
@@ -9,6 +10,29 @@ unsafe = true
 # 本站不用分类/标签，禁止生成 categories/、tags/ 空目录
 disableKinds = ['taxonomy', 'term']
 relativeURLs = true
+
+# 多语言：简体(根目录) / 繁体 / 英语 / 德语
+[languages]
+  [languages.zh-cn]
+    languageName = '简体中文'
+    languageCode = 'zh-CN'
+    weight = 1
+    contentDir = 'content/zh-cn'
+  [languages.zh-tw]
+    languageName = '繁體中文'
+    languageCode = 'zh-TW'
+    weight = 2
+    contentDir = 'content/zh-tw'
+  [languages.en]
+    languageName = 'English'
+    languageCode = 'en'
+    weight = 3
+    contentDir = 'content/en'
+  [languages.de]
+    languageName = 'Deutsch'
+    languageCode = 'de'
+    weight = 4
+    contentDir = 'content/de'
 
 [[menu.main]]
   name = "Shop"
