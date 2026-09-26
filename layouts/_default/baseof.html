@@ -3,7 +3,7 @@
   <head>
     {{ partial "head.html" . }}
   </head>
-  <body class="{{ .Params.body_class | default "ma0 avenir bg-near-white" }}">
+  <body class="{{ .Params.body_class | default "ma0 avenir bg-near-white" }}{{ if .IsHome }} is-home{{ end }}">
     {{ block "main" . }}{{ end }}
     {{ partial "palette.html" . }}
   </body>
