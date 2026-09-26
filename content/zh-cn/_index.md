@@ -473,6 +473,40 @@ fetch('/data/trance_mixing_slogans.txt')
     -webkit-text-fill-color: #ffffff !important;
     color: #ffffff !important;
   }
+  /* ===== 移动端适配（≤768px 生效，桌面排版不变） ===== */
+  @media (max-width: 768px) {
+    /* 顶部导航：压缩间距、允许换行 */
+    #scroll-nav { padding: 6px 8px !important; }
+    #scroll-nav .flex-l { flex-wrap: wrap; justify-content: center; row-gap: 2px; }
+    #scroll-nav ul { gap: 6px !important; flex-wrap: wrap; justify-content: center; }
+    #scroll-nav ul li a { font-size: 12px !important; padding: 3px 5px !important; }
+    /* Hero：收紧上距、标语降字号 */
+    #header-logo { margin-top: 60px !important; }
+    #index-slogan { font-size: 16px !important; margin-left: 0 !important; }
+    .tc-l h2.fw1 { font-size: 1rem !important; line-height: 1.5 !important; }
+    /* 区块标题与正文边距 */
+    article { padding-left: 14px !important; padding-right: 14px !important; }
+    article h2:not(.fw1) { font-size: 1.4em !important; }
+    article h3[style*="font-size: 22px"] { font-size: 17px !important; }
+    /* 认可区块：解除死宽度，纵向占满 */
+    div[style*="min-width: 450px"] { min-width: 0 !important; width: 100% !important; max-width: 100% !important; }
+    div[style*="min-width: 300px"] { min-width: 0 !important; width: 100% !important; }
+    /* 核心身份卡片 */
+    div[style*="min-width: 200px"] { min-width: 140px !important; flex: 1 1 140px; padding: 18px 12px !important; }
+    /* 服务/作品网格：单列 */
+    div[style*="minmax(280px, 1fr)"] { grid-template-columns: 1fr !important; }
+    div[style*="minmax(350px, 1fr)"] { grid-template-columns: 1fr !important; }
+    /* 卡片内边距 */
+    div[style*="padding: 30px"][style*="border-radius: 8px"] { padding: 20px 16px !important; }
+    /* 联系区块 */
+    div[style*="max-width: 600px"][style*="padding: 40px"] { padding: 24px 16px !important; }
+    /* 段落分隔线边距 */
+    div[style*="height: 1px"][style*="margin: 40px 0"] { margin: 24px 0 !important; }
+    /* 语言切换器与调色盘不挡内容 */
+    #lang-switch { left: 10px; bottom: 10px; }
+    #lang-switch button { padding: 4px 9px; font-size: 11px; }
+    #palette-toggle { right: 10px; bottom: 10px; }
+  }
 </style>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
 <h2 id="核心服务">核心服务</h2>
