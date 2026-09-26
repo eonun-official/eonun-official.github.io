@@ -467,23 +467,29 @@ fetch('data/trance_mixing_slogans.txt')
     border-color: rgba(255, 255, 255, 0.6);
     box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
   }
+  /* 区块小标题固定纯白，不随全站调色变色 */
+  article h2:not(.fw1) {
+    background: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+  }
 </style>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
-<h2 id="核心服务--为-trance-赋能">核心服务 · 为 Trance 赋能</h2>
+<h2 id="核心服务">核心服务</h2>
 <div style="max-width: 900px; margin: 60px auto;">
   <h3 style="color: #fff; font-size: 22px; text-align: center; margin-bottom: 40px;">从 Demo 到发行，全链路支持</h3>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
     <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); padding: 30px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
-      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">Trance 混音工程</h4>
-      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">解决频域冲突、动态失衡、声场扁平，打造具备国际质感的混音，突出 Trance 核心张力。</p>
+      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">Trance 音乐工程</h4>
+      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">机能、史诗与氛围感，解决频域冲突、动态失衡、声场扁平，打造具备行业一流的混音，突出 Trance 核心张力。</p>
     </div>
     <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); padding: 30px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
       <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">专业母带处理</h4>
       <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">提升响度、优化频谱平衡、增强总线粘合度，适配各大流媒体平台（Spotify/Beatport）。</p>
     </div>
     <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); padding: 30px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
-      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">作品与厂牌发行指导</h4>
-      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">通过一对一指导助力优质 Trance 作品走向全球市场。坚持无圈子化原则，确保艺人隐私单线服务。</p>
+      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">教学与发行指导</h4>
+      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">通过一对四或一对一指导助力优质 Trance 作品走向全球市场。坚持无圈子化原则，确保艺人隐私全程提供单线服务与信息保密。</p>
     </div>
   </div>
 </div>
