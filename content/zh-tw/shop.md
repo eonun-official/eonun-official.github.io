@@ -1,6 +1,6 @@
 ---
 title: "Eonun"
-description: "专业Trance音乐采样包，高质量音频素材"
+description: "專業Trance音樂採樣包，高質量音頻素材"
 body_class: "ma0 avenir bg-near-white development is-section is-section"
 extra_css:
   - css/shop-page.css
@@ -17,7 +17,7 @@ extra_css:
           color: #ffffff !important;
           font-size: 1.2em !important;
           font-weight: 800 !important;
-          letter-spacing: 0.5ch !important; /* 关键：缩窄为0.5ch（原1ch的一半） */
+          letter-spacing: 0.5ch !important; /* 關鍵：縮窄爲0.5ch（原1ch的一半） */
           text-shadow: 0 0 3px rgba(255,255,255,0.6) !important;
           position: relative;
           top: -1px;
@@ -75,7 +75,7 @@ extra_css:
             opacity: 0;
             transform: translateX(40%);
             filter: blur(12px);
-          ">一个年轻人奉献给了Trance艺术的部分人生</p>
+          ">一個年輕人奉獻給了Trance藝術的部分人生</p>
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@ window.addEventListener('scroll', function() {
 });
 fetch('/data/trance_mixing_slogans.txt')
   .then(response => {
-    if (!response.ok) throw new Error('标语文件加载失败');
+    if (!response.ok) throw new Error('標語文件加載失敗');
     return response.text();
   })
   .then(text => {
@@ -113,8 +113,8 @@ fetch('/data/trance_mixing_slogans.txt')
     }
   })
   .catch(error => {
-    console.log('随机标语加载失败，使用兜底文案：', error);
-    if (indexSlogan) indexSlogan.textContent = '一个年轻人奉献给了Trance艺术的部分人生';
+    console.log('隨機標語加載失敗，使用兜底文案：', error);
+    if (indexSlogan) indexSlogan.textContent = '一個年輕人奉獻給了Trance藝術的部分人生';
   });
   const aboutHeader = document.querySelector('header.about-header');
   if (aboutHeader) {
@@ -199,18 +199,18 @@ fetch('/data/trance_mixing_slogans.txt')
       <div class="hero-content">
         <h1 class="hero-title">Shop</h1>
         <div class="hero-subtitle">
-          <p>专业Trance音乐采样包</p>
-          <p>高质量音频素材 · 立即下载使用</p>
+          <p>專業Trance音樂採樣包</p>
+          <p>高質量音頻素材 · 立即下載使用</p>
         </div>
       </div>
     </div>
     <div class="shop-container">
-      <!-- 敬请期待提示 -->
+      <!-- 敬請期待提示 -->
       <div style="text-align: center; padding: 4rem 2rem; margin-bottom: 2rem;">
-        <div style="font-size: 2rem; font-weight: 600; color: #ffffff; margin-bottom: 2rem;">敬请期待</div>
-        <p style="font-size: 1.1rem; color: #ffffff; max-width: 600px; margin: 0 auto;">商店正在筹备中，更多专业Trance音乐采样包即将上架。请持续关注我们的更新！</p>
+        <div style="font-size: 2rem; font-weight: 600; color: #ffffff; margin-bottom: 2rem;">敬請期待</div>
+        <p style="font-size: 1.1rem; color: #ffffff; max-width: 600px; margin: 0 auto;">商店正在籌備中，更多專業Trance音樂採樣包即將上架。請持續關注我們的更新！</p>
       </div>
-      <!-- 产品网格 (暂时隐藏) -->
+      <!-- 產品網格 (暫時隱藏) -->
       <div class="shop-grid" style="display: none;">
         <!-- Trance Essentials Vol.1 -->
         <div class="product-card">
@@ -219,15 +219,15 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>Trance Essentials Vol.1</h3>
-              <div class="product-description">专业Trance音乐采样包，包含多种音色</div>
+              <div class="product-description">專業Trance音樂採樣包，包含多種音色</div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
                 <div class="price-tag">$29.99</div>
               </div>
               <div class="buy-buttons-container">
-              <a href="#" class="buy-button left">国际支付</a>
-              <a href="#" class="buy-button right">转到爱发电</a>
+              <a href="#" class="buy-button left">國際支付</a>
+              <a href="#" class="buy-button right">轉到愛發電</a>
             </div>
             </div>
           </div>
@@ -239,15 +239,15 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>Atmospheric Pads</h3>
-              <div class="product-description">营造氛围的合成器音色，适合各种电子音乐</div>
+              <div class="product-description">營造氛圍的合成器音色，適合各種電子音樂</div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
                 <div class="price-tag">$19.99</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="#" class="buy-button left">国际支付</a>
-                <a href="#" class="buy-button right">转到爱发电</a>
+                <a href="#" class="buy-button left">國際支付</a>
+                <a href="#" class="buy-button right">轉到愛發電</a>
               </div>
             </div>
           </div>
@@ -259,15 +259,15 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>Euphoric Leads</h3>
-              <div class="product-description">充满活力的 leads 音色，为作品增添独特魅力</div>
+              <div class="product-description">充滿活力的 leads 音色，爲作品增添獨特魅力</div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
                 <div class="price-tag">$24.99</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="#" class="buy-button left">国际支付</a>
-                <a href="#" class="buy-button right">转到爱发电</a>
+                <a href="#" class="buy-button left">國際支付</a>
+                <a href="#" class="buy-button right">轉到愛發電</a>
               </div>
             </div>
           </div>
@@ -278,15 +278,15 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>Drum Elements</h3>
-              <div class="product-description">专业鼓组采样，包含多种节奏元素</div>
+              <div class="product-description">專業鼓組採樣，包含多種節奏元素</div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
                 <div class="price-tag">$34.99</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="#" class="buy-button left">国际支付</a>
-                <a href="#" class="buy-button right">转到爱发电</a>
+                <a href="#" class="buy-button left">國際支付</a>
+                <a href="#" class="buy-button right">轉到愛發電</a>
               </div>
             </div>
           </div>
@@ -298,15 +298,15 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>Vocal Chops</h3>
-              <div class="product-description">精选人声切片，为作品增添情感色彩</div>
+              <div class="product-description">精選人聲切片，爲作品增添情感色彩</div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
                 <div class="price-tag">$39.99</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="#" class="buy-button left">国际支付</a>
-                <a href="#" class="buy-button right">转到爱发电</a>
+                <a href="#" class="buy-button left">國際支付</a>
+                <a href="#" class="buy-button right">轉到愛發電</a>
               </div>
             </div>
           </div>
@@ -317,15 +317,15 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>Complete Bundle</h3>
-              <div class="product-description">包含所有采样包的完整套装，享受40%折扣</div>
+              <div class="product-description">包含所有采樣包的完整套裝，享受40%折扣</div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
                 <div class="price-tag">$99.99</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="#" class="buy-button left">国际支付</a>
-                <a href="#" class="buy-button right">转到爱发电</a>
+                <a href="#" class="buy-button left">國際支付</a>
+                <a href="#" class="buy-button right">轉到愛發電</a>
               </div>
             </div>
           </div>

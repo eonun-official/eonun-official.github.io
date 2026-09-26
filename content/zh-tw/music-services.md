@@ -1,6 +1,6 @@
 ---
 title: "Eonun"
-description: "专业音乐制作服务，包括混音、母带处理等"
+description: "專業音樂製作服務，包括混音、母帶處理等"
 body_class: "ma0 avenir bg-near-white development is-section is-section page-music"
 ---
 <header class="about-header" style="position:relative; overflow:hidden; background-image: url('/images/background.webp'); background-size: cover; background-position: center center; background-repeat:no-repeat; min-height:520px;">
@@ -15,7 +15,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-mus
           color: #ffffff !important;
           font-size: 1.2em !important;
           font-weight: 800 !important;
-          letter-spacing: 0.5ch !important; /* 关键：缩窄为0.5ch（原1ch的一半） */
+          letter-spacing: 0.5ch !important; /* 關鍵：縮窄爲0.5ch（原1ch的一半） */
           text-shadow: 0 0 3px rgba(255,255,255,0.6) !important;
           position: relative;
           top: -1px;
@@ -73,7 +73,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-mus
             opacity: 0;
             transform: translateX(40%);
             filter: blur(12px);
-          ">一个年轻人奉献给了Trance艺术的部分人生</p>
+          ">一個年輕人奉獻給了Trance藝術的部分人生</p>
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ window.addEventListener('scroll', function() {
 });
 fetch('/data/trance_mixing_slogans.txt')
   .then(response => {
-    if (!response.ok) throw new Error('标语文件加载失败');
+    if (!response.ok) throw new Error('標語文件加載失敗');
     return response.text();
   })
   .then(text => {
@@ -111,8 +111,8 @@ fetch('/data/trance_mixing_slogans.txt')
     }
   })
   .catch(error => {
-    console.log('随机标语加载失败，使用兜底文案：', error);
-    if (indexSlogan) indexSlogan.textContent = '一个年轻人奉献给了Trance艺术的部分人生';
+    console.log('隨機標語加載失敗，使用兜底文案：', error);
+    if (indexSlogan) indexSlogan.textContent = '一個年輕人奉獻給了Trance藝術的部分人生';
   });
   const aboutHeader = document.querySelector('header.about-header');
   if (aboutHeader) {
@@ -197,37 +197,37 @@ fetch('/data/trance_mixing_slogans.txt')
       <div class="hero-content">
         <h1 class="hero-title">Music Services</h1>
         <div class="hero-subtitle">
-          <p>专业音乐制作服务</p>
-          <p>母带处理 · 音乐工程 · 合作发行</p>
+          <p>專業音樂製作服務</p>
+          <p>母帶處理 · 音樂工程 · 合作發行</p>
         </div>
       </div>
     </div>
     <div class="shop-container">
       <div class="shop-grid">
-        <!-- 母带服务 -->
+        <!-- 母帶服務 -->
         <div class="product-card featured-card" onmouseenter="cardTint('#8d67fe')" onmouseleave="cardTintOut()">
           <div class="product-badge premium">方案一</div>
           <div class="product-image master-image"></div>
           <div class="product-content">
             <div class="product-content-top">
-              <h3>母带服务</h3>
-              <div class="product-description">专业母带处理，让音乐更具商业品质</div>
+              <h3>母帶服務</h3>
+              <div class="product-description">專業母帶處理，讓音樂更具商業品質</div>
               <div class="service-levels">
                 <div class="service-level">
-                  <div class="level-name">标准母带</div>
+                  <div class="level-name">標準母帶</div>
                   <div class="level-price">¥330/首</div>
-                  <div class="level-desc">厂牌合作标准，适用于已完成的混音作品</div>
+                  <div class="level-desc">廠牌合作標準，適用於已完成的混音作品</div>
                 </div>
                 <div class="service-level premium-level">
-                  <div class="level-name">精细母带</div>
+                  <div class="level-name">精細母帶</div>
                   <div class="level-price">¥985/首</div>
-                  <div class="level-desc">分轨混音+母带，专业处理方法</div>
+                  <div class="level-desc">分軌混音+母帶，專業處理方法</div>
                 </div>
               </div>
               <div class="service-notice">
                 <div class="notice-icon">⚠️</div>
-                <div class="notice-text">精细混母服务由委托方自行保障素材规范、混音基底达标；
-                  分轨精度、电平失真、染色过度、时序异常等前置问题，沟通未修正的相关影响由委托方自行承担。</div>
+                <div class="notice-text">精細混母服務由委託方自行保障素材規範、混音基底達標；
+                  分軌精度、電平失真、染色過度、時序異常等前置問題，溝通未修正的相關影響由委託方自行承擔。</div>
               </div>
             </div>
             <div class="product-content-bottom">
@@ -235,32 +235,32 @@ fetch('/data/trance_mixing_slogans.txt')
                 <div class="price-tag">¥330起</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="../contact/index.html" class="buy-button left">联系咨询</a>
-                <a href="#" class="buy-button right" onclick="openMasteringModal()">了解详情</a>
+                <a href="../contact/index.html" class="buy-button left">聯繫諮詢</a>
+                <a href="#" class="buy-button right" onclick="openMasteringModal()">瞭解詳情</a>
               </div>
             </div>
           </div>
         </div>
-        <!-- 音乐工程服务 -->
+        <!-- 音樂工程服務 -->
         <div class="product-card featured-card" onmouseenter="cardTint('#00ff59')" onmouseleave="cardTintOut()">
           <div class="product-badge exclusive">方案二</div>
           <div class="product-image production-image"></div>
           <div class="product-content">
             <div class="product-content-top">
-              <h3>音乐工程服务</h3>
-              <div class="product-description">从零开始构建，将你的灵感转化为专业作品</div>
+              <h3>音樂工程服務</h3>
+              <div class="product-description">從零開始構建，將你的靈感轉化爲專業作品</div>
               <div class="service-details">
                 <div class="service-detail-item">
                   <div class="detail-icon">🎵</div>
-                  <div class="detail-text">将你的灵感、预设全部交给我</div>
+                  <div class="detail-text">將你的靈感、預設全部交給我</div>
                 </div>
                 <div class="service-detail-item">
                   <div class="detail-icon">🤝</div>
-                  <div class="detail-text">深度交流与合作创作</div>
+                  <div class="detail-text">深度交流與合作創作</div>
                 </div>
                 <div class="service-detail-item">
                   <div class="detail-icon">🚀</div>
-                  <div class="detail-text">合作发行高质量的成品曲目</div>
+                  <div class="detail-text">合作發行高質量的成品曲目</div>
                 </div>
               </div>
             </div>
@@ -269,8 +269,8 @@ fetch('/data/trance_mixing_slogans.txt')
                 <div class="price-tag">¥5200</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="../contact/index.html" class="buy-button left">联系咨询</a>
-                <a href="#" class="buy-button right" onclick="openServiceModal()">了解详情</a>
+                <a href="../contact/index.html" class="buy-button left">聯繫諮詢</a>
+                <a href="#" class="buy-button right" onclick="openServiceModal()">瞭解詳情</a>
               </div>
             </div>
           </div>
@@ -279,34 +279,34 @@ fetch('/data/trance_mixing_slogans.txt')
     </div>
     <div class="process-section">
       <div class="process-content">
-        <h2>服务流程</h2>
+        <h2>服務流程</h2>
         <div class="process-steps">
           <div class="process-step">
             <div class="step-number">1</div>
             <div class="step-content">
-              <h3>作品审核</h3>
-              <p>提交作品Demo，我们评估作品质量和适用服务</p>
+              <h3>作品審覈</h3>
+              <p>提交作品Demo，我們評估作品質量和適用服務</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-number">2</div>
             <div class="step-content">
-              <h3>方案定制</h3>
-              <p>根据需求制定个性化服务方案和报价</p>
+              <h3>方案定製</h3>
+              <p>根據需求制定個性化服務方案和報價</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-number">3</div>
             <div class="step-content">
               <h3>深度合作</h3>
-              <p>全程沟通协作，确保作品符合预期</p>
+              <p>全程溝通協作，確保作品符合預期</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-number">4</div>
             <div class="step-content">
-              <h3>交付与发行</h3>
-              <p>交付高质量成品，协助发行推广</p>
+              <h3>交付與發行</h3>
+              <p>交付高質量成品，協助發行推廣</p>
             </div>
           </div>
         </div>
@@ -358,7 +358,7 @@ function openServiceModal() {
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
-/* 卡片悬停 → 驱动全站色彩系统（50% 浓度）；移出 → 恢复用户保存的配色或黑白 */
+/* 卡片懸停 → 驅動全站色彩系統（50% 濃度）；移出 → 恢復用戶保存的配色或黑白 */
 function cardTint(hex) {
   if (window.eonunApplyTint) window.eonunApplyTint(hex, 100);
 }
@@ -367,7 +367,7 @@ function cardTintOut() {
   try {
     var s = JSON.parse(localStorage.getItem('eonun-tint') || 'null');
     if (s && s.hex) window.eonunApplyTint(s.hex, s.i || 25);
-    else window.eonunApplyTint('#ff2e2e', 20); /* 无已存配色时回到本页默认红 */
+    else window.eonunApplyTint('#ff2e2e', 20); /* 無已存配色時回到本頁默認紅 */
   } catch (e) { window.eonunApplyTint('#ff2e2e', 20); }
 }
 function closeServiceModal() {
@@ -385,7 +385,7 @@ function closeMasteringModal() {
   modal.style.display = 'none';
   document.body.style.overflow = 'auto';
 }
-// 点击模态框外部关闭
+// 點擊模態框外部關閉
 window.onclick = function(event) {
   const serviceModal = document.getElementById('service-modal');
   const masteringModal = document.getElementById('mastering-modal');
@@ -397,102 +397,102 @@ window.onclick = function(event) {
   }
 }
 </script>
-<!-- 服务详情悬浮窗 -->
+<!-- 服務詳情懸浮窗 -->
 <div id="service-modal" class="service-modal">
   <div class="service-modal-content">
     <div class="service-modal-header">
-      <h2>Eonun 曲目工程制作服务</h2>
+      <h2>Eonun 曲目工程製作服務</h2>
       <span class="close-button" onclick="closeServiceModal()">&times;</span>
     </div>
     <div class="service-modal-body">
-      <p>凭借多年专注 Uplifting Trance 的制作与经验，我将把你的具体需要，完整落地为结构成熟、音色精准、符合国际发行标准的成品作品。无论是完善一段动机、深化一首半成品，还是从零构建完整单曲，我都会以严谨的制作流程，让你的音乐想法真正成为可发行、可传播、具备辨识度的专业作品。</p>
-      <h3>服务内容</h3>
+      <p>憑藉多年專注 Uplifting Trance 的製作與經驗，我將把你的具體需要，完整落地爲結構成熟、音色精準、符合國際發行標準的成品作品。無論是完善一段動機、深化一首半成品，還是從零構建完整單曲，我都會以嚴謹的製作流程，讓你的音樂想法真正成爲可發行、可傳播、具備辨識度的專業作品。</p>
+      <h3>服務內容</h3>
       <ul>
-        <li>根据你提供的旋律、参考曲、MIDI 或创作方向，完成整首曲目从编曲、音色设计、混音到结构优化的完整工程制作，可适配游戏、影视等各类商用场景。</li>
-        <li>包含 2 次免费调整，确保最终作品贴合你的风格定位与听觉预期。</li>
-        <li>标准制作周期为 14 个自然日；如需更快上线，可选择加急流程，7 日内完成交付。</li>
+        <li>根據你提供的旋律、參考曲、MIDI 或創作方向，完成整首曲目從編曲、音色設計、混音到結構優化的完整工程製作，可適配遊戲、影視等各類商用場景。</li>
+        <li>包含 2 次免費調整，確保最終作品貼合你的風格定位與聽覺預期。</li>
+        <li>標準制作週期爲 14 個自然日；如需更快上線，可選擇加急流程，7 日內完成交付。</li>
       </ul>
-      <h3>选择这项制作服务的理由</h3>
-      <p>作为获得国际现代 Trance 音乐厂牌RIIR独家专访的制作人，我长期以现代 Uplifting Trance 制作体系为核心，懂得最新的审美标准，也了解全面的审美角度，所有作品均按照国际厂牌发行标准打磨。我不参与圈层化运作，不设身份门槛，只以作品质量为唯一标准，让你的音乐在全球市场中更具竞争力。</p>
+      <h3>選擇這項製作服務的理由</h3>
+      <p>作爲獲得國際現代 Trance 音樂廠牌RIIR獨家專訪的製作人，我長期以現代 Uplifting Trance 製作體系爲核心，懂得最新的審美標準，也瞭解全面的審美角度，所有作品均按照國際廠牌發行標準打磨。我不參與圈層化運作，不設身份門檻，只以作品質量爲唯一標準，讓你的音樂在全球市場中更具競爭力。</p>
       <h3>你需要提供的素材</h3>
       <ul>
-        <li>下单后 24 小时内，请提供项目相关素材，包括画面片段、剧情参考、情绪指引、参考配乐或风格描述。</li>
-        <li>同时请明确你的需求：曲风（仅限 Uplifting Trance 风格配乐）、单条时长、整体情绪与使用场景方向。</li>
+        <li>下單後 24 小時內，請提供項目相關素材，包括畫面片段、劇情參考、情緒指引、參考配樂或風格描述。</li>
+        <li>同時請明確你的需求：曲風（僅限 Uplifting Trance 風格配樂）、單條時長、整體情緒與使用場景方向。</li>
       </ul>
-      <h3>重要说明与版权条款</h3>
+      <h3>重要說明與版權條款</h3>
       <ul>
-        <li>作为配乐制作方，我将保留 10% 著作权收益（含作曲署名权、机械权、同步权），该比例不影响你方项目的全球发行、上映与全渠道传播收益。</li>
-        <li>作品交付后，若因项目调整产生额外修改，将按 ¥700 / 小时 收取调整费用。</li>
-        <li>我全程保证制作质量与场景适配度，但不承诺或保证作品达到任何特定第三方的验收标准。</li>
+        <li>作爲配樂製作方，我將保留 10% 著作權收益（含作曲署名權、機械權、同步權），該比例不影響你方項目的全球發行、上映與全渠道傳播收益。</li>
+        <li>作品交付後，若因項目調整產生額外修改，將按 ¥700 / 小時 收取調整費用。</li>
+        <li>我全程保證製作質量與場景適配度，但不承諾或保證作品達到任何特定第三方的驗收標準。</li>
       </ul>
-      <h3>服务价格</h3>
+      <h3>服務價格</h3>
       <div class="price-section">
         <div class="price-item">
-          <span class="price-label">标准制作（14 天交付）：</span>
+          <span class="price-label">標準制作（14 天交付）：</span>
           <span class="price-value">¥5200</span>
         </div>
         <div class="price-item">
-          <span class="price-label">加急制作（7 天交付）：</span>
+          <span class="price-label">加急製作（7 天交付）：</span>
           <span class="price-value">¥6600</span>
         </div>
       </div>
-      <h3>常见疑问</h3>
+      <h3>常見疑問</h3>
       <ul>
-        <li>素材要求：下单后同步详细规范，可提前沟通确认</li>
-        <li>制作流程：需求确认→初稿交付→调整优化→终版定稿</li>
-        <li>制作周期：标准 14 个自然日，加急 7 日内交付</li>
+        <li>素材要求：下單後同步詳細規範，可提前溝通確認</li>
+        <li>製作流程：需求確認→初稿交付→調整優化→終版定稿</li>
+        <li>製作週期：標準 14 個自然日，加急 7 日內交付</li>
       </ul>
       <div class="final-note">
-        <h3>开启你的项目配乐定制</h3>
-        <p>无论你是只需要单段情绪配乐，还是已有完整项目需要定制配乐，我都以稳定、可商用的制作标准，帮你把场景情绪变成真正适配项目的 Uplifting Trance 配乐。提交你的项目资料，帮你做出贴合场景、情绪到位、具备专业水准的音乐。</p>
+        <h3>開啓你的項目配樂定製</h3>
+        <p>無論你是只需要單段情緒配樂，還是已有完整項目需要定製配樂，我都以穩定、可商用的製作標準，幫你把場景情緒變成真正適配項目的 Uplifting Trance 配樂。提交你的項目資料，幫你做出貼合場景、情緒到位、具備專業水準的音樂。</p>
       </div>
     </div>
     <div class="service-modal-footer">
-      <a href="../contact/index.html" class="modal-cta-button">开始合作</a>
+      <a href="../contact/index.html" class="modal-cta-button">開始合作</a>
     </div>
   </div>
 </div>
-<!-- 母带服务详情悬浮窗 -->
+<!-- 母帶服務詳情懸浮窗 -->
 <div id="mastering-modal" class="service-modal">
   <div class="service-modal-content">
     <div class="service-modal-header">
-      <h2>Eonun 混音母带服务</h2>
+      <h2>Eonun 混音母帶服務</h2>
       <span class="close-button" onclick="closeMasteringModal()">&times;</span>
     </div>
     <div class="service-modal-body">
-      <p>以专业 Trance 舞曲审美逻辑与海外厂牌发行标准，完成动态、频段与响度的专业适配，兼顾听感质感与平台发行规范，拒绝流水线劣化处理。</p>
-      <h3>服务分级</h3>
+      <p>以專業 Trance 舞曲審美邏輯與海外廠牌發行標準，完成動態、頻段與響度的專業適配，兼顧聽感質感與平臺發行規範，拒絕流水線劣化處理。</p>
+      <h3>服務分級</h3>
       <div class="service-levels-modal">
         <div class="service-level-item">
-          <h4>标准母带校准｜¥330</h4>
-          <p>在保留作品原始听感与动态的前提下，快速完成专业响度校准、全局频段规整与播放规范优化，直接满足流媒体与厂牌基础发行标准，一站式解决非专业母带导致的电平不达标、听感粗糙问题。</p>
+          <h4>標準母帶校準｜¥330</h4>
+          <p>在保留作品原始聽感與動態的前提下，快速完成專業響度校準、全局頻段規整與播放規範優化，直接滿足流媒體與廠牌基礎發行標準，一站式解決非專業母帶導致的電平不達標、聽感粗糙問題。</p>
         </div>
         <div class="service-level-item premium-item">
-          <h4>全流程混音 + 母带｜¥950</h4>
-          <p>针对最高 10 组分组 Stem 做深度混音精修，覆盖低频结构、旋律层次、打击乐咬合与空间塑造；母带处理会更加具有针对性、进一步优化动态与响度、多场景播放适配，输出可直接投递适配国际厂牌的发行级成品。</p>
+          <h4>全流程混音 + 母帶｜¥950</h4>
+          <p>針對最高 10 組分組 Stem 做深度混音精修，覆蓋低頻結構、旋律層次、打擊樂咬合與空間塑造；母帶處理會更加具有針對性、進一步優化動態與響度、多場景播放適配，輸出可直接投遞適配國際廠牌的發行級成品。</p>
         </div>
       </div>
-      <h3>提交规范</h3>
+      <h3>提交規範</h3>
       <ul>
-        <li>Stem 为 WAV 格式，单轨预留 ≥ -6dB 净空</li>
-        <li>混响、延迟等效果轨独立导出</li>
-        <li>Master 总线清空限制器、压缩器等全局处理</li>
-        <li>文件打包后通过云盘链接提交</li>
+        <li>Stem 爲 WAV 格式，單軌預留 ≥ -6dB 淨空</li>
+        <li>混響、延遲等效果軌獨立導出</li>
+        <li>Master 總線清空限制器、壓縮器等全局處理</li>
+        <li>文件打包後通過雲盤鏈接提交</li>
       </ul>
-      <h3>交付与加急</h3>
+      <h3>交付與加急</h3>
       <ul>
-        <li>标准周期：3–5 个工作日</li>
-        <li>全流程加急 24 小时交付：附加费 ¥200</li>
+        <li>標準週期：3–5 個工作日</li>
+        <li>全流程加急 24 小時交付：附加費 ¥200</li>
       </ul>
-      <h3>品质核心</h3>
-      <p>深耕 Trance 制作与海外发行体系，专注舞曲垂直领域总线处理，不套用通用模板，以发行级标准保障作品质量。</p>
+      <h3>品質核心</h3>
+      <p>深耕 Trance 製作與海外發行體系，專注舞曲垂直領域總線處理，不套用通用模板，以發行級標準保障作品質量。</p>
       <div class="final-note">
-        <h3>专业母带，让你的音乐更具竞争力</h3>
-        <p>无论你是需要快速响度校准，还是深度混音精修，我都以专业 Trance 舞曲审美逻辑与海外厂牌发行标准，为你的作品提供高质量的处理服务。</p>
+        <h3>專業母帶，讓你的音樂更具競爭力</h3>
+        <p>無論你是需要快速響度校準，還是深度混音精修，我都以專業 Trance 舞曲審美邏輯與海外廠牌發行標準，爲你的作品提供高質量的處理服務。</p>
       </div>
     </div>
     <div class="service-modal-footer">
-      <a href="../contact/index.html" class="modal-cta-button">开始合作</a>
+      <a href="../contact/index.html" class="modal-cta-button">開始合作</a>
     </div>
   </div>
 </div>
@@ -795,7 +795,7 @@ window.onclick = function(event) {
       line-height: 1.6;
       margin: 0;
     }
-    /* 服务详情悬浮窗样式 */
+    /* 服務詳情懸浮窗樣式 */
     .service-modal {
       display: none;
       position: fixed;
@@ -894,7 +894,7 @@ window.onclick = function(event) {
       position: absolute;
       left: 0;
     }
-    /* 服务分级模态框样式 */
+    /* 服務分級模態框樣式 */
     .service-levels-modal {
       margin: 20px 0;
     }
@@ -993,7 +993,7 @@ window.onclick = function(event) {
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(255, 255, 255, 0.6);
     }
-    /* 滚动条样式 */
+    /* 滾動條樣式 */
     .service-modal-content::-webkit-scrollbar {
       width: 8px;
     }

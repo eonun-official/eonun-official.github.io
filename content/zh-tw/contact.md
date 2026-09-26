@@ -14,7 +14,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-con
           color: #ffffff !important;
           font-size: 1.2em !important;
           font-weight: 800 !important;
-          letter-spacing: 0.5ch !important; /* 关键：缩窄为0.5ch（原1ch的一半） */
+          letter-spacing: 0.5ch !important; /* 關鍵：縮窄爲0.5ch（原1ch的一半） */
           text-shadow: 0 0 3px rgba(255,255,255,0.6) !important;
           position: relative;
           top: -1px;
@@ -73,7 +73,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-con
             opacity: 0;
             transform: translateX(40%);
             filter: blur(12px);
-          ">一个年轻人奉献给了Trance艺术的部分人生</p>
+          ">一個年輕人奉獻給了Trance藝術的部分人生</p>
         </div>
       </div>
     </div>
@@ -143,7 +143,7 @@ window.addEventListener('scroll', function() {
 });
 fetch('/data/trance_mixing_slogans.txt') 
   .then(response => {
-    if (!response.ok) throw new Error('标语文件加载失败');
+    if (!response.ok) throw new Error('標語文件加載失敗');
     return response.text();
   })
   .then(text => {
@@ -156,8 +156,8 @@ fetch('/data/trance_mixing_slogans.txt')
     }
   })
   .catch(error => {
-    console.log('随机标语加载失败，使用兜底文案：', error);
-    if (indexSlogan) indexSlogan.textContent = '一个年轻人奉献给了Trance艺术的部分人生';
+    console.log('隨機標語加載失敗，使用兜底文案：', error);
+    if (indexSlogan) indexSlogan.textContent = '一個年輕人奉獻給了Trance藝術的部分人生';
   });
 const aboutHeader = document.querySelector('header.about-header');
 if (aboutHeader) {
@@ -182,9 +182,9 @@ if (aboutHeader) {
 </style>
   <main class="pb7" role="main">
     <div class="contact-container" style="max-width: 800px; margin: 0 auto; padding: 60px 20px; text-align: center;">
-      <h2 style="color: #fff; font-size: 32px; margin-bottom: 40px;">联系我</h2>
+      <h2 style="color: #fff; font-size: 32px; margin-bottom: 40px;">聯繫我</h2>
       <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 40px; margin-bottom: 40px;">
-        <p style="color: #d9d9d9; font-size: 18px; margin-bottom: 30px;">如果您有任何问题、合作意向或混音需求，欢迎随时联系我</p>
+        <p style="color: #d9d9d9; font-size: 18px; margin-bottom: 30px;">如果您有任何問題、合作意向或混音需求，歡迎隨時聯繫我</p>
         <div style="margin: 40px 0;">
           <a href="mailto:eonun.official@gmail.com" style="
             color: #f2f2f2;
@@ -209,11 +209,11 @@ if (aboutHeader) {
             display: inline-block;
             transition: all 0.3s ease;
           " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 15px rgba(255, 255, 255, 0.5);'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
-            发送邮件
+            發送郵件
           </a>
         </div>
         <div style="margin-top: 50px;">
-          <h3 style="color: #fff; font-size: 18px; margin-bottom: 20px;">Connect With Eonun / 联系我</h3>
+          <h3 style="color: #fff; font-size: 18px; margin-bottom: 20px;">Connect With Eonun / 聯繫我</h3>
           <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
             <a href="https://www.facebook.com/profile.php?id=100066102545732" target="_blank" style="color: #d9d9d9; font-size: 28px; transition: all 0.3s ease; text-decoration: none;">➤</a>
             <a href="https://www.instagram.com/eonun_offcial/" target="_blank" style="color: #d9d9d9; font-size: 28px; transition: all 0.3s ease; text-decoration: none;">📷</a>
@@ -221,11 +221,11 @@ if (aboutHeader) {
             <a href="https://space.bilibili.com/329479754" target="_blank" style="color: #d9d9d9; font-size: 28px; transition: all 0.3s ease; text-decoration: none;">📺</a>
             <a href="weixin://" style="color: #d9d9d9; font-size: 28px; transition: all 0.3s ease; text-decoration: none;">💬</a>
           </div>
-          <p style="color: #d9d9d9; font-size: 14px; margin-top: 15px;">微信号：EonunTrance</p>
+          <p style="color: #d9d9d9; font-size: 14px; margin-top: 15px;">微信號：EonunTrance</p>
         </div>
       </div>
       <div style="color: #d9d9d9; font-size: 14px;">
-        <p>期待与您的合作，共同创造精彩的Trance音乐作品</p>
+        <p>期待與您的合作，共同創造精彩的Trance音樂作品</p>
       </div>
     </div>
   </main>

@@ -361,11 +361,11 @@ window.addEventListener('scroll', function() {
     <p style="color: #d9d9d9; margin: 0; font-size: 14px;">Professional mastering for hundreds of chart-topping Trance tracks</p>
   </div>
   <div style="background: rgba(255,255,255,0.05); padding: 25px 30px; border-radius: 8px; border-left: 3px solid #e0e0e0; min-width: 200px; text-align: center;">
-    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">厂牌 A&R</h3>
+    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">Label A&R</h3>
     <p style="color: #d9d9d9; margin: 0; font-size: 14px;">Co-founder of Cooperation Trance</p>
   </div>
   <div style="background: rgba(255,255,255,0.05); padding: 25px 30px; border-radius: 8px; border-left: 3px solid #f2f2f2; min-width: 200px; text-align: center;">
-    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">厂牌 A&R</h3>
+    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">Label A&R</h3>
     <p style="color: #d9d9d9; margin: 0; font-size: 14px;">Team planning at Polar Impact</p>
   </div>
 </div>
@@ -493,7 +493,7 @@ window.addEventListener('scroll', function() {
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
 <h2 id="联系我--共创-trance-能量">Contact · Creating Trance Energy Together</h2>
 <div style="max-width: 600px; margin: 60px auto; background: rgba(255,255,255,0.03); padding: 40px; border-radius: 8px; text-align: center;">
-  <h3 style="color: #fff; font-size: 22px; margin: 0 0 20px 0;">混音需求 · 合作咨询 · DJ Booking</h3>
+  <h3 style="color: #fff; font-size: 22px; margin: 0 0 20px 0;">Mixing · Collaboration · DJ Booking</h3>
   <p style="color: #d9d9d9; margin: 0 0 30px 0; font-size: 14px;">Trance fans, producers and event organizers are welcome — let's create powerful sound waves together</p>
   <a href="contact/index.html" style="background: #f2f2f2; color: #0a0a0a; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 16px; display: inline-block;">
     Get in Touch

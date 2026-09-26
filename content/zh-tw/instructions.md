@@ -1,6 +1,6 @@
 ---
-title: "教学 | Trance 指导服务 | Eonun"
-description: "从爱好者到国际舞台：以合理的价格实现知识最大化，进步立竿见影"
+title: "教學 | Trance 指導服務 | Eonun"
+description: "從愛好者到國際舞臺：以合理的價格實現知識最大化，進步立竿見影"
 body_class: "ma0 avenir bg-near-white development is-section is-section page-instructions"
 ---
 <header class="cover-top " style="position:relative; overflow:visible; background-color: rgba(255, 255, 255, 0.2); padding-bottom: 0;">
@@ -28,7 +28,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-ins
             rgba(18,18,18,0.95));
         z-index: 1;
       }
-      /* 动态柔和流光效果 */
+      /* 動態柔和流光效果 */
       @keyframes softGlow {
         0%, 100% {
           filter: brightness(1) drop-shadow(0 1px 5px rgba(255, 255, 255, 0.2));
@@ -80,7 +80,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-ins
         z-index: -1;
         pointer-events: none;
       }
-      /* 初始状态添加柔和发光效果 */
+      /* 初始狀態添加柔和發光效果 */
       #header-logo.initial {
         animation: softGlow 7.2s ease-in-out infinite;
       }
@@ -95,7 +95,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-ins
           color: #ffffff !important;
           font-size: 1.2em !important;
           font-weight: 800 !important;
-          letter-spacing: 0.5ch !important; /* 关键：缩窄为0.5ch（原1ch的一半） */
+          letter-spacing: 0.5ch !important; /* 關鍵：縮窄爲0.5ch（原1ch的一半） */
           text-shadow: 0 0 3px rgba(255,255,255,0.6) !important;
           position: relative;
           top: -1px;
@@ -141,7 +141,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-ins
       </div>
       <div class="tc-l pv6 pv8-l ph3 ph4-ns">
         <div class="mb0 lh-title" style="max-width: 800px; margin: 0 auto; position: relative; background: transparent !important; ">
-          <img id="header-logo" src="/images/eonun2www.png" alt="教学 | Trance 指导服务" fetchpriority="high" decoding="async"
+          <img id="header-logo" src="/images/eonun2www.png" alt="教學 | Trance 指導服務" fetchpriority="high" decoding="async"
             style="width: 100%; height: auto;
                 margin-top: 100px !important;
                 opacity: 1 !important;
@@ -163,10 +163,10 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-ins
             opacity: 0;
             transform: translateX(40%);
             filter: blur(12px);
-          ">一个年轻人奉献给了Trance艺术的部分人生</p>
+          ">一個年輕人奉獻給了Trance藝術的部分人生</p>
         </div>
         <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt4 mb4">
-          从爱好者到国际舞台：以合理的价格实现知识最大化，进步立竿见影
+          從愛好者到國際舞臺：以合理的價格實現知識最大化，進步立竿見影
         </h2>
       </div>
     </div>
@@ -179,19 +179,19 @@ const headerVideo = document.getElementById('header-video');
 const videoFallback = document.getElementById('video-fallback');
 let lastScrollTop = 0;
 let isScrollDown = false;
-// 视频错误处理
+// 視頻錯誤處理
 if (headerVideo) {
   headerVideo.addEventListener('error', function() {
-    console.log('视频加载失败，显示备用背景');
+    console.log('視頻加載失敗，顯示備用背景');
     if (videoFallback) {
       videoFallback.style.display = 'block';
     }
   });
-  // 检查视频是否能正常播放
+  // 檢查視頻是否能正常播放
   headerVideo.addEventListener('loadeddata', function() {
-    console.log('视频加载成功');
+    console.log('視頻加載成功');
   });
-  // 页面其它内容全部加载完后，再后台加载视频：加载到哪儿播到哪儿，互不拖累
+  // 頁面其它內容全部加載完後，再後臺加載視頻：加載到哪兒播到哪兒，互不拖累
   window.addEventListener('load', function() {
     setTimeout(function() {
       if (headerVideo && !headerVideo.getAttribute('src')) {
@@ -199,10 +199,10 @@ if (headerVideo) {
         headerVideo.load();
         var pr = headerVideo.play();
         if (pr && pr.catch) { pr.catch(function(){}); }
-        // 视频开始加载后才计时：8秒还缓冲不出画面就换备用渐变背景
+        // 視頻開始加載後才計時：8秒還緩衝不出畫面就換備用漸變背景
         setTimeout(function() {
           if (headerVideo.readyState < 2) {
-            console.log('视频加载超时，显示备用背景');
+            console.log('視頻加載超時，顯示備用背景');
             if (videoFallback) { videoFallback.style.display = 'block'; }
           }
         }, 8000);
@@ -210,7 +210,7 @@ if (headerVideo) {
     }, 50);
   });
 }
-// 初始状态添加柔和发光效果
+// 初始狀態添加柔和發光效果
 if (headerLogo) {
   headerLogo.classList.add('initial');
 }
@@ -236,7 +236,7 @@ window.addEventListener('scroll', function() {
   const parallaxOffset = scrollDistance * 0.6; 
   const maxOffset = 250; 
   const finalOffset = Math.min(parallaxOffset, maxOffset);
-  // 当开始滚动时，移除初始动画类，让滚动效果接管
+  // 當開始滾動時，移除初始動畫類，讓滾動效果接管
   if (headerLogo && scrollDistance > 10) {
     headerLogo.classList.remove('initial');
   }
@@ -257,7 +257,7 @@ window.addEventListener('scroll', function() {
     if (scrollDistance === 0) {
       scrollNav.style.top = '-20px';
       isScrollDown = false;
-      // 回到顶部时重新添加初始动画类
+      // 回到頂部時重新添加初始動畫類
       if (headerLogo) {
         headerLogo.classList.add('initial');
       }
@@ -281,7 +281,7 @@ window.addEventListener('scroll', function() {
 });
 fetch('/data/trance_mixing_slogans.txt') 
   .then(response => {
-    if (!response.ok) throw new Error('标语文件加载失败');
+    if (!response.ok) throw new Error('標語文件加載失敗');
     return response.text();
   })
   .then(text => {
@@ -294,8 +294,8 @@ fetch('/data/trance_mixing_slogans.txt')
     }
   })
   .catch(error => {
-    console.log('随机标语加载失败，使用兜底文案：', error);
-    if (indexSlogan) indexSlogan.textContent = '一个年轻人奉献给了Trance艺术的部分人生';
+    console.log('隨機標語加載失敗，使用兜底文案：', error);
+    if (indexSlogan) indexSlogan.textContent = '一個年輕人奉獻給了Trance藝術的部分人生';
   });
   document.addEventListener('DOMContentLoaded', function() {
     const aboutHeader = document.querySelector('header.about-header');
@@ -364,192 +364,192 @@ fetch('/data/trance_mixing_slogans.txt')
       <main class="pb7" role="main">
   <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray">
     <link rel="stylesheet" href="/css/course-page.css">
-<!-- 课程主标题区域 -->
+<!-- 課程主標題區域 -->
 <div class="course-hero">
 <div class="hero-content">
-<h1 class="hero-title">Trance 指导服务</h1>
+<h1 class="hero-title">Trance 指導服務</h1>
 <div class="hero-subtitle">
-<p>既然你都看到这里，就请相信我——</p>
-<p>相比不合理收费与过度包装的 IP 服务，</p>
-<p>学到真东西才是货真价实的价值。</p>
-<p>我希望搭建一个合理透明的渠道，</p>
-<p>让每一个热爱 Trance 的人都能获得专业指导，突破创作瓶颈。</p>
-<p>无论你是想学习制作的 DJ，还是想进阶的制作人。</p>
+<p>既然你都看到這裏，就請相信我——</p>
+<p>相比不合理收費與過度包裝的 IP 服務，</p>
+<p>學到真東西纔是貨真價實的價值。</p>
+<p>我希望搭建一個合理透明的渠道，</p>
+<p>讓每一個熱愛 Trance 的人都能獲得專業指導，突破創作瓶頸。</p>
+<p>無論你是想學習製作的 DJ，還是想進階的製作人。</p>
 </div>
 </div>
 </div>
-<!-- 课程导航按钮 -->
+<!-- 課程導航按鈕 -->
 <div class="course-nav">
-<h3 class="nav-title">选择服务类型</h3>
+<h3 class="nav-title">選擇服務類型</h3>
 <div class="course-nav-links">
-<button class="course-nav-link" onclick="showSection('one-on-one')">即时一对一线上交流</button>
-<button class="course-nav-link" onclick="showSection('long-term')">长期课程体系（分阶成长计划）</button>
-<button class="course-nav-link" onclick="showSection('booking')">立即预约</button>
+<button class="course-nav-link" onclick="showSection('one-on-one')">即時一對一線上交流</button>
+<button class="course-nav-link" onclick="showSection('long-term')">長期課程體系（分階成長計劃）</button>
+<button class="course-nav-link" onclick="showSection('booking')">立即預約</button>
 </div>
 </div>
-<!-- 内容区域 -->
+<!-- 內容區域 -->
 <div class="content-container">
-<div id="select-hint">请 先 选 择 服 务 类 型</div>
-<!-- 一对一指导服务 -->
+<div id="select-hint">請 先 選 擇 服 務 類 型</div>
+<!-- 一對一指導服務 -->
 <div id="one-on-one" class="content-section">
-<h2>即时一对一线上交流</h2>
-<p style="text-align: center; color: #d9d9d9; font-size: 1.1rem; margin-bottom: 40px;">话题不设限：作品打磨、技术卡点、制作拆解等</p>
+<h2>即時一對一線上交流</h2>
+<p style="text-align: center; color: #d9d9d9; font-size: 1.1rem; margin-bottom: 40px;">話題不設限：作品打磨、技術卡點、製作拆解等</p>
 <div class="course-grid">
 <div class="course-card" style="max-width: 640px; margin: 0 auto; width: 100%; padding: 10px 28px;">
 <ul style="list-style: none; padding: 0; margin: 0;">
-<li style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #d9d9d9;"><span>1 小时 · 精准答疑</span><strong style="color: #fff;">428 元</strong></li>
-<li style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #d9d9d9;"><span>2 小时 · 深度梳理</span><strong style="color: #fff;">668 元</strong></li>
-<li style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 4px; color: #d9d9d9;"><span>3 小时 · 体系化定制</span><strong style="color: #fff;">828 元</strong></li>
+<li style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #d9d9d9;"><span>1 小時 · 精準答疑</span><strong style="color: #fff;">428 元</strong></li>
+<li style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #d9d9d9;"><span>2 小時 · 深度梳理</span><strong style="color: #fff;">668 元</strong></li>
+<li style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 4px; color: #d9d9d9;"><span>3 小時 · 體系化定製</span><strong style="color: #fff;">828 元</strong></li>
 </ul>
 </div>
 </div>
 </div>
-<!-- 长期课程体系 -->
+<!-- 長期課程體系 -->
 <div id="long-term" class="content-section">
-<h2>长期课程体系（分阶成长计划）</h2>
-<p style="text-align: center; color: #d9d9d9; font-size: 1.3rem; margin-bottom: 40px;"><strong>学员身份严格保密，绑定课程独立编号搭载 ECC 数字签名，官网凭专属序列号可查进度。</strong></p>
+<h2>長期課程體系（分階成長計劃）</h2>
+<p style="text-align: center; color: #d9d9d9; font-size: 1.3rem; margin-bottom: 40px;"><strong>學員身份嚴格保密，綁定課程獨立編號搭載 ECC 數字簽名，官網憑專屬序列號可查進度。</strong></p>
 <div class="course-grid">
-<!-- 初级课程 -->
+<!-- 初級課程 -->
 <div class="course-card long-term-course">
-<span class="course-level beginner">初级</span>
-<h3>Trance 创作核心认知课（直播互动）</h3>
+<span class="course-level beginner">初級</span>
+<h3>Trance 創作核心認知課（直播互動）</h3>
 <div class="price-tag small">¥1,500</div>
 <div class="course-target">
-<strong>适合人群：</strong> 纯新手、对电音感兴趣的小白——想亲身体验 Trance 创作流程，获得基础编曲能力，并拓展全方位的审美
+<strong>適合人羣：</strong> 純新手、對電音感興趣的小白——想親身體驗 Trance 創作流程，獲得基礎編曲能力，並拓展全方位的審美
 </div>
 <div class="course-features">
 <ul>
-<li><strong>形式：</strong> 2–4 人小班直播，节奏轻松，学完为止</li>
-<li><strong>核心内容：</strong> 系统建立对 Trance 风格的认知，从零做出一首完整的作品；保护并培养你的兴趣与探索欲</li>
+<li><strong>形式：</strong> 2–4 人小班直播，節奏輕鬆，學完爲止</li>
+<li><strong>核心內容：</strong> 系統建立對 Trance 風格的認知，從零做出一首完整的作品；保護並培養你的興趣與探索欲</li>
 </ul>
 </div>
 <div class="course-notice">
-<strong>报名要求：</strong> 会基本宿主操作，自备一副入门监听耳机（报名前会与你确认）
+<strong>報名要求：</strong> 會基本宿主操作，自備一副入門監聽耳機（報名前會與你確認）
 </div>
-<div class="course-benefit">结业 9 折进阶：持结业证报高阶正课享 9 折；毕业班作品点评第一名另获 300 元折扣，可用于任意课程</div>
+<div class="course-benefit">結業 9 折進階：持結業證報高階正課享 9 折；畢業班作品點評第一名另獲 300 元折扣，可用於任意課程</div>
 </div>
-<!-- 中级课程 -->
+<!-- 中級課程 -->
 <div class="course-card long-term-course pro-ink">
-<span class="course-level intermediate">中级</span>
-<h3>风格定制 + 艺人养成计划（一对一）</h3>
-<div class="price-tag small">¥5,500（含半年指导）</div>
+<span class="course-level intermediate">中級</span>
+<h3>風格定製 + 藝人養成計劃（一對一）</h3>
+<div class="price-tag small">¥5,500（含半年指導）</div>
 <div class="course-target">
-<strong>适合人群：</strong> 有基础的制作人，愿意跟随讲师思路、执行力强、能认真完成任务；想突破瓶颈、形成个人风格、冲击厂牌发行，乃至建立专业艺人形象
+<strong>適合人羣：</strong> 有基礎的製作人，願意跟隨講師思路、執行力強、能認真完成任務；想突破瓶頸、形成個人風格、衝擊廠牌發行，乃至建立專業藝人形象
 </div>
 <div class="course-features">
 <ul>
-<li><strong>形式：</strong> 一对一教学与指导 + 半年持续答疑（约 20 课时，因材施教）+ 作业点评 + 定期复盘；期间可停课 2–3 次，限一年内学完（特殊情况可沟通）；获发专属数字通行证，课程进度实时可查</li>
-<li><strong>核心内容：</strong> 定制你的舞曲风格，引导并建立个人审美，打造独特声音标识；讲解混音/母带的基础知识与操作，达到发行标准；掌握区别于"经验堆砌"的专业制作思维</li>
-<li><strong>艺人养成：</strong> 自我运营规划建议，厂牌狩猎策略指导，艺人自我修养提升，音乐作品包装技巧，建立可持续发展的艺人形象</li>
-<li><strong>专属服务：</strong> 硬指标阶段性作业考核，保证学员质量；全程跟进进度；厂牌投稿指导</li>
+<li><strong>形式：</strong> 一對一教學與指導 + 半年持續答疑（約 20 課時，因材施教）+ 作業點評 + 定期覆盤；期間可停課 2–3 次，限一年內學完（特殊情況可溝通）；獲發專屬數字通行證，課程進度實時可查</li>
+<li><strong>核心內容：</strong> 定製你的舞曲風格，引導並建立個人審美，打造獨特聲音標識；講解混音/母帶的基礎知識與操作，達到發行標準；掌握區別於"經驗堆砌"的專業製作思維</li>
+<li><strong>藝人養成：</strong> 自我運營規劃建議，廠牌狩獵策略指導，藝人自我修養提升，音樂作品包裝技巧，建立可持續發展的藝人形象</li>
+<li><strong>專屬服務：</strong> 硬指標階段性作業考覈，保證學員質量；全程跟進進度；廠牌投稿指導</li>
 </ul>
 </div>
 <div class="course-notice">
-<strong>报名要求：</strong> 熟练操作宿主软件；建议配备开放式或半开放式监听耳机（报名前会与你确认）；报名前需完成一份入学测试，评估是否合适
+<strong>報名要求：</strong> 熟練操作宿主軟件；建議配備開放式或半開放式監聽耳機（報名前會與你確認）；報名前需完成一份入學測試，評估是否合適
 </div>
-<div class="course-benefit">结业颁发结业证书与个人能力证书（如有需要）；享三年扶持计划：每年可预约与讲师合作，及系列回馈与折扣</div>
+<div class="course-benefit">結業頒發結業證書與個人能力證書（如有需要）；享三年扶持計劃：每年可預約與講師合作，及系列回饋與折扣</div>
 </div>
-<!-- 高级课程 -->
+<!-- 高級課程 -->
 <div class="course-card long-term-course master-ink">
-<span class="course-level advanced">高级</span>
+<span class="course-level advanced">高級</span>
 <h3>Eonun Trance（限量）</h3>
-<div class="price-tag small">排期满，可咨询</div>
+<div class="price-tag small">排期滿，可諮詢</div>
 <div class="course-target">
-<strong>适合人群：</strong> 有多年制作经验，追求顶级质感与最新审美趋势，渴望彻底突破瓶颈的资深制作人——目标是以职业为导向的舞曲制作人身份（一般爱好者不推荐）
+<strong>適合人羣：</strong> 有多年製作經驗，追求頂級質感與最新審美趨勢，渴望徹底突破瓶頸的資深製作人——目標是以職業爲導向的舞曲製作人身份（一般愛好者不推薦）
 </div>
 <div class="course-features">
 <ul>
-<li><strong>形式：</strong> 一对一深度辅导（含私人书籍资料）+ 长期陪伴 + 讲师资源对接</li>
-<li><strong>核心内容：</strong> Eonun Trance 系列以个人未公开书籍为核心，从根源维度拆解 Trance 舞曲的律动底层逻辑与氛围生成本质，搭建体系化的律动审美认知框架；<br><br>夯实系统级自洽电声学基础理论，吃透多效果器链路的耦合作用机制，掌握独家构筑的「原理驱动型」混音创作理论：以底层数学原理为支点，推演出所有反直觉混音逻辑的底层运行法则，完成对任意风格 Trance 作品的逆向工程式全结构解析；最终实现从「模仿式制作」到「无参考原创」的第一性原理跃迁，构建起专属于你的声音风格语言与混音技巧矩阵。<br><br>同时覆盖高阶母带处理方法论、国际厂牌合作发行全流程，以及配套中级进阶衔接课程体系。</li>
+<li><strong>形式：</strong> 一對一深度輔導（含私人書籍資料）+ 長期陪伴 + 講師資源對接</li>
+<li><strong>核心內容：</strong> Eonun Trance 系列以個人未公開書籍爲核心，從根源維度拆解 Trance 舞曲的律動底層邏輯與氛圍生成本質，搭建體系化的律動審美認知框架；<br><br>夯實系統級自洽電聲學基礎理論，喫透多效果器鏈路的耦合作用機制，掌握獨家構築的「原理驅動型」混音創作理論：以底層數學原理爲支點，推演出所有反直覺混音邏輯的底層運行法則，完成對任意風格 Trance 作品的逆向工程式全結構解析；最終實現從「模仿式製作」到「無參考原創」的第一性原理躍遷，構建起專屬於你的聲音風格語言與混音技巧矩陣。<br><br>同時覆蓋高階母帶處理方法論、國際廠牌合作發行全流程，以及配套中級進階銜接課程體系。</li>
 </ul>
 </div>
 <div class="course-notice">
-<strong>报名要求：</strong> 成熟的舞曲制作人——无论心智还是水平，由讲师综合评估
+<strong>報名要求：</strong> 成熟的舞曲製作人——無論心智還是水平，由講師綜合評估
 </div>
-<div class="course-benefit">结业特权：任意课程 5 折；邀请折扣最高可返 ¥10,000；获得讲师直接资源对接与长期扶持，形成平等合作关系</div>
+<div class="course-benefit">結業特權：任意課程 5 折；邀請折扣最高可返 ¥10,000；獲得講師直接資源對接與長期扶持，形成平等合作關係</div>
 </div>
 </div>
 <div class="discount-entry">
-<button type="button" class="discount-btn" onclick="openDiscountModal()">查看完整优惠与返利体系</button>
-<p class="discount-hint">进阶折扣 · 老学员邀请返利 · 新学员礼遇</p>
+<button type="button" class="discount-btn" onclick="openDiscountModal()">查看完整優惠與返利體系</button>
+<p class="discount-hint">進階折扣 · 老學員邀請返利 · 新學員禮遇</p>
 </div>
 </div>
-<!-- 预约方式 -->
+<!-- 預約方式 -->
 <div id="booking" class="content-section">
 <div class="booking-section">
-<h2>预约方式与注意事项</h2>
+<h2>預約方式與注意事項</h2>
 <div class="booking-steps">
 <div class="booking-step">
 <div class="booking-step-number">1</div>
-<h4>提前沟通</h4>
-<p>通过邮件/微信私信，告知你的需求（套餐类型、问题/目标、可用时间），讲师根据情况评估个人综合能力是否合适</p>
+<h4>提前溝通</h4>
+<p>通過郵件/微信私信，告知你的需求（套餐類型、問題/目標、可用時間），講師根據情況評估個人綜合能力是否合適</p>
 </div>
 <div class="booking-step">
 <div class="booking-step-number">2</div>
-<h4>确认预约</h4>
-<p>确认时间后支付费用，发送相关工程文件/作品片段（提前24-72小时）</p>
+<h4>確認預約</h4>
+<p>確認時間後支付費用，發送相關工程文件/作品片段（提前24-72小時）</p>
 </div>
 <div class="booking-step">
 <div class="booking-step-number">3</div>
-<h4>开始指导</h4>
-<p>通过Zoom/腾讯会议实时互动</p>
+<h4>開始指導</h4>
+<p>通過Zoom/騰訊會議實時互動</p>
 </div>
 </div>
 <div style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 12px; margin-top: 30px;">
-<h3 style="color: #fff; margin-bottom: 20px; text-align: center;">注意事项</h3>
+<h3 style="color: #fff; margin-bottom: 20px; text-align: center;">注意事項</h3>
 <ul style="list-style: none; padding: 0; margin: 0;">
-<li style="color: #d9d9d9; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">所有指导服务不包含代做工程、代发作品等行为</li>
-<li style="color: #d9d9d9; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">预约后如需改期，需提前12小时告知，否则视为一次服务已使用</li>
-<li style="color: #d9d9d9; padding: 10px 0;">长期课程需通过前期沟通审核，确认符合学习条件后再报名</li>
+<li style="color: #d9d9d9; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">所有指導服務不包含代做工程、代發作品等行爲</li>
+<li style="color: #d9d9d9; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">預約後如需改期，需提前12小時告知，否則視爲一次服務已使用</li>
+<li style="color: #d9d9d9; padding: 10px 0;">長期課程需通過前期溝通審覈，確認符合學習條件後再報名</li>
 </ul>
 </div>
 </div>
-<!-- 联系预约 -->
+<!-- 聯繫預約 -->
 <div class="contact-section">
-<h3>立即预约 · 开启你的Trance进阶之路</h3>
-<p>微信/邮件均可预约，备注"Trance指导+套餐类型"</p>
+<h3>立即預約 · 開啓你的Trance進階之路</h3>
+<p>微信/郵件均可預約，備註"Trance指導+套餐類型"</p>
 <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-<a href="weixin://" class="cta-button" title="微信号：EonunTrance">微信预约</a>
-<a href="mailto:eonun.official@gmail.com" class="cta-button">邮件预约</a>
+<a href="weixin://" class="cta-button" title="微信號：EonunTrance">微信預約</a>
+<a href="mailto:eonun.official@gmail.com" class="cta-button">郵件預約</a>
 </div>
 <p style="color: #d9d9d9; font-size: 14px; margin-top: 15px; text-align: center;">
-微信号：EonunTrance | 邮箱：eonun.official@gmail.com
+微信號：EonunTrance | 郵箱：eonun.official@gmail.com
 </p>
 </div>
 </div>
 </div>
-<!-- 优惠与返利体系弹层 -->
+<!-- 優惠與返利體系彈層 -->
 <div id="discount-modal" class="discount-modal">
 <div class="discount-modal-content">
 <div class="discount-modal-header">
-<h2>优惠与返利体系</h2>
+<h2>優惠與返利體系</h2>
 <span class="discount-close" onclick="closeDiscountModal()">&times;</span>
 </div>
 <div class="discount-modal-body">
 <div class="discount-columns">
 <div class="discount-col">
-<h3>进阶之路</h3>
+<h3>進階之路</h3>
 <ul>
-<li>结业后报名下一阶段<strong>正课 9 折</strong></li>
-<li>大师课结业特权：<strong>任意课程 5 折</strong></li>
-<li>长期扶持（中高级学员）：每年可预约 1–2 次与讲师合作，三年有效</li>
+<li>結業後報名下一階段<strong>正課 9 折</strong></li>
+<li>大師課結業特權：<strong>任意課程 5 折</strong></li>
+<li>長期扶持（中高級學員）：每年可預約 1–2 次與講師合作，三年有效</li>
 </ul>
 </div>
 <div class="discount-col">
-<h3>老学员邀请返利</h3>
+<h3>老學員邀請返利</h3>
 <ul>
-<li>返利标准：初级 <strong>¥150</strong> / 中级 <strong>¥300</strong> / 大师互荐 <strong>¥1,000</strong>（须同为大师课结业）</li>
-<li>邀请名额：初级 2 名 / 中级 5 名（返利封顶 ¥1,500）/ 大师 10 名（按 ¥1,000 或 ¥150–300 均计入名额）</li>
-<li>低层级可邀请高层级，互不越界</li>
-<li>结算方式：课程过半付半款，结业付全款；中途退出按进度折算</li>
-<li>返利有效期 12 / 24 个月，限本人使用</li>
-<li>被邀请人退费则返利作废，已使用的返利从后续款项中扣回</li>
+<li>返利標準：初級 <strong>¥150</strong> / 中級 <strong>¥300</strong> / 大師互薦 <strong>¥1,000</strong>（須同爲大師課結業）</li>
+<li>邀請名額：初級 2 名 / 中級 5 名（返利封頂 ¥1,500）/ 大師 10 名（按 ¥1,000 或 ¥150–300 均計入名額）</li>
+<li>低層級可邀請高層級，互不越界</li>
+<li>結算方式：課程過半付半款，結業付全款；中途退出按進度折算</li>
+<li>返利有效期 12 / 24 個月，限本人使用</li>
+<li>被邀請人退費則返利作廢，已使用的返利從後續款項中扣回</li>
 </ul>
 </div>
 <div class="discount-col">
-<h3>新学员礼遇</h3>
+<h3>新學員禮遇</h3>
 <ul>
-<li>结业获证后，同等享受进阶折扣等老学员权益</li>
+<li>結業獲證後，同等享受進階折扣等老學員權益</li>
 </ul>
 </div>
 </div>

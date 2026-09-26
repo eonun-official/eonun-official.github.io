@@ -1,6 +1,6 @@
 ---
-title: "Eonun | Trance 声波雕刻师 | Eonun"
-description: "欢迎来到 Eonun 领域：Trance 制作、风格设计、母带工程、美学与概念"
+title: "Eonun | Trance 聲波雕刻師 | Eonun"
+description: "歡迎來到 Eonun 領域：Trance 製作、風格設計、母帶工程、美學與概念"
 body_class: "ma0 avenir bg-near-white development is-home"
 ---
 <header class="cover-top " style="position:relative; overflow:visible; background-color: rgba(255, 255, 255, 0.2); padding-bottom: 0;">
@@ -16,7 +16,7 @@ body_class: "ma0 avenir bg-near-white development is-home"
           color: #ffffff !important;
           font-size: 1.2em !important;
           font-weight: 800 !important;
-          letter-spacing: 0.5ch !important; /* 关键：缩窄为0.5ch（原1ch的一半） */
+          letter-spacing: 0.5ch !important; /* 關鍵：縮窄爲0.5ch（原1ch的一半） */
           text-shadow: 0 0 3px rgba(255,255,255,0.6) !important;
           position: relative;
           top: -1px;
@@ -79,7 +79,7 @@ body_class: "ma0 avenir bg-near-white development is-home"
             rgba(18,18,18,0.95));
         z-index: 1;
       }
-      /* 动态柔和流光效果 */
+      /* 動態柔和流光效果 */
       @keyframes softGlow {
         0%, 100% {
           filter: brightness(1) drop-shadow(0 1px 5px rgba(255, 255, 255, 0.2));
@@ -131,14 +131,14 @@ body_class: "ma0 avenir bg-near-white development is-home"
         z-index: -1;
         pointer-events: none;
       }
-      /* 初始状态添加柔和发光效果 */
+      /* 初始狀態添加柔和發光效果 */
       #header-logo.initial {
         animation: softGlow 7.2s ease-in-out infinite;
       }
     </style>
       <div class="tc-l pv6 pv8-l ph3 ph4-ns">
         <div class="mb0 lh-title" style="max-width: 800px; margin: 0 auto; position: relative; background: transparent !important; ">
-          <img id="header-logo" src="/images/eonun2www.png" alt="Eonun | Trance 声波雕刻师" fetchpriority="high" decoding="async"
+          <img id="header-logo" src="/images/eonun2www.png" alt="Eonun | Trance 聲波雕刻師" fetchpriority="high" decoding="async"
             style="width: 100%; height: auto;
                 margin-top: 100px !important; 
                 opacity: 1 !important;
@@ -160,10 +160,10 @@ body_class: "ma0 avenir bg-near-white development is-home"
             opacity: 0;
             transform: translateX(40%);
             filter: blur(12px);
-          ">一个年轻人奉献给了Trance艺术的部分人生</p>
+          ">一個年輕人奉獻給了Trance藝術的部分人生</p>
         </div>
         <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt4 mb4">
-          欢迎来到 Eonun 领域：Trance 制作、风格设计、母带工程、美学与概念
+          歡迎來到 Eonun 領域：Trance 製作、風格設計、母帶工程、美學與概念
         </h2>
       </div>
     </div>
@@ -176,19 +176,19 @@ const headerVideo = document.getElementById('header-video');
 const videoFallback = document.getElementById('video-fallback');
 let lastScrollTop = 0;
 let isScrollDown = false;
-// 视频错误处理
+// 視頻錯誤處理
 if (headerVideo) {
   headerVideo.addEventListener('error', function() {
-    console.log('视频加载失败，显示备用背景');
+    console.log('視頻加載失敗，顯示備用背景');
     if (videoFallback) {
       videoFallback.style.display = 'block';
     }
   });
-  // 检查视频是否能正常播放
+  // 檢查視頻是否能正常播放
   headerVideo.addEventListener('loadeddata', function() {
-    console.log('视频加载成功');
+    console.log('視頻加載成功');
   });
-  // 页面其它内容全部加载完后，再后台加载视频：加载到哪儿播到哪儿，互不拖累
+  // 頁面其它內容全部加載完後，再後臺加載視頻：加載到哪兒播到哪兒，互不拖累
   window.addEventListener('load', function() {
     setTimeout(function() {
       if (headerVideo && !headerVideo.getAttribute('src')) {
@@ -196,10 +196,10 @@ if (headerVideo) {
         headerVideo.load();
         var pr = headerVideo.play();
         if (pr && pr.catch) { pr.catch(function(){}); }
-        // 视频开始加载后才计时：8秒还缓冲不出画面就换备用渐变背景
+        // 視頻開始加載後才計時：8秒還緩衝不出畫面就換備用漸變背景
         setTimeout(function() {
           if (headerVideo.readyState < 2) {
-            console.log('视频加载超时，显示备用背景');
+            console.log('視頻加載超時，顯示備用背景');
             if (videoFallback) { videoFallback.style.display = 'block'; }
           }
         }, 8000);
@@ -207,7 +207,7 @@ if (headerVideo) {
     }, 50);
   });
 }
-// 初始状态添加柔和发光效果
+// 初始狀態添加柔和發光效果
 if (headerLogo) {
   headerLogo.classList.add('initial');
 }
@@ -233,7 +233,7 @@ window.addEventListener('scroll', function() {
   const parallaxOffset = scrollDistance * 0.6; 
   const maxOffset = 250; 
   const finalOffset = Math.min(parallaxOffset, maxOffset);
-  // 当开始滚动时，移除初始动画类，让滚动效果接管
+  // 當開始滾動時，移除初始動畫類，讓滾動效果接管
   if (headerLogo && scrollDistance > 10) {
     headerLogo.classList.remove('initial');
   }
@@ -254,7 +254,7 @@ window.addEventListener('scroll', function() {
     if (scrollDistance === 0) {
       scrollNav.style.top = '-20px';
       isScrollDown = false;
-      // 回到顶部时重新添加初始动画类
+      // 回到頂部時重新添加初始動畫類
       if (headerLogo) {
         headerLogo.classList.add('initial');
       }
@@ -276,10 +276,10 @@ window.addEventListener('scroll', function() {
   }
   lastScrollTop = scrollDistance;
 });
-// 加载标语文件
-fetch('/data/trance_mixing_slogans.txt')
+// 加載標語文件
+fetch('/data/trance_mixing_slogans_tw.txt')
   .then(response => {
-    if (!response.ok) throw new Error('标语文件加载失败: ' + response.status);
+    if (!response.ok) throw new Error('標語文件加載失敗: ' + response.status);
     return response.text();
   })
   .then(text => {
@@ -292,9 +292,9 @@ fetch('/data/trance_mixing_slogans.txt')
     }
   })
   .catch(error => {
-    console.error('标语文件加载失败，使用默认标语:', error);
-    // 使用默认标语作为兜底
-    if (indexSlogan) indexSlogan.textContent = '一个年轻人奉献给了Trance艺术的部分人生';
+    console.error('標語文件加載失敗，使用默認標語:', error);
+    // 使用默認標語作爲兜底
+    if (indexSlogan) indexSlogan.textContent = '一個年輕人奉獻給了Trance藝術的部分人生';
   });
   document.addEventListener('DOMContentLoaded', function() {
     const aboutHeader = document.querySelector('header.about-header');
@@ -362,56 +362,56 @@ fetch('/data/trance_mixing_slogans.txt')
 </style>
       <main class="pb7" role="main" style="position: relative; z-index: 2;">
         <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray">
-    <!-- 无需额外标题，logo+随机标语已占顶部，直接上核心内容 -->
-<h2 id="用声波定义-trance-的质感边界">用声波，定义 Trance 的质感边界</h2>
+    <!-- 無需額外標題，logo+隨機標語已佔頂部，直接上核心內容 -->
+<h2 id="用聲波定義-trance-的質感邊界">用聲波，定義 Trance 的質感邊界</h2>
 <div style="max-width: 900px; margin: 40px auto; color: #ffffff; line-height: 1.8; font-size: 18px;">
-  专注于现代 Uplifting / Tech Trance 制作与母带工程，从卧室混音到国际平台发行，用<span style="font-weight: bold;">前沿的音乐审美理念</span>与<span style="font-weight: bold;">独家完备的理论体系</span>，让每首作品都具备国际级质感。
+  專注於現代 Uplifting / Tech Trance 製作與母帶工程，從臥室混音到國際平臺發行，用<span style="font-weight: bold;">前沿的音樂審美理念</span>與<span style="font-weight: bold;">獨家完備的理論體系</span>，讓每首作品都具備國際級質感。
 </div>
 <div style="height: 2px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
 <h2 id="核心身份">核心身份</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 60px 0;">
   <div style="background: rgba(255,255,255,0.05); padding: 25px 30px; border-radius: 8px; border-left: 3px solid #f2f2f2; min-width: 200px; text-align: center;">
-    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">Trance 制作人</h3>
-    <p style="color: #d9d9d9; margin: 0; font-size: 14px;">Uplifting / Tech Trance 为主</p>
+    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">Trance 製作人</h3>
+    <p style="color: #d9d9d9; margin: 0; font-size: 14px;">Uplifting / Tech Trance 爲主</p>
   </div>
   <div style="background: rgba(255,255,255,0.05); padding: 25px 30px; border-radius: 8px; border-left: 3px solid #f2f2f2; min-width: 200px; text-align: center;">
-    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">母带工程师</h3>
-    <p style="color: #d9d9d9; margin: 0; font-size: 14px;">上百首榜单Trance作品专业母带处理</p>
+    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">母帶工程師</h3>
+    <p style="color: #d9d9d9; margin: 0; font-size: 14px;">上百首榜單Trance作品專業母帶處理</p>
   </div>
   <div style="background: rgba(255,255,255,0.05); padding: 25px 30px; border-radius: 8px; border-left: 3px solid #e0e0e0; min-width: 200px; text-align: center;">
-    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">厂牌 A&R</h3>
-    <p style="color: #d9d9d9; margin: 0; font-size: 14px;">Cooperation Trance 联合创始人</p>
+    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">廠牌 A&R</h3>
+    <p style="color: #d9d9d9; margin: 0; font-size: 14px;">Cooperation Trance 聯合創始人</p>
   </div>
   <div style="background: rgba(255,255,255,0.05); padding: 25px 30px; border-radius: 8px; border-left: 3px solid #f2f2f2; min-width: 200px; text-align: center;">
-    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">厂牌 A&R</h3>
-    <p style="color: #d9d9d9; margin: 0; font-size: 14px;">Polar Impact 团队策划</p>
+    <h3 style="color: #fff; margin: 0 0 10px 0; font-size: 20px;">廠牌 A&R</h3>
+    <p style="color: #d9d9d9; margin: 0; font-size: 14px;">Polar Impact 團隊策劃</p>
   </div>
 </div>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
-<h2 id="国内外认可--合作背书">国内外认可 · 合作背书</h2>
+<h2 id="國內外認可--合作背書">國內外認可 · 合作背書</h2>
 <div style="max-width: 1200px; margin: 60px auto;">
   <div style="display: flex; gap: 40px; justify-content: center; align-items: stretch; flex-wrap: wrap;">
     <div style="flex: 1; min-width: 300px; max-width: 300px;">
-      <h3 style="color: #fff; font-size: 18px; text-align: center; margin-bottom: 20px;">独家报道</h3>
+      <h3 style="color: #fff; font-size: 18px; text-align: center; margin-bottom: 20px;">獨家報道</h3>
       <div style="position: relative; width: 100%; height: 300px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.2);">
         <div id="slider" style="position: relative; width: 100%; height: 100%;">
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <img src="/images/1.webp" loading="lazy" decoding="async" alt="独家报道1" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+            <img src="/images/1.webp" loading="lazy" decoding="async" alt="獨家報道1" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
           </a>
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <img src="/images/2.webp" loading="lazy" decoding="async" alt="独家报道2" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+            <img src="/images/2.webp" loading="lazy" decoding="async" alt="獨家報道2" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
           </a>
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <img src="/images/3.webp" loading="lazy" decoding="async" alt="独家报道3" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+            <img src="/images/3.webp" loading="lazy" decoding="async" alt="獨家報道3" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
           </a>
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <img src="/images/4.webp" loading="lazy" decoding="async" alt="独家报道4" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+            <img src="/images/4.webp" loading="lazy" decoding="async" alt="獨家報道4" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
           </a>
         </div>
       </div>
     </div>
     <div style="flex: 1.5; min-width: 450px; max-width: 600px;">
-      <h3 style="color: #fff; font-size: 18px; text-align: center; margin-bottom: 20px;">AFTERHOURS 国际电台特邀</h3>
+      <h3 style="color: #fff; font-size: 18px; text-align: center; margin-bottom: 20px;">AFTERHOURS 國際電臺特邀</h3>
       <div style="width: 100%; height: 300px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.2);">
         <div style="display: flex; height: 100%; gap: 0; margin: 0; padding: 0; align-items: stretch;">
           <img src="/images/Takeover1.webp" loading="lazy" decoding="async" alt="Takeover 1" style="height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease;">
@@ -449,7 +449,7 @@ fetch('/data/trance_mixing_slogans.txt')
   }
 </style>
 <div style="max-width: 900px; margin: 60px auto; text-align: center;">
-  <h3 style="color: #fff; font-size: 22px; margin-bottom: 30px;">与世界级 Trance 力量并肩</h3>
+  <h3 style="color: #fff; font-size: 22px; margin-bottom: 30px;">與世界級 Trance 力量並肩</h3>
   <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; align-items: center;">
     <span style="color: #d9d9d9; font-size: 16px;">Darren Porter (UK)</span>
     <span style="color: #d9d9d9;">•</span>
@@ -457,7 +457,7 @@ fetch('/data/trance_mixing_slogans.txt')
     <span style="color: #d9d9d9;">•</span>
     <span style="color: #d9d9d9; font-size: 16px;">RIIR Music (UK)</span>
   </div>
-  <p style="color: #d9d9d9; margin-top: 20px; font-size: 14px; line-height: 1.6;">作品以及艺人采访入选厂牌专题报道，第一个用实力征服国际厂牌开启独家专访的中国Trance制作人。<br><br>与此同时也是首个被厂牌邀请在该国际电台上参与活动的国人</p>
+  <p style="color: #d9d9d9; margin-top: 20px; font-size: 14px; line-height: 1.6;">作品以及藝人採訪入選廠牌專題報道，第一個用實力征服國際廠牌開啓獨家專訪的中國Trance製作人。<br><br>與此同時也是首個被廠牌邀請在該國際電臺上參與活動的國人</p>
 </div>
 <style>
   a[href*="r2rmusic.com"] div:hover img {
@@ -467,7 +467,7 @@ fetch('/data/trance_mixing_slogans.txt')
     border-color: rgba(255, 255, 255, 0.6);
     box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
   }
-  /* 区块小标题固定纯白，不随全站调色变色 */
+  /* 區塊小標題固定純白，不隨全站調色變色 */
   article h2:not(.fw1) {
     background: none !important;
     -webkit-text-fill-color: #ffffff !important;
@@ -475,26 +475,26 @@ fetch('/data/trance_mixing_slogans.txt')
   }
 </style>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
-<h2 id="核心服务">核心服务</h2>
+<h2 id="核心服務">核心服務</h2>
 <div style="max-width: 900px; margin: 60px auto;">
-  <h3 style="color: #fff; font-size: 22px; text-align: center; margin-bottom: 40px;">从 Demo 到发行，全链路支持</h3>
+  <h3 style="color: #fff; font-size: 22px; text-align: center; margin-bottom: 40px;">從 Demo 到發行，全鏈路支持</h3>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
     <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); padding: 30px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
-      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">Trance 音乐工程</h4>
-      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">机能、史诗与氛围感，解决频域冲突、动态失衡、声场扁平，打造具备行业一流的混音，突出 Trance 核心张力。</p>
+      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">Trance 音樂工程</h4>
+      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">機能、史詩與氛圍感，解決頻域衝突、動態失衡、聲場扁平，打造具備行業一流的混音，突出 Trance 核心張力。</p>
     </div>
     <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); padding: 30px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
-      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">专业母带处理</h4>
-      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">提升响度、优化频谱平衡、增强总线粘合度，适配各大流媒体平台（Spotify/Beatport）。</p>
+      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">專業母帶處理</h4>
+      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">提升響度、優化頻譜平衡、增強總線粘合度，適配各大流媒體平臺（Spotify/Beatport）。</p>
     </div>
     <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)); padding: 30px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
-      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">教学与发行指导</h4>
-      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">通过一对四或一对一指导助力优质 Trance 作品走向全球市场。坚持无圈子化原则，确保艺人隐私全程提供单线服务与信息保密。</p>
+      <h4 style="color: #fff; margin: 0 0 15px 0; font-size: 18px;">教學與發行指導</h4>
+      <p style="color: #d9d9d9; margin: 0; font-size: 14px; line-height: 1.6;">通過一對四或一對一指導助力優質 Trance 作品走向全球市場。堅持無圈子化原則，確保藝人隱私全程提供單線服務與信息保密。</p>
     </div>
   </div>
 </div>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
-<h2 id="近期作品--声波现场">近期作品 · 声波现场</h2>
+<h2 id="近期作品--聲波現場">近期作品 · 聲波現場</h2>
 <div style="max-width: 1200px; margin: 60px auto;">
   <h3 style="color: #fff; font-size: 22px; text-align: center; margin-bottom: 40px;">Listen to the Sound</h3>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; justify-items: center;">
@@ -504,17 +504,17 @@ fetch('/data/trance_mixing_slogans.txt')
     </div>
     <div style="width: 100%;">
       <iframe src="https://music.163.com/outchain/player?type=0&id=17739007625&auto=0&height=430" loading="lazy" width="100%" height="352" frameborder="no" marginwidth="0" marginheight="0" style="border-radius:12px"></iframe>
-      <p style="color: #d9d9d9; text-align: center; margin-top: 15px; font-size: 14px;">更多作品 → <a href="https://music.163.com/playlist?id=17739007625" target="_blank" style="color: #ffffff; text-decoration: none;">网易云音乐</a></p>
+      <p style="color: #d9d9d9; text-align: center; margin-top: 15px; font-size: 14px;">更多作品 → <a href="https://music.163.com/playlist?id=17739007625" target="_blank" style="color: #ffffff; text-decoration: none;">網易雲音樂</a></p>
     </div>
   </div>
 </div>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
-<h2 id="联系我--共创-trance-能量">联系我 · 共创 Trance 能量</h2>
+<h2 id="聯繫我--共創-trance-能量">聯繫我 · 共創 Trance 能量</h2>
 <div style="max-width: 600px; margin: 60px auto; background: rgba(255,255,255,0.03); padding: 40px; border-radius: 8px; text-align: center;">
-  <h3 style="color: #fff; font-size: 22px; margin: 0 0 20px 0;">混音需求 · 合作咨询 · DJ Booking</h3>
-  <p style="color: #d9d9d9; margin: 0 0 30px 0; font-size: 14px;">欢迎 Trance 同好、制作人、活动方洽谈合作，让我们一起打造有力量的声波</p>
+  <h3 style="color: #fff; font-size: 22px; margin: 0 0 20px 0;">混音需求 · 合作諮詢 · DJ Booking</h3>
+  <p style="color: #d9d9d9; margin: 0 0 30px 0; font-size: 14px;">歡迎 Trance 同好、製作人、活動方洽談合作，讓我們一起打造有力量的聲波</p>
   <a href="contact/index.html" style="background: #f2f2f2; color: #0a0a0a; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 16px; display: inline-block;">
-    立即咨询
+    立即諮詢
   </a>
 </div>
   </article>
