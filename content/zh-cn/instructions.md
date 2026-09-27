@@ -179,6 +179,17 @@ const headerVideo = document.getElementById('header-video');
 const videoFallback = document.getElementById('video-fallback');
 let lastScrollTop = 0;
 let isScrollDown = false;
+// 移动端：标语降为 16px（内联 24px!important 只有 JS 内联才能覆盖）；回桌面恢复 24px
+function applyMobileSloganSize() {
+  if (!indexSlogan) return;
+  if (window.innerWidth <= 768) {
+    indexSlogan.style.setProperty('font-size', '16px', 'important');
+  } else {
+    indexSlogan.style.setProperty('font-size', '24px', 'important');
+  }
+}
+applyMobileSloganSize();
+window.addEventListener('resize', applyMobileSloganSize);
 // 视频错误处理
 if (headerVideo) {
   headerVideo.addEventListener('error', function() {
@@ -778,3 +789,18 @@ event.target.classList.add('active');
   else document.addEventListener('DOMContentLoaded', bind);
 })();
 </script>
+
+<style>
+  /* ===== 移动端字号自适应（仅 ≤768px，桌面零影响；下限=小米14 现值，大屏机等比放大）===== */
+  @media (max-width: 768px) {
+    html { font-size: clamp(16px, 4.1vw, 19.5px); }
+    #index-slogan { text-align: center !important; }
+    /* 页内固定 px 类字号 → 随屏宽等比缩放（下限=现值） */
+    .course-benefit { font-size: clamp(14px, 3.6vw, 17px); }
+    .discount-btn { font-size: clamp(16px, 4.1vw, 20px); }
+    .discount-hint { font-size: clamp(13px, 3.3vw, 16px); }
+    .discount-modal-header h2 { font-size: clamp(26px, 6.6vw, 32px); }
+    .discount-col h3 { font-size: clamp(19px, 4.9vw, 24px); }
+    .discount-col li { font-size: clamp(14px, 3.6vw, 17px); }
+  }
+</style>

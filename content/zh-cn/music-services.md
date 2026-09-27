@@ -317,6 +317,17 @@ fetch('/data/trance_mixing_slogans.txt')
 const scrollNav = document.getElementById('scroll-nav');
 let lastScrollTop = 0;
 let isScrollDown = false;
+// 移动端：标语降为 16px（内联 24px!important 只有 JS 内联才能覆盖）；回桌面恢复 24px
+function applyMobileSloganSize() {
+  if (!indexSlogan) return;
+  if (window.innerWidth <= 768) {
+    indexSlogan.style.setProperty('font-size', '16px', 'important');
+  } else {
+    indexSlogan.style.setProperty('font-size', '24px', 'important');
+  }
+}
+applyMobileSloganSize();
+window.addEventListener('resize', applyMobileSloganSize);
 window.addEventListener('mousemove', function(e) {
   const scrollDistance = window.scrollY;
   if (scrollDistance > 0 && isScrollDown) {
@@ -1057,3 +1068,34 @@ window.onclick = function(event) {
 </div>
   </div>
 </footer>
+
+<style>
+  /* ===== 移动端字号自适应（仅 ≤768px，桌面零影响；下限=小米14 现值，大屏机等比放大）===== */
+  @media (max-width: 768px) {
+    html { font-size: clamp(16px, 4.1vw, 19.5px); }
+    #index-slogan { text-align: center !important; }
+    /* 页内固定 px 类字号 → 随屏宽等比缩放（下限=现值） */
+    .hero-title { font-size: clamp(32px, 8.2vw, 40px); }
+    .product-content h3 { font-size: clamp(26px, 6.7vw, 33px); }
+    .product-description { font-size: clamp(15px, 3.85vw, 19px); }
+    .level-name { font-size: clamp(16px, 4.1vw, 20px); }
+    .level-price { font-size: clamp(22px, 5.6vw, 28px); }
+    .level-desc { font-size: clamp(13px, 3.3vw, 16px); }
+    .notice-text { font-size: clamp(13px, 3.3vw, 16px); }
+    .detail-text { font-size: clamp(14px, 3.6vw, 17px); }
+    .price-tag { font-size: clamp(28px, 7.2vw, 35px); }
+    .buy-button { font-size: clamp(14px, 3.6vw, 17px); }
+    .process-content h2 { font-size: clamp(36px, 9.2vw, 45px); }
+    .step-number { font-size: clamp(24px, 6.2vw, 30px); }
+    .step-content h3 { font-size: clamp(18px, 4.6vw, 22px); }
+    .step-content p { font-size: clamp(14px, 3.6vw, 17px); }
+    .service-modal-header h2 { font-size: clamp(20px, 5.1vw, 25px); }
+    .service-modal-body h3 { font-size: clamp(18px, 4.6vw, 22px); }
+    .service-modal-body p { font-size: clamp(14px, 3.6vw, 17px); }
+    .service-level-item h4 { font-size: clamp(18px, 4.6vw, 22px); }
+    .service-level-item p { font-size: clamp(15px, 3.85vw, 19px); }
+    .price-label { font-size: clamp(16px, 4.1vw, 20px); }
+    .price-value { font-size: clamp(20px, 5.1vw, 25px); }
+    .modal-cta-button { font-size: clamp(18px, 4.6vw, 22px); }
+  }
+</style>

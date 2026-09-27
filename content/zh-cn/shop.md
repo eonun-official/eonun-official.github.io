@@ -337,6 +337,17 @@ fetch('/data/trance_mixing_slogans.txt')
 const scrollNav = document.getElementById('scroll-nav');
 let lastScrollTop = 0;
 let isScrollDown = false;
+// 移动端：标语降为 16px（内联 24px!important 只有 JS 内联才能覆盖）；回桌面恢复 24px
+function applyMobileSloganSize() {
+  if (!indexSlogan) return;
+  if (window.innerWidth <= 768) {
+    indexSlogan.style.setProperty('font-size', '16px', 'important');
+  } else {
+    indexSlogan.style.setProperty('font-size', '24px', 'important');
+  }
+}
+applyMobileSloganSize();
+window.addEventListener('resize', applyMobileSloganSize);
 window.addEventListener('mousemove', function(e) {
   const scrollDistance = window.scrollY;
   if (scrollDistance > 0 && isScrollDown) {
@@ -383,3 +394,11 @@ window.addEventListener('scroll', function() {
 </div>
   </div>
 </footer>
+
+<style>
+  /* ===== 移动端字号自适应（仅 ≤768px，桌面零影响；下限=小米14 现值，大屏机等比放大）===== */
+  @media (max-width: 768px) {
+    html { font-size: clamp(16px, 4.1vw, 19.5px); }
+    #index-slogan { text-align: center !important; }
+  }
+</style>
