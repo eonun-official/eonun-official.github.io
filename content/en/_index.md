@@ -1,6 +1,6 @@
 ---
-title: "Eonun | Trance 声波雕刻师 | Eonun"
-description: "欢迎来到 Eonun 领域：Trance 制作、风格设计、母带工程、美学与概念"
+title: "Eonun | Trance Sound Sculptor | Eonun"
+description: "Welcome to the world of Eonun: Trance production, style design, mastering, aesthetics and concept"
 body_class: "ma0 avenir bg-near-white development is-home"
 ---
 <header class="cover-top " style="position:relative; overflow:visible; background-color: rgba(255, 255, 255, 0.2); padding-bottom: 0;">
@@ -139,7 +139,7 @@ body_class: "ma0 avenir bg-near-white development is-home"
     </style>
       <div class="tc-l pv6 pv8-l ph3 ph4-ns">
         <div class="mb0 lh-title" style="max-width: 800px; margin: 0 auto; position: relative; background: transparent !important; ">
-          <img id="header-logo" src="/images/eonun2www.png" alt="Eonun | Trance 声波雕刻师" fetchpriority="high" decoding="async"
+          <img id="header-logo" src="/images/eonun2www.png" alt="Eonun | Trance Sound Sculptor" fetchpriority="high" decoding="async"
             style="width: 100%; height: auto;
                 margin-top: 100px !important; 
                 opacity: 1 !important;
@@ -161,10 +161,10 @@ body_class: "ma0 avenir bg-near-white development is-home"
             opacity: 0;
             transform: translateX(40%);
             filter: blur(12px);
-          ">一个年轻人奉献给了Trance艺术的部分人生</p>
+          ">Part of a young life, devoted to the art of Trance</p>
         </div>
         <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt4 mb4">
-          欢迎来到 Eonun 领域：Trance 制作、风格设计、母带工程、美学与概念
+          Welcome to the world of Eonun: Trance production, style design, mastering, aesthetics and concept
         </h2>
       </div>
     </div>
@@ -191,14 +191,14 @@ window.addEventListener('resize', applyMobileSloganSize);
 // 视频错误处理
 if (headerVideo) {
   headerVideo.addEventListener('error', function() {
-    console.log('视频加载失败，显示备用背景');
+    console.log('Video failed to load, showing fallback background');
     if (videoFallback) {
       videoFallback.style.display = 'block';
     }
   });
   // 检查视频是否能正常播放
   headerVideo.addEventListener('loadeddata', function() {
-    console.log('视频加载成功');
+    console.log('Video loaded');
   });
   // 页面其它内容全部加载完后，再后台加载视频：加载到哪儿播到哪儿，互不拖累
   window.addEventListener('load', function() {
@@ -211,7 +211,7 @@ if (headerVideo) {
         // 视频开始加载后才计时：8秒还缓冲不出画面就换备用渐变背景
         setTimeout(function() {
           if (headerVideo.readyState < 2) {
-            console.log('视频加载超时，显示备用背景');
+            console.log('Video load timed out, showing fallback background');
             if (videoFallback) { videoFallback.style.display = 'block'; }
           }
         }, 8000);
@@ -291,7 +291,7 @@ window.addEventListener('scroll', function() {
 // 加载标语文件
 fetch('/data/trance_mixing_slogans.txt')
   .then(response => {
-    if (!response.ok) throw new Error('标语文件加载失败: ' + response.status);
+    if (!response.ok) throw new Error('Slogan file failed to load: ' + response.status);
     return response.text();
   })
   .then(text => {
@@ -304,9 +304,9 @@ fetch('/data/trance_mixing_slogans.txt')
     }
   })
   .catch(error => {
-    console.error('标语文件加载失败，使用默认标语:', error);
+    console.error('Slogan file failed to load, using default slogan:', error);
     // 使用默认标语作为兜底
-    if (indexSlogan) indexSlogan.textContent = '一个年轻人奉献给了Trance艺术的部分人生';
+    if (indexSlogan) indexSlogan.textContent = 'Part of a young life, devoted to the art of Trance';
   });
   document.addEventListener('DOMContentLoaded', function() {
     const aboutHeader = document.querySelector('header.about-header');
@@ -375,54 +375,54 @@ fetch('/data/trance_mixing_slogans.txt')
       <main class="pb7" role="main" style="position: relative; z-index: 2;">
         <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray">
     <!-- 无需额外标题，logo+随机标语已占顶部，直接上核心内容 -->
-<h2 id="用声波定义-trance-的质感边界">用声波，定义 Trance 质感边界</h2>
+<h2 id="defining-trances-textural-boundaries-through-sound">Defining the textural boundaries of Trance, through sound</h2>
 <div style="max-width: 900px; margin: 40px auto; color: #ffffff; line-height: 1.8; font-size: 18px;">
-  专注于现代 Uplifting / Tech Trance 制作与母带工程，从卧室混音到国际平台发行，用<span style="font-weight: bold;">前沿的音乐审美理念</span>与<span style="font-weight: bold;">独家完备的理论体系</span>，让每首作品都具备国际级质感。
+  Specializing in modern Uplifting / Tech Trance production and mastering — from bedroom mixes to releases on international platforms. With <span style="font-weight: bold;">a forward-thinking musical aesthetic</span> and <span style="font-weight: bold;">a complete, self-developed theoretical system</span>, every track is finished to a standard that travels.
 </div>
 <div style="height: 2px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
-<h2 id="核心身份">核心身份</h2>
+<h2 id="core-identity">Core Identity</h2>
 <div class="identity-strip">
   <div class="identity-item">
-    <h3>Trance 制作人</h3>
-    <p>Uplifting / Tech Trance 为主</p>
+    <h3>Trance Producer</h3>
+    <p>Focused on Uplifting / Tech Trance</p>
   </div>
   <div class="identity-item">
-    <h3>母带工程师</h3>
-    <p>上百首榜单Trance作品专业母带处理</p>
+    <h3>Mastering Engineer</h3>
+    <p>Professional mastering for 100+ Trance releases that reached the charts</p>
   </div>
   <div class="identity-item">
-    <h3>联合创始人</h3>
-    <p>兼首任 Cooperation Trance A&amp;R</p>
+    <h3>Co-Founder</h3>
+    <p>&amp; the first A&amp;R of Cooperation Trance</p>
   </div>
   <div class="identity-item">
-    <h3>厂牌 A&amp;R</h3>
-    <p>Polar Impact 团队策划</p>
+    <h3>Label A&amp;R</h3>
+    <p>Programme curator at Polar Impact</p>
   </div>
 </div>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
-<h2 id="国内外认可--合作背书">国内外认可 · 合作背书</h2>
+<h2 id="recognition--endorsements">Recognition · Endorsements</h2>
 <div class="cred-wrap">
     <div class="cred-col">
-      <h3 class="cred-title">独家报道</h3>
+      <h3 class="cred-title">Exclusive Feature</h3>
       <div class="cred-frame">
         <div id="slider" style="position: relative; width: 100%; height: 100%;">
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <img src="/images/1.webp" loading="lazy" decoding="async" alt="独家报道1" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+            <img src="/images/1.webp" loading="lazy" decoding="async" alt="Exclusive feature 1" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
           </a>
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <img src="/images/2.webp" loading="lazy" decoding="async" alt="独家报道2" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+            <img src="/images/2.webp" loading="lazy" decoding="async" alt="Exclusive feature 2" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
           </a>
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <img src="/images/3.webp" loading="lazy" decoding="async" alt="独家报道3" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+            <img src="/images/3.webp" loading="lazy" decoding="async" alt="Exclusive feature 3" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
           </a>
           <a href="https://www.r2rmusic.com/post/artist-feature-eonun" target="_blank" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease-in-out;">
-            <img src="/images/4.webp" loading="lazy" decoding="async" alt="独家报道4" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+            <img src="/images/4.webp" loading="lazy" decoding="async" alt="Exclusive feature 4" style="width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
           </a>
         </div>
       </div>
     </div>
     <div class="cred-col cred-col-wide">
-      <h3 class="cred-title">AFTERHOURS 国际电台特邀</h3>
+      <h3 class="cred-title">Guest Takeover — AFTERHOURS Radio</h3>
       <div class="cred-frame cred-frame-wide">
         <div class="takeover-strip">
           <img src="/images/Takeover1.webp" loading="lazy" decoding="async" alt="Takeover 1" class="takeover-img">
@@ -531,11 +531,11 @@ fetch('/data/trance_mixing_slogans.txt')
   }
 </style>
 <div class="collab-block">
-  <h3 class="collab-title">与世界级 Trance 力量并肩</h3>
+  <h3 class="collab-title">Standing alongside leading names in Trance</h3>
   <div class="collab-strip">
     <span class="collab-item">RIIR Music <em>(UK)</em></span>
   </div>
-  <p class="collab-desc">长期与海外 Trance 厂牌及媒体保持合作：作品与艺人专访入选 RIIR Music 专题报道，并受邀参与 AFTERHOURS 国际电台活动。</p>
+  <p class="collab-desc">Long-term collaboration with overseas Trance labels and media: releases and an artist interview featured in RIIR Music coverage, plus a guest appearance on the AFTERHOURS international radio show.</p>
 </div>
 <style>
   a[href*="r2rmusic.com"] div:hover img {
@@ -590,32 +590,32 @@ fetch('/data/trance_mixing_slogans.txt')
   }
 </style>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
-<h2 id="核心服务">核心服务</h2>
+<h2 id="core-services">Core Services</h2>
 <div class="service-wrap">
-  <h3 class="block-subtitle">从 Demo 到发行，全链路支持</h3>
+  <h3 class="block-subtitle">From demo to release, every step covered</h3>
   <div class="service-grid">
     <div class="service-card">
-      <h4>Trance 音乐工程</h4>
-      <p>机能、史诗与氛围感，解决频域冲突、动态失衡、声场扁平，打造具备行业一流的混音，突出 Trance 核心张力。</p>
+      <h4>Trance Music Production</h4>
+      <p>Precision, epic scale and atmosphere. Resolving frequency clashes, dynamic imbalance and flat soundstages — mixes built to put the core tension of Trance front and center.</p>
     </div>
     <div class="service-card">
-      <h4>专业母带处理</h4>
-      <p>提升响度、优化频谱平衡、增强总线粘合度，适配各大流媒体平台（Spotify/Beatport）。</p>
+      <h4>Professional Mastering</h4>
+      <p>Loudness, spectral balance and bus cohesion — delivered to the playback specs of Spotify, Beatport and other major platforms.</p>
     </div>
     <div class="service-card">
-      <h4>教学与发行指导</h4>
-      <p>通过一对四或一对一指导助力优质 Trance 作品走向全球市场。坚持无圈子化原则，确保艺人隐私全程提供单线服务与信息保密。</p>
+      <h4>Coaching &amp; Release Guidance</h4>
+      <p>Small-group (up to four) or one-on-one coaching that helps strong Trance tracks reach a global audience. A strict no-clique policy: single-point service and full confidentiality throughout.</p>
     </div>
   </div>
 </div>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
-<h2 id="近期作品--声波现场">近期作品 · 声波现场</h2>
+<h2 id="recent-works--sonic-stage">Recent Works · Sonic Stage</h2>
 <div class="works-wrap">
   <h3 class="block-subtitle">Listen to the Sound</h3>
   <div class="works-grid">
     <div style="width: 100%;">
       <iframe data-testid="embed-iframe" class="work-embed work-embed--spotify" src="https://open.spotify.com/embed/artist/7ok2w55yMiwbUvrlVn9mBW?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <p class="work-note">更多作品 → <a href="https://open.spotify.com/artist/7ok2w55yMiwbUvrlVn9mBW" target="_blank" style="color: #ffffff; text-decoration: none;">Spotify</a></p>
+      <p class="work-note">More on <a href="https://open.spotify.com/artist/7ok2w55yMiwbUvrlVn9mBW" target="_blank" style="color: #ffffff; text-decoration: none;">Spotify</a></p>
     </div>
     <div style="width: 100%;">
       <div class="work-163-crop">
@@ -630,16 +630,16 @@ fetch('/data/trance_mixing_slogans.txt')
         }
       })();
       </script>
-      <p class="work-note">更多作品 → <a href="https://music.163.com/playlist?id=17739007625" target="_blank" style="color: #ffffff; text-decoration: none;">网易云音乐</a></p>
+      <p class="work-note">More on <a href="https://music.163.com/playlist?id=17739007625" target="_blank" style="color: #ffffff; text-decoration: none;">网易云音乐</a></p>
     </div>
   </div>
 </div>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
-<h2 id="联系我--共创-trance-能量">联系我 · 共创 Trance 能量</h2>
+<h2 id="contact--lets-create-trance-energy">Contact · Let&rsquo;s Create Trance Energy</h2>
 <div class="contact-cta">
-  <h3>混音需求 · 合作咨询 · DJ Booking</h3>
-  <p>欢迎 Trance 同好、制作人、活动方洽谈合作，让我们一起打造有力量的声波</p>
-  <a class="cta-pill" href="/contact/index.html">立即咨询</a>
+  <h3>Mixing Needs · Collaboration Inquiries · DJ Booking</h3>
+  <p>Trance fans, producers and event organizers are all welcome — let&rsquo;s build something powerful together</p>
+  <a class="cta-pill" href="/contact/index.html">Get in Touch</a>
 </div>
   </article>
       </main>
