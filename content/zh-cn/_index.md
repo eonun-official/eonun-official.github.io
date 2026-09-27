@@ -433,7 +433,8 @@ fetch('/data/trance_mixing_slogans.txt')
   .service-card p { color: #999999; font-size: 13px; line-height: 1.75; margin: 0; }
   .works-wrap { max-width: 1200px; margin: 60px auto; }
   .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-  .work-embed { width: 100%; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12); display: block; background: rgba(255,255,255,0.02); }
+  .work-card { border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 8px; background: rgba(255, 255, 255, 0.02); }
+  .work-embed { width: 100%; border: none; border-radius: 6px; display: block; background: transparent; }
   .work-embed--spotify { height: 430px; }
   .work-embed--163 { height: 430px; }
   .work-note { color: #999999; text-align: center; margin-top: 14px; font-size: 13px; }
@@ -586,11 +587,15 @@ fetch('/data/trance_mixing_slogans.txt')
   <h3 class="block-subtitle">Listen to the Sound</h3>
   <div class="works-grid">
     <div style="width: 100%;">
-      <iframe data-testid="embed-iframe" class="work-embed work-embed--spotify" src="https://open.spotify.com/embed/artist/7ok2w55yMiwbUvrlVn9mBW?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="work-card">
+        <iframe data-testid="embed-iframe" class="work-embed work-embed--spotify" src="https://open.spotify.com/embed/artist/7ok2w55yMiwbUvrlVn9mBW?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
       <p class="work-note">更多作品 → <a href="https://open.spotify.com/artist/7ok2w55yMiwbUvrlVn9mBW" target="_blank" style="color: #ffffff; text-decoration: none;">Spotify</a></p>
     </div>
     <div style="width: 100%;">
-      <iframe id="netease-player" class="work-embed work-embed--163" src="https://music.163.com/outchain/player?type=0&id=17739007625&auto=0&height=430" loading="lazy" frameborder="no" marginwidth="0" marginheight="0"></iframe>
+      <div class="work-card">
+        <iframe id="netease-player" class="work-embed work-embed--163" src="https://music.163.com/outchain/player?type=0&id=17739007625&auto=0&height=430" loading="lazy" frameborder="no" marginwidth="0" marginheight="0"></iframe>
+      </div>
       <script>
       /* 网易云外链播放器：移动端会被 302 到 http 造成混合内容拦截，按 UA 直取 https 移动版 */
       (function () {
