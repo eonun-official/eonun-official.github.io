@@ -73,7 +73,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-abo
             opacity: 0;
             transform: translateX(40%);
             filter: blur(12px);
-          ">一个年轻人奉献给了Trance艺术的部分人生</p>
+          ">Part of a young life, devoted to the art of Trance</p>
         </div>
       </div>
     </div>
@@ -154,7 +154,7 @@ window.addEventListener('scroll', function() {
 });
 fetch('/data/trance_mixing_slogans.txt') 
   .then(response => {
-    if (!response.ok) throw new Error('标语文件加载失败');
+    if (!response.ok) throw new Error('Slogan file failed to load');
     return response.text();
   })
   .then(text => {
@@ -167,8 +167,8 @@ fetch('/data/trance_mixing_slogans.txt')
     }
   })
   .catch(error => {
-    console.log('随机标语加载失败，使用兜底文案：', error);
-    if (indexSlogan) indexSlogan.textContent = '一个年轻人奉献给了Trance艺术的部分人生';
+    console.log('Failed to load slogans, using fallback text:', error);
+    if (indexSlogan) indexSlogan.textContent = 'Part of a young life, devoted to the art of Trance';
   });
   const aboutHeader = document.querySelector('header.about-header');
   if (aboutHeader) {
@@ -255,7 +255,7 @@ fetch('/data/trance_mixing_slogans.txt')
   <main class="pb7" role="main">
     <div class="about-container" style="max-width: 1000px; margin: 0 auto; padding: 60px 20px; text-align: center;">
       <h1 class="f3 fw1 athelas mt0 lh-title">
-          关于我
+          About
       </h1>
       <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
         <!-- 个人形象区域 -->
@@ -266,11 +266,11 @@ fetch('/data/trance_mixing_slogans.txt')
           <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 30px rgba(255, 255, 255, 0.3);">
             <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; color: #ffffff; display: flex; align-items: center; justify-content: center;">
               <span style="width: 4px; height: 24px; background: #ffffff; margin-right: 12px; border-radius: 2px;"></span>
-              核心身份
+              Core Identity
             </h2>
             <div style="font-size: 1.15rem; line-height: 1.8; color: #ffffff;">
-              <p style="margin-bottom: 1.5rem; font-weight: 600; color: #ffffff;">泛电子音乐制作人 | Trance 艺术家 | 舞曲数字母带工程师 | Cooperation Trance 厂牌创始成员 | Polar Impact 策划</p>
-              <p style="margin-bottom: 0;">曾任 Hertz Records（中国）A&amp;R 核心成员；更早曾以艺名“unfairmesseater”在 2088 Records、Hertz Records 等中国电子音乐厂牌发表作品。</p>
+              <p style="margin-bottom: 1.5rem; font-weight: 600; color: #ffffff;">Electronic Music Producer | Trance Artist | Digital Mastering Engineer for Dance Music | Founding Member of Cooperation Trance | Programme Curator at Polar Impact</p>
+              <p style="margin-bottom: 0;">Formerly a core member of the A&amp;R team at Hertz Records (China); earlier, released music on Chinese electronic labels including 2088 Records and Hertz Records under the alias “unfairmesseater”.</p>
             </div>
           </div>
         </section>
@@ -278,75 +278,75 @@ fetch('/data/trance_mixing_slogans.txt')
         <section style="margin-bottom: 4rem;">
           <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 2rem; color: #ffffff; display: flex; align-items: center; justify-content: center;">
             <span style="width: 4px; height: 24px; background: #ffffff; margin-right: 12px; border-radius: 2px;"></span>
-            职业履历
+            Career
           </h2>
           <!-- 2019年 -->
           <div style="margin-bottom: 2.5rem; position: relative; padding-left: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
             <div style="position: absolute; left: 1rem; top: 2rem; width: 1px; height: calc(100% + 1rem); background: rgba(255, 255, 255, 0.5); transform: translateX(-50%);"></div>
             <div style="position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #f2f2f2; font-weight: 600; font-size: 0.9rem; box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);">19</div>
-            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2019年：行业初露锋芒</h3>
+            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2019: First Steps in the Scene</h3>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem;">
-              2019 年起，参与 N2V 旗下 2088 Records 厂牌两届年度合集的曲目创作与发行；完成早期积累后，暂别电子音乐行业数年。
+              Starting in 2019, contributed tracks to two annual compilations on 2088 Records, the label run by N2V. After this early groundwork, stepped away from the electronic music scene for several years.
             </p>
           </div>
           <!-- 2022年 -->
           <div style="margin-bottom: 2.5rem; position: relative; padding-left: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
             <div style="position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #f2f2f2; font-weight: 600; font-size: 0.9rem; box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);">22</div>
             <div style="position: absolute; left: 1rem; top: 2rem; width: 1px; height: calc(100% + 1rem); background: rgba(255, 255, 255, 0.5); transform: translateX(-50%);"></div>
-            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2022年：厂牌创立与行业深耕</h3>
+            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2022: Founding a Label, Deepening the Craft</h3>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem; margin-bottom: 1.5rem;">
-              由中国 Trance DJ CO1N 牵头，联合其他制作人共同创立中国首个独立商业舞曲厂牌 Cooperation Trance；作为创始成员兼首任 A&amp;R，曾在任期间长期主导厂牌作品审核与母带制作核心工作：
+              Initiated by Chinese Trance DJ CO1N and co-founded with a group of fellow producers, Cooperation Trance became China’s first independent commercial dance label. As a founding member and its first A&amp;R, he led the label’s track review and in-house mastering throughout his tenure:
             </p>
             <div style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem 1.5rem 1.5rem 3rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
               <p style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
                 <span style="position: absolute; left: 0; top: 0.6rem; width: 8px; height: 8px; background: #ffffff; border-radius: 50%; box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);"></span>
-                累计完成数百首优质电子音乐作品的专业评审
+                Personally reviewed several hundred electronic music submissions
               </p>
               <p style="position: relative; padding-left: 1.5rem;">
                 <span style="position: absolute; left: 0; top: 0.6rem; width: 8px; height: 8px; background: #ffffff; border-radius: 50%; box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);"></span>
-                助力超过百轨曲目与几十张EP与专辑的母带处理，其上架均荣登Beatport的各类发行榜单
+                Mastered 100+ tracks across dozens of EPs and albums, with releases charting on Beatport’s genre charts
               </p>
             </div>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 0 1.5rem 1.5rem 1.5rem;">
-              2025 年起，随着厂牌步入稳定运营，本人逐渐淡出 Cooperation Trance 的日常厂务，转向独立发展。
+              From 2025, as the label settled into steady operation, he gradually stepped back from day-to-day label affairs to focus on independent work.
             </p>
           </div>
           <!-- 2025年 -->
           <div style="margin-bottom: 2.5rem; position: relative; padding-left: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
             <div style="position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #f2f2f2; font-weight: 600; font-size: 0.9rem; box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);">25</div>
             <div style="position: absolute; left: 1rem; top: 2rem; width: 1px; height: calc(100% + 1rem); background: rgba(255, 255, 255, 0.5); transform: translateX(-50%);"></div>
-            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2025年：国际合作与专业认可</h3>
+            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2025: International Collaboration & Recognition</h3>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem; margin-bottom: 1.5rem;">
-              开始以独立身份发展，与英国知名 Trance 艺人 Darren Porter 主导的 Reason II Rise（RIIR Music）团队达成系列发行合作，作品获得积极反响，并陆续受到多位国际 Trance 艺人的关注与互动：
+              Now working as an independent artist, he built a series of releases with Reason II Rise (RIIR Music), the team led by UK Trance artist Darren Porter. The releases were well received, and his work has since drawn attention and engagement from a number of international Trance artists:
             </p>
             <div style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem 1.5rem 1.5rem 3rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
               <p style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
                 <span style="position: absolute; left: 0; top: 0.6rem; width: 8px; height: 8px; background: #ffffff; border-radius: 50%; box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);"></span>
-                英国知名Trance音乐人 Darren Porter
+                Darren Porter — Trance artist from the UK
               </p>
               <p style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
                 <span style="position: absolute; left: 0; top: 0.6rem; width: 8px; height: 8px; background: #ffffff; border-radius: 50%; box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);"></span>
-                澳洲电子音乐艺术家 Pinkque
+                Pinkque — electronic music artist from Australia
               </p>
               <p style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
                 <span style="position: absolute; left: 0; top: 0.6rem; width: 8px; height: 8px; background: #ffffff; border-radius: 50%; box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);"></span>
-                Armada Music厂牌旗下乌克兰制作人 Geographer
+                Geographer — Ukrainian producer on Armada Music
               </p>
               <p style="position: relative; padding-left: 1.5rem;">
                 <span style="position: absolute; left: 0; top: 0.6rem; width: 8px; height: 8px; background: #ffffff; border-radius: 50%; box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);"></span>
-                日本Trance领域代表艺人 N-sking
+                N-sking — Trance artist from Japan
               </p>
             </div>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem;">
-              同期，个人专属英文专题报道正式刊发于 RIIR Music News 专栏，成为第一位、也是截至目前唯一一位获得该平台专题报道的中国 Trance 艺术家。
+              In the same period, a dedicated English-language feature was published in the RIIR Music News column — making Eonun the first, and to date only, Chinese Trance artist to receive a feature on the platform.
             </p>
           </div>
           <!-- 2026年初 -->
           <div style="margin-bottom: 2.5rem; position: relative; padding-left: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
             <div style="position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #f2f2f2; font-weight: 600; font-size: 0.9rem; box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);">26</div>
-            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2026年初：新使命与新征程</h3>
+            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">Early 2026: A New Chapter</h3>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem;">
-              应邀担任Polar Impact厂牌的A&R与策划，为中国的Trance发展继续做出贡献。
+              Joined Polar Impact as A&amp;R and programme curator, continuing to support the growth of Trance in China.
             </p>
           </div>
         </section>
@@ -355,12 +355,12 @@ fetch('/data/trance_mixing_slogans.txt')
           <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 30px rgba(255, 255, 255, 0.3);">
             <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; color: #ffffff; display: flex; align-items: center; justify-content: center;">
               <span style="width: 4px; height: 24px; background: #ffffff; margin-right: 12px; border-radius: 2px;"></span>
-              相关报道
+              Press Coverage
             </h2>
             <div style="text-align: center;">
               <a href="https://www.r2rmusic.com/post/artist-feature-eonun"
                  style="display: inline-block; font-size: 1.15rem; font-weight: 600; color: #ffffff; text-decoration: none; padding: 1rem 2rem; border: 2px solid rgba(255, 255, 255, 0.8); border-radius: 8px; transition: all 0.3s ease; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-                Eonun Artist Feature | RIIR Music 海外专题报道
+                Eonun Artist Feature | RIIR Music Feature Story
               </a>
             </div>
           </div>
