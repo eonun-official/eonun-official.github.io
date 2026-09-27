@@ -375,7 +375,7 @@ fetch('/data/trance_mixing_slogans.txt')
       <main class="pb7" role="main" style="position: relative; z-index: 2;">
         <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray">
     <!-- 无需额外标题，logo+随机标语已占顶部，直接上核心内容 -->
-<h2 id="用声波定义-trance-的质感边界">用声波，定义 Trance 的质感边界</h2>
+<h2 id="用声波定义-trance-的质感边界">用声波，定义 Trance 质感边界</h2>
 <div style="max-width: 900px; margin: 40px auto; color: #ffffff; line-height: 1.8; font-size: 18px;">
   专注于现代 Uplifting / Tech Trance 制作与母带工程，从卧室混音到国际平台发行，用<span style="font-weight: bold;">前沿的音乐审美理念</span>与<span style="font-weight: bold;">独家完备的理论体系</span>，让每首作品都具备国际级质感。
 </div>
