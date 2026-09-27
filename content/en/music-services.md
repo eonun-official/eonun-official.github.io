@@ -1101,3 +1101,5 @@ window.onclick = function(event) {
     .modal-cta-button { font-size: clamp(18px, 4.6vw, 22px); }
   }
 </style>
+
+<script src="../../js/price-localizer.js" data-native="usd"></script>

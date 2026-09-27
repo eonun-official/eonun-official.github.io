@@ -811,3 +811,5 @@ event.target.classList.add('active');
     .discount-col li { font-size: clamp(14px, 3.6vw, 17px); }
   }
 </style>
+
+<script src="../../js/price-localizer.js" data-native="usd"></script>
