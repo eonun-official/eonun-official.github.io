@@ -84,6 +84,17 @@ const scrollNav = document.getElementById('scroll-nav');
 const indexSlogan = document.getElementById('index-slogan');
 let lastScrollTop = 0;
 let isScrollDown = false;
+// 移动端：标语降为 16px（内联 24px!important 只有 JS 内联才能覆盖）；回桌面恢复 24px
+function applyMobileSloganSize() {
+  if (!indexSlogan) return;
+  if (window.innerWidth <= 768) {
+    indexSlogan.style.setProperty('font-size', '16px', 'important');
+  } else {
+    indexSlogan.style.setProperty('font-size', '24px', 'important');
+  }
+}
+applyMobileSloganSize();
+window.addEventListener('resize', applyMobileSloganSize);
 window.addEventListener('mousemove', function(e) {
   const scrollDistance = window.scrollY;
   if (scrollDistance > 0 && isScrollDown) {
@@ -258,8 +269,8 @@ fetch('/data/trance_mixing_slogans.txt')
               核心身份
             </h2>
             <div style="font-size: 1.15rem; line-height: 1.8; color: #ffffff;">
-              <p style="margin-bottom: 1.5rem; font-weight: 600; color: #ffffff;">泛电子音乐制作人 | Trance艺术家 | 舞曲数字母带工程师 | Cooperation Trance厂牌创始策划兼A&amp;R | Polar Impact 策划</p>
-              <p style="margin-bottom: 0;">前Hertz Records（中国）A&amp;R核心成员，曾以艺名“unfairmesseater”活跃于2088 Records、Hertz Records等国内顶尖电子音乐厂牌。</p>
+              <p style="margin-bottom: 1.5rem; font-weight: 600; color: #ffffff;">泛电子音乐制作人 | Trance 艺术家 | 舞曲数字母带工程师 | Cooperation Trance 厂牌创始成员 | Polar Impact 策划</p>
+              <p style="margin-bottom: 0;">曾任 Hertz Records（中国）A&amp;R 核心成员；更早曾以艺名“unfairmesseater”在 2088 Records、Hertz Records 等中国电子音乐厂牌发表作品。</p>
             </div>
           </div>
         </section>
@@ -275,7 +286,7 @@ fetch('/data/trance_mixing_slogans.txt')
             <div style="position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #f2f2f2; font-weight: 600; font-size: 0.9rem; box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);">19</div>
             <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2019年：行业初露锋芒</h3>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem;">
-              2019年起，深度参与N2V旗下2088 Records厂牌两届年度音乐合集的创作与发行工作，完成行业初期积累后，暂别电子音乐行业数年。
+              2019 年起，参与 N2V 旗下 2088 Records 厂牌两届年度合集的曲目创作与发行；完成早期积累后，暂别电子音乐行业数年。
             </p>
           </div>
           <!-- 2022年 -->
@@ -284,7 +295,7 @@ fetch('/data/trance_mixing_slogans.txt')
             <div style="position: absolute; left: 1rem; top: 2rem; width: 1px; height: calc(100% + 1rem); background: rgba(255, 255, 255, 0.5); transform: translateX(-50%);"></div>
             <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2022年：厂牌创立与行业深耕</h3>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem; margin-bottom: 1.5rem;">
-              与国内知名Trance制作人DJ CO1N联合创立<strong style="color: #ffffff;">中国首个独立商业舞曲厂牌Cooperation Trance</strong>，并长期主导厂牌作品审核与母带制作核心工作：
+              由中国 Trance DJ CO1N 牵头，联合其他制作人共同创立中国首个独立商业舞曲厂牌 Cooperation Trance；作为创始成员兼首任 A&amp;R，曾在任期间长期主导厂牌作品审核与母带制作核心工作：
             </p>
             <div style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem 1.5rem 1.5rem 3rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
               <p style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
@@ -296,6 +307,9 @@ fetch('/data/trance_mixing_slogans.txt')
                 助力超过百轨曲目与几十张EP与专辑的母带处理，其上架均荣登Beatport的各类发行榜单
               </p>
             </div>
+            <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 0 1.5rem 1.5rem 1.5rem;">
+              2025 年起，随着厂牌步入稳定运营，本人逐渐淡出 Cooperation Trance 的日常厂务，转向独立发展。
+            </p>
           </div>
           <!-- 2025年 -->
           <div style="margin-bottom: 2.5rem; position: relative; padding-left: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
@@ -303,7 +317,7 @@ fetch('/data/trance_mixing_slogans.txt')
             <div style="position: absolute; left: 1rem; top: 2rem; width: 1px; height: calc(100% + 1rem); background: rgba(255, 255, 255, 0.5); transform: translateX(-50%);"></div>
             <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2025年：国际合作与专业认可</h3>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem; margin-bottom: 1.5rem;">
-              开始以独立身份发展自己，与世界级Trance艺术家Darren Porter旗下Reason II Rise（RIIR Music）音乐团队达成系列发行合作，合作成果获得多国顶尖Trance艺人的高度认可与支持：
+              开始以独立身份发展，与英国知名 Trance 艺人 Darren Porter 主导的 Reason II Rise（RIIR Music）团队达成系列发行合作，作品获得积极反响，并陆续受到多位国际 Trance 艺人的关注与互动：
             </p>
             <div style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem 1.5rem 1.5rem 3rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
               <p style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
@@ -324,7 +338,7 @@ fetch('/data/trance_mixing_slogans.txt')
               </p>
             </div>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem;">
-              同期，个人专属海外英文专题报道正式发布于RIIR Music News专栏，成为少数获得该平台专题报道的中国Trance艺术家。
+              同期，个人专属英文专题报道正式刊发于 RIIR Music News 专栏，成为第一位、也是截至目前唯一一位获得该平台专题报道的中国 Trance 艺术家。
             </p>
           </div>
           <!-- 2026年初 -->
@@ -369,3 +383,20 @@ fetch('/data/trance_mixing_slogans.txt')
 </div>
   </div>
 </footer>
+
+<style>
+  /* ===== 移动端字号自适应（仅 ≤768px，桌面零影响；下限=小米14 现值，大屏机等比放大）===== */
+  @media (max-width: 768px) {
+    #index-slogan { text-align: center !important; }
+    /* 以下为与主页完全一致的 hero 方案 */
+    #header-logo { display: block !important; margin-left: auto !important; margin-right: auto !important; }
+    .tc-l h2.fw1 { font-size: 1rem !important; line-height: 1.5 !important; }
+    /* 容器基准=主页 article clamp；内联 rem 文本转 em 跟随容器缩放 */
+    main { font-size: clamp(15px, 3.85vw, 18px) !important; }
+    [style*="font-size: 1.05rem"] { font-size: 1.05em !important; }
+    [style*="font-size: 1.15rem"] { font-size: 1.15em !important; }
+    [style*="font-size: 1.3rem"] { font-size: 1.3em !important; }
+    [style*="font-size: 1.8rem"] { font-size: 1.8em !important; }
+    [style*="font-size: 0.9rem"] { font-size: 0.9em !important; }
+  }
+</style>

@@ -198,7 +198,7 @@ fetch('/data/trance_mixing_slogans.txt')
         <h1 class="hero-title">Music Services</h1>
         <div class="hero-subtitle">
           <p>专业音乐制作服务</p>
-          <p>母带处理 · 音乐工程 · 合作发行</p>
+          <p>母带处理 · 音乐工程 · 商业合作</p>
         </div>
       </div>
     </div>
@@ -211,7 +211,7 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>母带服务</h3>
-              <div class="product-description">专业母带处理，让音乐更具商业品质</div>
+              <div class="product-description">专业母带处理，让音乐更具商业规范与音乐性</div>
               <div class="service-levels">
                 <div class="service-level">
                   <div class="level-name">标准母带</div>
@@ -317,6 +317,17 @@ fetch('/data/trance_mixing_slogans.txt')
 const scrollNav = document.getElementById('scroll-nav');
 let lastScrollTop = 0;
 let isScrollDown = false;
+// 移动端：标语降为 16px（内联 24px!important 只有 JS 内联才能覆盖）；回桌面恢复 24px
+function applyMobileSloganSize() {
+  if (!indexSlogan) return;
+  if (window.innerWidth <= 768) {
+    indexSlogan.style.setProperty('font-size', '16px', 'important');
+  } else {
+    indexSlogan.style.setProperty('font-size', '24px', 'important');
+  }
+}
+applyMobileSloganSize();
+window.addEventListener('resize', applyMobileSloganSize);
 window.addEventListener('mousemove', function(e) {
   const scrollDistance = window.scrollY;
   if (scrollDistance > 0 && isScrollDown) {
@@ -460,24 +471,23 @@ window.onclick = function(event) {
       <span class="close-button" onclick="closeMasteringModal()">&times;</span>
     </div>
     <div class="service-modal-body">
-      <p>以专业 Trance 舞曲审美逻辑与海外厂牌发行标准，完成动态、频段与响度的专业适配，兼顾听感质感与平台发行规范，拒绝流水线劣化处理。</p>
+      <p>以 Trance 舞曲的审美逻辑与数字发行规范，完成动态、频段与响度的适配，兼顾听感质感与平台播放标准。</p>
       <h3>服务分级</h3>
       <div class="service-levels-modal">
         <div class="service-level-item">
           <h4>标准母带校准｜¥330</h4>
-          <p>在保留作品原始听感与动态的前提下，快速完成专业响度校准、全局频段规整与播放规范优化，直接满足流媒体与厂牌基础发行标准，一站式解决非专业母带导致的电平不达标、听感粗糙问题。</p>
+          <p>在你提供的最终立体声混音基础上，进行响度校准、全局频段规整与播放适配，交付符合流媒体发行规范的母带成品。</p>
         </div>
         <div class="service-level-item premium-item">
           <h4>全流程混音 + 母带｜¥950</h4>
-          <p>针对最高 10 组分组 Stem 做深度混音精修，覆盖低频结构、旋律层次、打击乐咬合与空间塑造；母带处理会更加具有针对性、进一步优化动态与响度、多场景播放适配，输出可直接投递适配国际厂牌的发行级成品。</p>
+          <p>针对最高 10 组分组 Stem 进行混音精修，覆盖低频结构、旋律层次、打击乐咬合与空间塑造，再经针对性母带处理优化动态与响度，交付可直接发布的成品。</p>
         </div>
       </div>
       <h3>提交规范</h3>
       <ul>
-        <li>Stem 为 WAV 格式，单轨预留 ≥ -6dB 净空</li>
-        <li>混响、延迟等效果轨独立导出</li>
-        <li>Master 总线清空限制器、压缩器等全局处理</li>
-        <li>文件打包后通过云盘链接提交</li>
+        <li><strong>单轨母带：</strong>提交最终立体声混音，WAV 格式，24-bit 精度，采样率保持工程原始值（44.1 / 48 kHz），不做升频或转码；峰值预留 -6 dB 净空（-6 ~ -3 dBFS 均可），总线不加限制器、压限等全局处理</li>
+        <li><strong>Stem 混音：</strong>WAV 格式，24-bit，采样率与工程一致，最多 10 组；混响、延迟等效果轨单独导出；各轨预留约 -6 dB 净空，严禁削波</li>
+        <li><strong>文件交付：</strong>建议文件名注明曲名与 BPM，打包后通过邮箱或通讯软件发送，云盘链接亦可</li>
       </ul>
       <h3>交付与加急</h3>
       <ul>
@@ -485,10 +495,10 @@ window.onclick = function(event) {
         <li>全流程加急 24 小时交付：附加费 ¥200</li>
       </ul>
       <h3>品质核心</h3>
-      <p>深耕 Trance 制作与海外发行体系，专注舞曲垂直领域总线处理，不套用通用模板，以发行级标准保障作品质量。</p>
+      <p>长期专注 Trance 舞曲的总线处理，按每首作品的结构与风格针对性调整，以数字发行规范交付成品。</p>
       <div class="final-note">
-        <h3>专业母带，让你的音乐更具竞争力</h3>
-        <p>无论你是需要快速响度校准，还是深度混音精修，我都以专业 Trance 舞曲审美逻辑与海外厂牌发行标准，为你的作品提供高质量的处理服务。</p>
+        <h3>为发行做好准备</h3>
+        <p>无论是快速响度校准，还是深度混音精修，都以发行规范为准绳，交付可直接发布的成品。若已有目标厂牌，可针对其发行作品的音色审美与响度习惯做针对性母带处理，让成品更贴合该厂牌的整体声音取向。</p>
       </div>
     </div>
     <div class="service-modal-footer">
@@ -1057,3 +1067,38 @@ window.onclick = function(event) {
 </div>
   </div>
 </footer>
+
+<style>
+  /* ===== 移动端字号自适应（仅 ≤768px，桌面零影响；下限=小米14 现值，大屏机等比放大）===== */
+  @media (max-width: 768px) {
+    #index-slogan { text-align: center !important; }
+    /* 以下为与主页完全一致的 hero 方案 */
+    #header-logo { display: block !important; margin-left: auto !important; margin-right: auto !important; }
+    .tc-l h2.fw1 { font-size: 1rem !important; line-height: 1.5 !important; }
+    /* 容器基准=主页 article clamp（页内文本多为已 clamp 的 px 类，此处兜住 em/继承文本） */
+    main { font-size: clamp(15px, 3.85vw, 18px) !important; }
+    /* 页内固定 px 类字号 → 随屏宽等比缩放（下限=现值） */
+    .hero-title { font-size: clamp(32px, 8.2vw, 40px); }
+    .product-content h3 { font-size: clamp(26px, 6.7vw, 33px); }
+    .product-description { font-size: clamp(15px, 3.85vw, 19px); }
+    .level-name { font-size: clamp(16px, 4.1vw, 20px); }
+    .level-price { font-size: clamp(22px, 5.6vw, 28px); }
+    .level-desc { font-size: clamp(13px, 3.3vw, 16px); }
+    .notice-text { font-size: clamp(13px, 3.3vw, 16px); }
+    .detail-text { font-size: clamp(14px, 3.6vw, 17px); }
+    .price-tag { font-size: clamp(28px, 7.2vw, 35px); }
+    .buy-button { font-size: clamp(14px, 3.6vw, 17px); }
+    .process-content h2 { font-size: clamp(36px, 9.2vw, 45px); }
+    .step-number { font-size: clamp(24px, 6.2vw, 30px); }
+    .step-content h3 { font-size: clamp(18px, 4.6vw, 22px); }
+    .step-content p { font-size: clamp(14px, 3.6vw, 17px); }
+    .service-modal-header h2 { font-size: clamp(20px, 5.1vw, 25px); }
+    .service-modal-body h3 { font-size: clamp(18px, 4.6vw, 22px); }
+    .service-modal-body p { font-size: clamp(14px, 3.6vw, 17px); }
+    .service-level-item h4 { font-size: clamp(18px, 4.6vw, 22px); }
+    .service-level-item p { font-size: clamp(15px, 3.85vw, 19px); }
+    .price-label { font-size: clamp(16px, 4.1vw, 20px); }
+    .price-value { font-size: clamp(20px, 5.1vw, 25px); }
+    .modal-cta-button { font-size: clamp(18px, 4.6vw, 22px); }
+  }
+</style>

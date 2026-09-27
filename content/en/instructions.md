@@ -179,6 +179,17 @@ const headerVideo = document.getElementById('header-video');
 const videoFallback = document.getElementById('video-fallback');
 let lastScrollTop = 0;
 let isScrollDown = false;
+// 移动端：标语降为 16px（内联 24px!important 只有 JS 内联才能覆盖）；回桌面恢复 24px
+function applyMobileSloganSize() {
+  if (!indexSlogan) return;
+  if (window.innerWidth <= 768) {
+    indexSlogan.style.setProperty('font-size', '16px', 'important');
+  } else {
+    indexSlogan.style.setProperty('font-size', '24px', 'important');
+  }
+}
+applyMobileSloganSize();
+window.addEventListener('resize', applyMobileSloganSize);
 // 视频错误处理
 if (headerVideo) {
   headerVideo.addEventListener('error', function() {
@@ -369,12 +380,11 @@ fetch('/data/trance_mixing_slogans.txt')
 <div class="hero-content">
 <h1 class="hero-title">Trance 指导服务</h1>
 <div class="hero-subtitle">
-<p>既然你都看到这里，就请相信我——</p>
-<p>相比不合理收费与过度包装的 IP 服务，</p>
-<p>学到真东西才是货真价实的价值。</p>
-<p>我希望搭建一个合理透明的渠道，</p>
-<p>让每一个热爱 Trance 的人都能获得专业指导，突破创作瓶颈。</p>
-<p>无论你是想学习制作的 DJ，还是想进阶的制作人。</p>
+<p>既然你已经看到这里，不妨再多了解一步。</p>
+<p>我提供的东西很朴素：直接与我本人对接；价格与档位完全透明，没有隐藏费用；知识成体系；指导真正落在你的作品上。</p>
+<p>每一项内容都指向实际——让你做出属于自己的、站得住脚的作品。</p>
+<p>无论你是刚开始接触制作的新手，还是想更进一步的制作人或 DJ，这里都有适合你的位置。<span style="color: #d9d9d9;"></span></p>
+<p style="margin-top: 0.6rem; font-size: 0.8rem; color: #888888; letter-spacing: 0.5px;">* 支持中文 / 英语授课</p>
 </div>
 </div>
 </div>
@@ -410,7 +420,7 @@ fetch('/data/trance_mixing_slogans.txt')
 <p style="text-align: center; color: #d9d9d9; font-size: 1.3rem; margin-bottom: 40px;"><strong>学员身份严格保密，绑定课程独立编号搭载 ECC 数字签名，官网凭专属序列号可查进度。</strong></p>
 <div class="course-grid">
 <!-- 初级课程 -->
-<div class="course-card long-term-course">
+<div class="course-card long-term-course basic-ink">
 <span class="course-level beginner">初级</span>
 <h3>Trance 创作核心认知课（直播互动）</h3>
 <div class="price-tag small">¥1,500</div>
@@ -761,3 +771,43 @@ event.target.classList.add('active');
 </div>
   </div>
 </footer>
+<script>
+/* 触屏悬浮：手指按下变色、抬起还原（绕过移动端 :hover 粘滞） */
+(function () {
+  function bind() {
+    Array.prototype.forEach.call(document.querySelectorAll('.course-card'), function (c) {
+      if (c.__touchInk) return;
+      c.__touchInk = 1;
+      c.addEventListener('touchstart', function () { c.classList.add('touch-hover'); }, { passive: true });
+      var off = function () { c.classList.remove('touch-hover'); };
+      c.addEventListener('touchend', off);
+      c.addEventListener('touchcancel', off);
+    });
+  }
+  if (document.readyState !== 'loading') bind();
+  else document.addEventListener('DOMContentLoaded', bind);
+})();
+</script>
+
+<style>
+  /* ===== 移动端字号自适应（仅 ≤768px，桌面零影响；下限=小米14 现值，大屏机等比放大）===== */
+  @media (max-width: 768px) {
+    #index-slogan { text-align: center !important; }
+    /* 以下为与主页完全一致的 hero 方案 */
+    #header-logo { display: block !important; margin-left: auto !important; margin-right: auto !important; }
+    .tc-l h2.fw1 { font-size: 1rem !important; line-height: 1.5 !important; }
+    /* 内联 rem 文本转 em 跟随 article clamp */
+    [style*="font-size: 1.1rem"] { font-size: 1.1em !important; }
+    [style*="font-size: 1.3rem"] { font-size: 1.3em !important; }
+    /* 正文与主页对齐（修复点）：主页 article 基准是 clamp(15,3.85vw,18)，本页缺这条导致正文偏大 */
+    article { font-size: clamp(15px, 3.85vw, 18px) !important; padding-left: 14px !important; padding-right: 14px !important; }
+    .content-section h2 { font-size: 1.3em !important; }
+    /* 页内固定 px 类字号 → 随屏宽等比缩放（下限=现值） */
+    .course-benefit { font-size: clamp(14px, 3.6vw, 17px); }
+    .discount-btn { font-size: clamp(16px, 4.1vw, 20px); }
+    .discount-hint { font-size: clamp(13px, 3.3vw, 16px); }
+    .discount-modal-header h2 { font-size: clamp(26px, 6.6vw, 32px); }
+    .discount-col h3 { font-size: clamp(19px, 4.9vw, 24px); }
+    .discount-col li { font-size: clamp(14px, 3.6vw, 17px); }
+  }
+</style>
