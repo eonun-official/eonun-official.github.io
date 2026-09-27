@@ -518,11 +518,9 @@ fetch('/data/trance_mixing_slogans.txt')
 <div class="collab-block">
   <h3 class="collab-title">与世界级 Trance 力量并肩</h3>
   <div class="collab-strip">
-    <span class="collab-item">Darren Porter <em>(UK)</em></span>
-    <span class="collab-item">Pinkque <em>(AU)</em></span>
     <span class="collab-item">RIIR Music <em>(UK)</em></span>
   </div>
-  <p class="collab-desc">作品以及艺人采访入选厂牌专题报道，第一个用实力征服国际厂牌开启独家专访的中国Trance制作人。<br><br>与此同时也是首个被厂牌邀请在该国际电台上参与活动的国人</p>
+  <p class="collab-desc">长期与海外 Trance 厂牌及媒体保持合作：作品与艺人专访入选 RIIR Music 专题报道，并受邀参与 AFTERHOURS 国际电台活动。</p>
 </div>
 <style>
   a[href*="r2rmusic.com"] div:hover img {
