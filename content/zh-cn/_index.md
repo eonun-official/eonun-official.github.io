@@ -391,8 +391,8 @@ fetch('/data/trance_mixing_slogans.txt')
     <p>上百首榜单Trance作品专业母带处理</p>
   </div>
   <div class="identity-item">
-    <h3>厂牌 A&amp;R</h3>
-    <p>Cooperation Trance 联合创始人</p>
+    <h3>联合创始人</h3>
+    <p>首任 Cooperation Trance A&amp;R</p>
   </div>
   <div class="identity-item">
     <h3>厂牌 A&amp;R</h3>
