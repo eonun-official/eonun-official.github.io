@@ -270,7 +270,7 @@ fetch('/data/trance_mixing_slogans.txt')
             </h2>
             <div style="font-size: 1.15rem; line-height: 1.8; color: #ffffff;">
               <p style="margin-bottom: 1.5rem; font-weight: 600; color: #ffffff;">泛电子音乐制作人 | Trance艺术家 | 舞曲数字母带工程师 | Cooperation Trance厂牌创始策划兼A&amp;R | Polar Impact 策划</p>
-              <p style="margin-bottom: 0;">前Hertz Records（中国）A&amp;R核心成员，曾以艺名“unfairmesseater”活跃于2088 Records、Hertz Records等国内顶尖电子音乐厂牌。</p>
+              <p style="margin-bottom: 0;">曾任 Hertz Records（中国）A&amp;R 核心成员；更早曾以艺名“unfairmesseater”在 2088 Records、Hertz Records 等中国电子音乐厂牌发表作品。</p>
             </div>
           </div>
         </section>
@@ -286,7 +286,7 @@ fetch('/data/trance_mixing_slogans.txt')
             <div style="position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #f2f2f2; font-weight: 600; font-size: 0.9rem; box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);">19</div>
             <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2019年：行业初露锋芒</h3>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem;">
-              2019年起，深度参与N2V旗下2088 Records厂牌两届年度音乐合集的创作与发行工作，完成行业初期积累后，暂别电子音乐行业数年。
+              2019 年起，参与 N2V 旗下 2088 Records 厂牌两届年度合集的曲目创作与发行；完成早期积累后，暂别电子音乐行业数年。
             </p>
           </div>
           <!-- 2022年 -->
@@ -314,7 +314,7 @@ fetch('/data/trance_mixing_slogans.txt')
             <div style="position: absolute; left: 1rem; top: 2rem; width: 1px; height: calc(100% + 1rem); background: rgba(255, 255, 255, 0.5); transform: translateX(-50%);"></div>
             <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2025年：国际合作与专业认可</h3>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem; margin-bottom: 1.5rem;">
-              开始以独立身份发展自己，与世界级Trance艺术家Darren Porter旗下Reason II Rise（RIIR Music）音乐团队达成系列发行合作，合作成果获得多国顶尖Trance艺人的高度认可与支持：
+              开始以独立身份发展，与英国知名 Trance 艺人 Darren Porter 主导的 Reason II Rise（RIIR Music）团队达成系列发行合作，作品获得积极反响，并陆续受到多位国际 Trance 艺人的关注与互动：
             </p>
             <div style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem 1.5rem 1.5rem 3rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
               <p style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
@@ -335,7 +335,7 @@ fetch('/data/trance_mixing_slogans.txt')
               </p>
             </div>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem;">
-              同期，个人专属海外英文专题报道正式发布于RIIR Music News专栏，成为少数获得该平台专题报道的中国Trance艺术家。
+              同期，个人专属英文专题报道正式刊发于 RIIR Music News 专栏，成为第一位、也是截至目前唯一一位获得该平台专题报道的中国 Trance 艺术家。
             </p>
           </div>
           <!-- 2026年初 -->
