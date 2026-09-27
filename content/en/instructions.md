@@ -407,7 +407,7 @@ fetch('/data/trance_mixing_slogans.txt')
 <div class="course-grid">
 <div class="course-card" style="max-width: 640px; margin: 0 auto; width: 100%; padding: 10px 28px;">
 <ul style="list-style: none; padding: 0; margin: 0;">
-<li style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #d9d9d9;"><span>1 hour · Focused Q&amp;A</span><strong style="color: #fff;">$65</strong></li>
+<li style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #d9d9d9;"><span>1 hour · Focused Q&amp;A</span><strong style="color: #fff;">$60</strong></li>
 <li style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #d9d9d9;"><span>2 hours · In-Depth Review</span><strong style="color: #fff;">$95</strong></li>
 <li style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 4px; color: #d9d9d9;"><span>3 hours · Full System Customization</span><strong style="color: #fff;">$120</strong></li>
 </ul>
@@ -436,7 +436,7 @@ fetch('/data/trance_mixing_slogans.txt')
 <div class="course-notice">
 <strong>Requirements:</strong> basic DAW skills and a pair of entry-level monitoring headphones (confirmed with you before enrollment).
 </div>
-<div class="course-benefit">Graduate benefit: 10% off the next tier’s full course with your certificate; the top-rated final project earns an extra $45 credit, usable on any course.</div>
+<div class="course-benefit">Graduate benefit: 10% off the next tier’s full course with your certificate; the top-rated final project earns an extra $44 credit, usable on any course.</div>
 </div>
 <!-- 中级课程 -->
 <div class="course-card long-term-course pro-ink">
@@ -548,8 +548,8 @@ WeChat: EonunTrance | Email: eonun.official@gmail.com
 <div class="discount-col">
 <h3>Alumni Referral Rewards</h3>
 <ul>
-<li>Rewards: Beginner <strong>$25</strong> / Intermediate <strong>$45</strong> / Master-to-master <strong>$150</strong> (both parties must be masterclass graduates)</li>
-<li>Referral slots: Beginner 2 / Intermediate 5 (rewards capped at $210) / Master 10 (counted at $150 or $25–45 per referral)</li>
+<li>Rewards: Beginner <strong>$22</strong> / Intermediate <strong>$44</strong> / Master-to-master <strong>$145</strong> (both parties must be masterclass graduates)</li>
+<li>Referral slots: Beginner 2 / Intermediate 5 (rewards capped at $210) / Master 10 (counted at $145 or $22–44 per referral)</li>
 <li>Lower tiers may refer upward; the reverse doesn’t apply</li>
 <li>Payout: half at the midpoint of the course, the remainder at graduation; early withdrawal is prorated by progress</li>
 <li>Rewards are valid for 12 / 24 months and non-transferable</li>

@@ -215,12 +215,12 @@ fetch('/data/trance_mixing_slogans.txt')
               <div class="service-levels">
                 <div class="service-level">
                   <div class="level-name">Standard Mastering</div>
-                  <div class="level-price">$50/track</div>
+                  <div class="level-price">$45/track</div>
                   <div class="level-desc">Label-grade standard, for finished mixes</div>
                 </div>
                 <div class="service-level premium-level">
                   <div class="level-name">Premium Mastering</div>
-                  <div class="level-price">$140/track</div>
+                  <div class="level-price">$135/track</div>
                   <div class="level-desc">Stem mixing + mastering, handled with professional methods</div>
                 </div>
               </div>
@@ -231,7 +231,7 @@ fetch('/data/trance_mixing_slogans.txt')
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
-                <div class="price-tag">from $50</div>
+                <div class="price-tag">from $45</div>
               </div>
               <div class="buy-buttons-container">
                 <a href="../contact/index.html" class="buy-button left">Inquire</a>
@@ -474,11 +474,11 @@ window.onclick = function(event) {
       <h3>Service Tiers</h3>
       <div class="service-levels-modal">
         <div class="service-level-item">
-          <h4>Standard Mastering Tune-Up — $50</h4>
+          <h4>Standard Mastering Tune-Up — $45</h4>
           <p>Starting from your final stereo mix: loudness calibration, global frequency cleanup and playback optimization, delivered as a master that meets streaming release specs.</p>
         </div>
         <div class="service-level-item premium-item">
-          <h4>Full-Cycle Mixing + Mastering — $140</h4>
+          <h4>Full-Cycle Mixing + Mastering — $135</h4>
           <p>Detailed mixing of up to 10 grouped stems — low-end structure, melodic layers, drum cohesion and spatial design — followed by targeted mastering for dynamics and loudness. Delivered release-ready.</p>
         </div>
       </div>
@@ -491,7 +491,7 @@ window.onclick = function(event) {
       <h3>Turnaround &amp; Express</h3>
       <ul>
         <li>Standard: 3–5 business days</li>
-        <li>Express full-cycle delivery within 24 hours: +$30</li>
+        <li>Express full-cycle delivery within 24 hours: +$29</li>
       </ul>
       <h3>The Core of the Quality</h3>
       <p>Years of focus on Trance bus processing. Every track is adjusted to its own structure and style, and delivered to digital distribution specs.</p>
