@@ -295,7 +295,7 @@ fetch('/data/trance_mixing_slogans.txt')
             <div style="position: absolute; left: 1rem; top: 2rem; width: 1px; height: calc(100% + 1rem); background: rgba(255, 255, 255, 0.5); transform: translateX(-50%);"></div>
             <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #ffffff;">2022年：厂牌创立与行业深耕</h3>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem; margin-bottom: 1.5rem;">
-              由国内 Trance DJ CO1N 牵头，联合其他制作人共同创立<strong style="color: #ffffff;">中国首个独立商业舞曲厂牌 Cooperation Trance</strong>；本人作为创始成员，在任期间长期主导厂牌作品审核与母带制作核心工作：
+              由中国 Trance DJ CO1N 牵头，联合其他制作人共同创立中国首个独立商业舞曲厂牌 Cooperation Trance；作为创始成员兼A&amp;R，曾在任期间长期主导厂牌作品审核与母带制作核心工作：
             </p>
             <div style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 1.5rem 1.5rem 1.5rem 3rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
               <p style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
