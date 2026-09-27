@@ -436,7 +436,6 @@ fetch('/data/trance_mixing_slogans.txt')
   .work-embed { width: 100%; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12); display: block; background: rgba(255,255,255,0.02); }
   .work-embed--spotify { height: 352px; }
   .work-embed--163 { height: 430px; }
-  .netease-card { display: none; }
   .work-note { color: #999999; text-align: center; margin-top: 14px; font-size: 13px; }
   .work-note a { color: #ffffff; text-decoration: none; }
   .contact-cta { max-width: 640px; margin: 60px auto 20px; padding: 50px 20px 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.18); }
@@ -487,11 +486,6 @@ fetch('/data/trance_mixing_slogans.txt')
     .service-grid { grid-template-columns: 1fr; gap: 14px; }
     .service-card { padding: 22px 18px; }
     .works-grid { grid-template-columns: 1fr; gap: 20px; }
-    /* 网易云外链播放器在移动端由原生跳转卡替代（第三方 JS 可能加载失败且无法检测） */
-    .work-embed--163 { display: none; }
-    .netease-card { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; height: 180px; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 12px; text-decoration: none; background: rgba(255, 255, 255, 0.03); }
-    .netease-card-title { color: #fff; font-size: 16px; letter-spacing: 0.5px; }
-    .netease-card-cta { color: #999999; font-size: 13px; }
     .contact-cta { margin: 30px auto 10px; padding-top: 36px; }
     .collab-item { padding: 13px 16px; font-size: 13px; }
     .collab-item em { font-size: 11px; }
@@ -595,11 +589,16 @@ fetch('/data/trance_mixing_slogans.txt')
       <p class="work-note">更多作品 → <a href="https://open.spotify.com/artist/7ok2w55yMiwbUvrlVn9mBW" target="_blank" style="color: #ffffff; text-decoration: none;">Spotify</a></p>
     </div>
     <div style="width: 100%;">
-      <iframe class="work-embed work-embed--163" src="https://music.163.com/outchain/player?type=0&id=17739007625&auto=0&height=430" loading="lazy" frameborder="no" marginwidth="0" marginheight="0"></iframe>
-      <a class="netease-card" href="https://music.163.com/playlist?id=17739007625" target="_blank">
-        <span class="netease-card-title">Eonun · Trance 精选歌单</span>
-        <span class="netease-card-cta">在网易云音乐收听 →</span>
-      </a>
+      <iframe id="netease-player" class="work-embed work-embed--163" src="https://music.163.com/outchain/player?type=0&id=17739007625&auto=0&height=430" loading="lazy" frameborder="no" marginwidth="0" marginheight="0"></iframe>
+      <script>
+      /* 网易云外链播放器：移动端会被 302 到 http 造成混合内容拦截，按 UA 直取 https 移动版 */
+      (function () {
+        var f = document.getElementById('netease-player');
+        if (f && /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+          f.src = 'https://music.163.com/m/outchain/player?type=0&id=17739007625&auto=0&height=430';
+        }
+      })();
+      </script>
       <p class="work-note">更多作品 → <a href="https://music.163.com/playlist?id=17739007625" target="_blank" style="color: #ffffff; text-decoration: none;">网易云音乐</a></p>
     </div>
   </div>
