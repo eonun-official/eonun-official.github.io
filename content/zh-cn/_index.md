@@ -150,7 +150,7 @@ body_class: "ma0 avenir bg-near-white development is-home"
             margin: 20px 0 0 20px;
             padding: 0;
             color: #fff;
-            font-size: 24px;
+            font-size: 24px !important;
             text-align: center;
             animation: slideInFromRight 1.4s ease-out forwards;
             position: relative !important;
@@ -177,6 +177,17 @@ const headerVideo = document.getElementById('header-video');
 const videoFallback = document.getElementById('video-fallback');
 let lastScrollTop = 0;
 let isScrollDown = false;
+// 移动端：标语降为 16px（内联 24px!important 只有 JS 内联才能覆盖）；回桌面恢复 24px
+function applyMobileSloganSize() {
+  if (!indexSlogan) return;
+  if (window.innerWidth <= 768) {
+    indexSlogan.style.setProperty('font-size', '16px', 'important');
+  } else {
+    indexSlogan.style.setProperty('font-size', '24px', 'important');
+  }
+}
+applyMobileSloganSize();
+window.addEventListener('resize', applyMobileSloganSize);
 // 视频错误处理
 if (headerVideo) {
   headerVideo.addEventListener('error', function() {
@@ -547,9 +558,9 @@ fetch('/data/trance_mixing_slogans.txt')
     #scroll-nav .flex-l { flex-wrap: wrap; row-gap: 2px; }
     #scroll-nav ul { gap: 6px !important; flex-wrap: wrap; justify-content: center; }
     #scroll-nav ul li a { font-size: 12px !important; padding: 3px 5px !important; }
-    /* Hero：收紧上距、logo 与标语水平居中、标语字号随屏宽缩放 */
-    #header-logo { margin-top: 60px !important; margin-left: auto !important; margin-right: auto !important; display: block; }
-    #index-slogan { font-size: clamp(15px, 4vw, 24px) !important; margin-left: 0 !important; text-align: center !important; width: 100%; box-sizing: border-box; }
+    /* Hero：收紧上距、标语降字号 */
+    #header-logo { margin-top: 60px !important; }
+    #index-slogan { font-size: 16px !important; margin-left: 0 !important; }
     .tc-l h2.fw1 { font-size: 1rem !important; line-height: 1.5 !important; }
     /* 区块标题与正文边距：正文基准字号随屏宽等比缩放（下限=小米14 现值） */
     article { padding-left: 14px !important; padding-right: 14px !important; font-size: clamp(15px, 3.85vw, 18px) !important; }
@@ -567,6 +578,15 @@ fetch('/data/trance_mixing_slogans.txt')
     #lang-switch { left: 10px; bottom: 10px; }
     #lang-switch button { padding: 4px 9px; font-size: 11px; }
     #palette-toggle { right: 10px; bottom: 10px; }
+  }
+</style>
+<style>
+  /* ===== 移动端专属居中（仅 ≤768px 生效，桌面端零影响）===== */
+  @media (max-width: 768px) {
+    /* 大 logo：主题 img{display:inline-block!important} 会顶掉块级，必须同样 !important 才能居中 */
+    #header-logo { display: block !important; margin-left: auto !important; margin-right: auto !important; }
+    /* 标语：全局 p{text-align:left!important} 会抢走居中，用 ID 优先级压回 */
+    #index-slogan { text-align: center !important; }
   }
 </style>
 <div style="height: 1px; margin: 40px 0; background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)); border-radius: 1px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);"></div>
