@@ -793,11 +793,13 @@ event.target.classList.add('active');
 <style>
   /* ===== 移动端字号自适应（仅 ≤768px，桌面零影响；下限=小米14 现值，大屏机等比放大）===== */
   @media (max-width: 768px) {
-    html { font-size: clamp(15px, 3.85vw, 18px); }
     #index-slogan { text-align: center !important; }
     /* 以下为与主页完全一致的 hero 方案 */
     #header-logo { display: block !important; margin-left: auto !important; margin-right: auto !important; }
     .tc-l h2.fw1 { font-size: 1rem !important; line-height: 1.5 !important; }
+    /* 内联 rem 文本转 em 跟随 article clamp */
+    [style*="font-size: 1.1rem"] { font-size: 1.1em !important; }
+    [style*="font-size: 1.3rem"] { font-size: 1.3em !important; }
     /* 正文与主页对齐（修复点）：主页 article 基准是 clamp(15,3.85vw,18)，本页缺这条导致正文偏大 */
     article { font-size: clamp(15px, 3.85vw, 18px) !important; padding-left: 14px !important; padding-right: 14px !important; }
     .content-section h2 { font-size: 1.3em !important; }
