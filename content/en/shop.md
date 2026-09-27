@@ -1,6 +1,6 @@
 ---
 title: "Eonun"
-description: "专业Trance音乐采样包，高质量音频素材"
+description: "Professional Trance sample packs and high-quality audio material"
 body_class: "ma0 avenir bg-near-white development is-section is-section"
 extra_css:
   - css/shop-page.css
@@ -75,7 +75,7 @@ extra_css:
             opacity: 0;
             transform: translateX(40%);
             filter: blur(12px);
-          ">一个年轻人奉献给了Trance艺术的部分人生</p>
+          ">Part of a young life, devoted to the art of Trance</p>
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@ window.addEventListener('scroll', function() {
 });
 fetch('/data/trance_mixing_slogans.txt')
   .then(response => {
-    if (!response.ok) throw new Error('标语文件加载失败');
+    if (!response.ok) throw new Error('Slogan file failed to load');
     return response.text();
   })
   .then(text => {
@@ -113,8 +113,8 @@ fetch('/data/trance_mixing_slogans.txt')
     }
   })
   .catch(error => {
-    console.log('随机标语加载失败，使用兜底文案：', error);
-    if (indexSlogan) indexSlogan.textContent = '一个年轻人奉献给了Trance艺术的部分人生';
+    console.log('Failed to load slogans, using fallback text:', error);
+    if (indexSlogan) indexSlogan.textContent = 'Part of a young life, devoted to the art of Trance';
   });
   const aboutHeader = document.querySelector('header.about-header');
   if (aboutHeader) {
@@ -199,16 +199,16 @@ fetch('/data/trance_mixing_slogans.txt')
       <div class="hero-content">
         <h1 class="hero-title">Shop</h1>
         <div class="hero-subtitle">
-          <p>专业Trance音乐采样包</p>
-          <p>高质量音频素材 · 立即下载使用</p>
+          <p>Professional Trance Sample Packs</p>
+          <p>High-quality audio material · Download and use right away</p>
         </div>
       </div>
     </div>
     <div class="shop-container">
       <!-- 敬请期待提示 -->
       <div style="text-align: center; padding: 4rem 2rem; margin-bottom: 2rem;">
-        <div style="font-size: 2rem; font-weight: 600; color: #ffffff; margin-bottom: 2rem;">敬请期待</div>
-        <p style="font-size: 1.1rem; color: #ffffff; max-width: 600px; margin: 0 auto;">商店正在筹备中，更多专业Trance音乐采样包即将上架。请持续关注我们的更新！</p>
+        <div style="font-size: 2rem; font-weight: 600; color: #ffffff; margin-bottom: 2rem;">Coming Soon</div>
+        <p style="font-size: 1.1rem; color: #ffffff; max-width: 600px; margin: 0 auto;">The store is under preparation — more professional Trance sample packs are on the way. Stay tuned for updates!</p>
       </div>
       <!-- 产品网格 (暂时隐藏) -->
       <div class="shop-grid" style="display: none;">
@@ -219,15 +219,15 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>Trance Essentials Vol.1</h3>
-              <div class="product-description">专业Trance音乐采样包，包含多种音色</div>
+              <div class="product-description">A professional Trance sample pack covering a wide range of sounds</div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
                 <div class="price-tag">$29.99</div>
               </div>
               <div class="buy-buttons-container">
-              <a href="#" class="buy-button left">国际支付</a>
-              <a href="#" class="buy-button right">转到爱发电</a>
+              <a href="#" class="buy-button left">International Payment</a>
+              <a href="#" class="buy-button right">Buy on Afdian</a>
             </div>
             </div>
           </div>
@@ -239,15 +239,15 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>Atmospheric Pads</h3>
-              <div class="product-description">营造氛围的合成器音色，适合各种电子音乐</div>
+              <div class="product-description">Atmospheric synth sounds, suited to all kinds of electronic music</div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
                 <div class="price-tag">$19.99</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="#" class="buy-button left">国际支付</a>
-                <a href="#" class="buy-button right">转到爱发电</a>
+                <a href="#" class="buy-button left">International Payment</a>
+                <a href="#" class="buy-button right">Buy on Afdian</a>
               </div>
             </div>
           </div>
@@ -259,15 +259,15 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>Euphoric Leads</h3>
-              <div class="product-description">充满活力的 leads 音色，为作品增添独特魅力</div>
+              <div class="product-description">Energetic lead sounds that give your tracks a distinct character</div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
                 <div class="price-tag">$24.99</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="#" class="buy-button left">国际支付</a>
-                <a href="#" class="buy-button right">转到爱发电</a>
+                <a href="#" class="buy-button left">International Payment</a>
+                <a href="#" class="buy-button right">Buy on Afdian</a>
               </div>
             </div>
           </div>
@@ -278,15 +278,15 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>Drum Elements</h3>
-              <div class="product-description">专业鼓组采样，包含多种节奏元素</div>
+              <div class="product-description">Professional drum samples with a wide range of rhythmic elements</div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
                 <div class="price-tag">$34.99</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="#" class="buy-button left">国际支付</a>
-                <a href="#" class="buy-button right">转到爱发电</a>
+                <a href="#" class="buy-button left">International Payment</a>
+                <a href="#" class="buy-button right">Buy on Afdian</a>
               </div>
             </div>
           </div>
@@ -298,15 +298,15 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>Vocal Chops</h3>
-              <div class="product-description">精选人声切片，为作品增添情感色彩</div>
+              <div class="product-description">Hand-picked vocal chops that add an emotional touch to your tracks</div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
                 <div class="price-tag">$39.99</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="#" class="buy-button left">国际支付</a>
-                <a href="#" class="buy-button right">转到爱发电</a>
+                <a href="#" class="buy-button left">International Payment</a>
+                <a href="#" class="buy-button right">Buy on Afdian</a>
               </div>
             </div>
           </div>
@@ -317,15 +317,15 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>Complete Bundle</h3>
-              <div class="product-description">包含所有采样包的完整套装，享受40%折扣</div>
+              <div class="product-description">The complete bundle of all sample packs at a 40% discount</div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
                 <div class="price-tag">$99.99</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="#" class="buy-button left">国际支付</a>
-                <a href="#" class="buy-button right">转到爱发电</a>
+                <a href="#" class="buy-button left">International Payment</a>
+                <a href="#" class="buy-button right">Buy on Afdian</a>
               </div>
             </div>
           </div>
