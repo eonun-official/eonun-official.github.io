@@ -1,6 +1,6 @@
 ---
 title: "Eonun"
-description: "专业音乐制作服务，包括混音、母带处理等"
+description: "Professionelle Dienstleistungen rund um Musikproduktion, Mixing und Mastering"
 body_class: "ma0 avenir bg-near-white development is-section is-section page-music"
 ---
 <header class="about-header" style="position:relative; overflow:hidden; background-image: url('/images/background.webp'); background-size: cover; background-position: center center; background-repeat:no-repeat; min-height:520px;">
@@ -73,7 +73,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-mus
             opacity: 0;
             transform: translateX(40%);
             filter: blur(12px);
-          ">一个年轻人奉献给了Trance艺术的部分人生</p>
+          ">Ein Stück eines jungen Lebens, der Kunst des Trance gewidmet</p>
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ window.addEventListener('scroll', function() {
 });
 fetch('/data/trance_mixing_slogans.txt')
   .then(response => {
-    if (!response.ok) throw new Error('标语文件加载失败');
+    if (!response.ok) throw new Error('Slogan-Datei konnte nicht geladen werden');
     return response.text();
   })
   .then(text => {
@@ -111,8 +111,8 @@ fetch('/data/trance_mixing_slogans.txt')
     }
   })
   .catch(error => {
-    console.log('随机标语加载失败，使用兜底文案：', error);
-    if (indexSlogan) indexSlogan.textContent = '一个年轻人奉献给了Trance艺术的部分人生';
+    console.log('Slogans konnten nicht geladen werden, Fallback-Text wird verwendet:', error);
+    if (indexSlogan) indexSlogan.textContent = 'Ein Stück eines jungen Lebens, der Kunst des Trance gewidmet';
   });
   const aboutHeader = document.querySelector('header.about-header');
   if (aboutHeader) {
@@ -197,8 +197,8 @@ fetch('/data/trance_mixing_slogans.txt')
       <div class="hero-content">
         <h1 class="hero-title">Music Services</h1>
         <div class="hero-subtitle">
-          <p>专业音乐制作服务</p>
-          <p>母带处理 · 音乐工程 · 商业合作</p>
+          <p>Professionelle Musikproduktions-Services</p>
+          <p>Mastering · Musikproduktion · Kommerzielle Zusammenarbeit</p>
         </div>
       </div>
     </div>
@@ -206,71 +206,70 @@ fetch('/data/trance_mixing_slogans.txt')
       <div class="shop-grid">
         <!-- 母带服务 -->
         <div class="product-card featured-card" onmouseenter="cardTint('#8d67fe')" onmouseleave="cardTintOut()">
-          <div class="product-badge premium">方案一</div>
+          <div class="product-badge premium">Option 1</div>
           <div class="product-image master-image"></div>
           <div class="product-content">
             <div class="product-content-top">
-              <h3>母带服务</h3>
-              <div class="product-description">专业母带处理，让音乐更具商业规范与音乐性</div>
+              <h3>Mastering-Service</h3>
+              <div class="product-description">Professionelles Mastering, das Ihre Musik auf kommerzielles Niveau hebt — bei unversehrter Musikalität</div>
               <div class="service-levels">
                 <div class="service-level">
-                  <div class="level-name">标准母带</div>
-                  <div class="level-price">¥330/首</div>
-                  <div class="level-desc">厂牌合作标准，适用于已完成的混音作品</div>
+                  <div class="level-name">Standard-Mastering</div>
+                  <div class="level-price">45 €/Track</div>
+                  <div class="level-desc">Label-Standard, für fertige Mixe</div>
                 </div>
                 <div class="service-level premium-level">
-                  <div class="level-name">精细母带</div>
-                  <div class="level-price">¥985/首</div>
-                  <div class="level-desc">分轨混音+母带，专业处理方法</div>
+                  <div class="level-name">Premium-Mastering</div>
+                  <div class="level-price">135 €/Track</div>
+                  <div class="level-desc">Stem-Mixing + Mastering, professionelle Methodik</div>
                 </div>
               </div>
               <div class="service-notice">
                 <div class="notice-icon">⚠️</div>
-                <div class="notice-text">精细混母服务由委托方自行保障素材规范、混音基底达标；
-                  分轨精度、电平失真、染色过度、时序异常等前置问题，沟通未修正的相关影响由委托方自行承担。</div>
+                <div class="notice-text">Beim Premium-Mixing &amp; -Mastering liegt die Verantwortung für die Qualität des Quellmaterials und der Mix-Basis beim Auftraggeber. Vorbestehende Probleme — Stem-Auflösung, Pegelverzerrung, übermäßige Coloration, Timing-Fehler — bleiben bei unzureichender Korrektur nach Absprache in der Verantwortung des Auftraggebers.</div>
               </div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
-                <div class="price-tag">¥330起</div>
+                <div class="price-tag">ab 45 €</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="../contact/index.html" class="buy-button left">联系咨询</a>
-                <a href="#" class="buy-button right" onclick="openMasteringModal()">了解详情</a>
+                <a href="../contact/index.html" class="buy-button left">Anfragen</a>
+                <a href="#" class="buy-button right" onclick="openMasteringModal()">Details</a>
               </div>
             </div>
           </div>
         </div>
         <!-- 音乐工程服务 -->
         <div class="product-card featured-card" onmouseenter="cardTint('#00ff59')" onmouseleave="cardTintOut()">
-          <div class="product-badge exclusive">方案二</div>
+          <div class="product-badge exclusive">Option 2</div>
           <div class="product-image production-image"></div>
           <div class="product-content">
             <div class="product-content-top">
-              <h3>音乐工程服务</h3>
-              <div class="product-description">从零开始构建，将你的灵感转化为专业作品</div>
+              <h3>Komplette Track-Produktion</h3>
+              <div class="product-description">Von Grund auf neu erschaffen — Ihre Ideen werden zu professionellen Tracks</div>
               <div class="service-details">
                 <div class="service-detail-item">
                   <div class="detail-icon">🎵</div>
-                  <div class="detail-text">将你的灵感、预设全部交给我</div>
+                  <div class="detail-text">Übergeben Sie Ihre Ideen, Skizzen und Presets</div>
                 </div>
                 <div class="service-detail-item">
                   <div class="detail-icon">🤝</div>
-                  <div class="detail-text">深度交流与合作创作</div>
+                  <div class="detail-text">Tiefe Zusammenarbeit während des gesamten Prozesses</div>
                 </div>
                 <div class="service-detail-item">
                   <div class="detail-icon">🚀</div>
-                  <div class="detail-text">合作发行高质量的成品曲目</div>
+                  <div class="detail-text">Releasefertige Tracks in hoher Qualität</div>
                 </div>
               </div>
             </div>
             <div class="product-content-bottom">
               <div class="price-container">
-                <div class="price-tag">¥5200</div>
+                <div class="price-tag">750 €</div>
               </div>
               <div class="buy-buttons-container">
-                <a href="../contact/index.html" class="buy-button left">联系咨询</a>
-                <a href="#" class="buy-button right" onclick="openServiceModal()">了解详情</a>
+                <a href="../contact/index.html" class="buy-button left">Anfragen</a>
+                <a href="#" class="buy-button right" onclick="openServiceModal()">Details</a>
               </div>
             </div>
           </div>
@@ -279,34 +278,34 @@ fetch('/data/trance_mixing_slogans.txt')
     </div>
     <div class="process-section">
       <div class="process-content">
-        <h2>服务流程</h2>
+        <h2>So funktioniert es</h2>
         <div class="process-steps">
           <div class="process-step">
             <div class="step-number">1</div>
             <div class="step-content">
-              <h3>作品审核</h3>
-              <p>提交作品Demo，我们评估作品质量和适用服务</p>
+              <h3>Track-Prüfung</h3>
+              <p>Reichen Sie ein Demo ein — wir bewerten den Track und empfehlen den passenden Service</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-number">2</div>
             <div class="step-content">
-              <h3>方案定制</h3>
-              <p>根据需求制定个性化服务方案和报价</p>
+              <h3>Individuelles Konzept</h3>
+              <p>Ein persönlicher Plan und ein Angebot, abgestimmt auf Ihre Ziele</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-number">3</div>
             <div class="step-content">
-              <h3>深度合作</h3>
-              <p>全程沟通协作，确保作品符合预期</p>
+              <h3>Enge Zusammenarbeit</h3>
+              <p>Enge Absprache in jeder Phase, damit das Ergebnis Ihrer Vision entspricht</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-number">4</div>
             <div class="step-content">
-              <h3>交付与发行</h3>
-              <p>交付高质量成品，协助发行推广</p>
+              <h3>Lieferung &amp; Release</h3>
+              <p>Hochwertige Endabnahme, mit Unterstützung bei Release und Promotion</p>
             </div>
           </div>
         </div>
@@ -412,54 +411,54 @@ window.onclick = function(event) {
 <div id="service-modal" class="service-modal">
   <div class="service-modal-content">
     <div class="service-modal-header">
-      <h2>Eonun 曲目工程制作服务</h2>
+      <h2>Eonun Track-Produktionsservice</h2>
       <span class="close-button" onclick="closeServiceModal()">&times;</span>
     </div>
     <div class="service-modal-body">
-      <p>凭借多年专注 Uplifting Trance 的制作与经验，我将把你的具体需要，完整落地为结构成熟、音色精准、符合国际发行标准的成品作品。无论是完善一段动机、深化一首半成品，还是从零构建完整单曲，我都会以严谨的制作流程，让你的音乐想法真正成为可发行、可传播、具备辨识度的专业作品。</p>
-      <h3>服务内容</h3>
+      <p>Mit jahrelanger Fokussierung auf Uplifting-Trance-Produktion verwandle ich Ihre konkreten Anforderungen in fertige Tracks mit ausgereifter Struktur, präzisem Sounddesign und internationalen Release-Standards. Ob die Weiterentwicklung einer groben Idee, die Vertiefung eines halbfertigen Tracks oder der komplette Neubau einer Single — ein disziplinierter Produktionsprozess macht Ihre musikalischen Ideen real: releasefertig, teilbar und unverwechselbar.</p>
+      <h3>Leistungsumfang</h3>
       <ul>
-        <li>根据你提供的旋律、参考曲、MIDI 或创作方向，完成整首曲目从编曲、音色设计、混音到结构优化的完整工程制作，可适配游戏、影视等各类商用场景。</li>
-        <li>包含 2 次免费调整，确保最终作品贴合你的风格定位与听觉预期。</li>
-        <li>标准制作周期为 14 个自然日；如需更快上线，可选择加急流程，7 日内完成交付。</li>
+        <li>Eine komplette Produktion — Arrangement, Sounddesign, Mixing und Strukturoptimierung — auf Basis Ihrer Melodie, Referenztracks, MIDI-Dateien oder kreativen Vorgabe; geeignet für die kommerzielle Nutzung in Games, Film und mehr.</li>
+        <li>Zwei kostenlose Überarbeitungsrunden, damit der fertige Track zu Ihrem Stil und Ihren Erwartungen passt.</li>
+        <li>Die Standard-Lieferzeit beträgt 14 Kalendertage; per Express ist die Lieferung innerhalb von 7 Tagen möglich.</li>
       </ul>
-      <h3>选择这项制作服务的理由</h3>
-      <p>作为获得国际现代 Trance 音乐厂牌RIIR独家专访的制作人，我长期以现代 Uplifting Trance 制作体系为核心，懂得最新的审美标准，也了解全面的审美角度，所有作品均按照国际厂牌发行标准打磨。我不参与圈层化运作，不设身份门槛，只以作品质量为唯一标准，让你的音乐在全球市场中更具竞争力。</p>
-      <h3>你需要提供的素材</h3>
+      <h3>Warum dieser Service</h3>
+      <p>Als Produzent, dem RIIR, einem internationalen modernen Trance-Label, ein exklusives Interview widmete, basiert meine Arbeit auf dem modernen Uplifting-Trance-Produktionssystem — ich halte mich an aktuelle ästhetische Standards und behalte gleichzeitig den ganzen Genre-Kontext im Blick; jeder Track wird nach den Release-Standards internationaler Labels ausgearbeitet. Ich mache keine Insider-Spiele und kenne kein Gatekeeping: Die Qualität der Arbeit ist das einzige Kriterium, damit Ihre Musik auf dem Weltmarkt bestehen kann.</p>
+      <h3>Benötigtes Material</h3>
       <ul>
-        <li>下单后 24 小时内，请提供项目相关素材，包括画面片段、剧情参考、情绪指引、参考配乐或风格描述。</li>
-        <li>同时请明确你的需求：曲风（仅限 Uplifting Trance 风格配乐）、单条时长、整体情绪与使用场景方向。</li>
+        <li>Bitte reichen Sie innerhalb von 24 Stunden nach Auftragserteilung das Projektmaterial ein: Videosequenzen, Story-Referenzen, Stimmungsvorgaben, Referenzmusik oder eine Stilbeschreibung.</li>
+        <li>Bitte geben Sie außerdem an: Stil (für diesen Service ausschließlich Uplifting Trance), Länge des jeweiligen Stücks, Gesamtstimmung und vorgesehene Verwendung bzw. Einsatzszenario.</li>
       </ul>
-      <h3>重要说明与版权条款</h3>
+      <h3>Wichtige Hinweise &amp; Urheberrechtsbedingungen</h3>
       <ul>
-        <li>作为配乐制作方，我将保留 10% 著作权收益（含作曲署名权、机械权、同步权），该比例不影响你方项目的全球发行、上映与全渠道传播收益。</li>
-        <li>作品交付后，若因项目调整产生额外修改，将按 ¥700 / 小时 收取调整费用。</li>
-        <li>我全程保证制作质量与场景适配度，但不承诺或保证作品达到任何特定第三方的验收标准。</li>
+        <li>Als Produzent behalte ich 10 % der Urheberrechtserträge (einschließlich Kompositionsnennung, mechanischer Rechte und Synchronisationsrechte). Dieser Anteil berührt nicht die weltweite Verbreitung, Vorführung oder die Einnahmen Ihres Projekts über alle Kanäle.</li>
+        <li>Nach Lieferung werden zusätzliche, auf Projektänderungen zurückzuführende Überarbeitungen mit 100 € pro Stunde berechnet.</li>
+        <li>Ich garantiere während des gesamten Prozesses Produktionsqualität und Eignung für den vorgesehenen Zweck, verspreche oder garantiere jedoch nicht, dass ein Werk die Akzeptanzkriterien eines bestimmten Dritten erfüllt.</li>
       </ul>
-      <h3>服务价格</h3>
+      <h3>Preise</h3>
       <div class="price-section">
         <div class="price-item">
-          <span class="price-label">标准制作（14 天交付）：</span>
-          <span class="price-value">¥5200</span>
+          <span class="price-label">Standardproduktion (Lieferung in 14 Tagen):</span>
+          <span class="price-value">750 €</span>
         </div>
         <div class="price-item">
-          <span class="price-label">加急制作（7 天交付）：</span>
-          <span class="price-value">¥6600</span>
+          <span class="price-label">Expressproduktion (Lieferung in 7 Tagen):</span>
+          <span class="price-value">950 €</span>
         </div>
       </div>
-      <h3>常见疑问</h3>
+      <h3>Häufige Fragen</h3>
       <ul>
-        <li>素材要求：下单后同步详细规范，可提前沟通确认</li>
-        <li>制作流程：需求确认→初稿交付→调整优化→终版定稿</li>
-        <li>制作周期：标准 14 个自然日，加急 7 日内交付</li>
+        <li>Material: Detaillierte Spezifikationen erhalten Sie nach Bestellung — gern klären wir Details vorab</li>
+        <li>Ablauf: Anforderungen bestätigt → erster Entwurf → Überarbeitungen → Endabnahme</li>
+        <li>Lieferzeit: 14 Kalendertage im Standard, Express innerhalb von 7 Tagen</li>
       </ul>
       <div class="final-note">
-        <h3>开启你的项目配乐定制</h3>
-        <p>无论你是只需要单段情绪配乐，还是已有完整项目需要定制配乐，我都以稳定、可商用的制作标准，帮你把场景情绪变成真正适配项目的 Uplifting Trance 配乐。提交你的项目资料，帮你做出贴合场景、情绪到位、具备专业水准的音乐。</p>
+        <h3>Starten Sie Ihr Custom-Projekt</h3>
+        <p>Ob Sie nur ein einzelnes Stimmungsstück oder eine komplette individuelle Vertonung für ein ganzes Projekt benötigen — ich arbeite nach stabilen, kommerziell nutzbaren Standards und verwandle Szenenstimmung in Uplifting Trance, die wirklich passt. Senden Sie Ihr Projektmaterial, und lassen Sie uns Musik erschaffen, die zur Szene passt, die Emotion trifft und professionelles Niveau hält.</p>
       </div>
     </div>
     <div class="service-modal-footer">
-      <a href="../contact/index.html" class="modal-cta-button">开始合作</a>
+      <a href="../contact/index.html" class="modal-cta-button">Projekt starten</a>
     </div>
   </div>
 </div>
@@ -467,42 +466,42 @@ window.onclick = function(event) {
 <div id="mastering-modal" class="service-modal">
   <div class="service-modal-content">
     <div class="service-modal-header">
-      <h2>Eonun 混音母带服务</h2>
+      <h2>Eonun Mixing- &amp; Mastering-Service</h2>
       <span class="close-button" onclick="closeMasteringModal()">&times;</span>
     </div>
     <div class="service-modal-body">
-      <p>以 Trance 舞曲的审美逻辑与数字发行规范，完成动态、频段与响度的适配，兼顾听感质感与平台播放标准。</p>
-      <h3>服务分级</h3>
+      <p>Nach der ästhetischen Logik des Trance und den Spezifikationen digitaler Distribution: Dynamik, Frequenzbalance und Lautheit — damit die Musik sich richtig anfühlt und auf jeder Plattform richtig klingt.</p>
+      <h3>Leistungsstufen</h3>
       <div class="service-levels-modal">
         <div class="service-level-item">
-          <h4>标准母带校准｜¥330</h4>
-          <p>在你提供的最终立体声混音基础上，进行响度校准、全局频段规整与播放适配，交付符合流媒体发行规范的母带成品。</p>
+          <h4>Standard-Mastering-Kalibrierung — 45 €</h4>
+          <p>Ausgehend von Ihrem fertigen Stereomix: Lautheitskalibrierung, globale Frequenzbereinigung und Wiedergabeoptimierung — geliefert als Master, der den Streaming-Release-Spezifikationen entspricht.</p>
         </div>
         <div class="service-level-item premium-item">
-          <h4>全流程混音 + 母带｜¥950</h4>
-          <p>针对最高 10 组分组 Stem 进行混音精修，覆盖低频结构、旋律层次、打击乐咬合与空间塑造，再经针对性母带处理优化动态与响度，交付可直接发布的成品。</p>
+          <h4>Komplettes Mixing + Mastering — 135 €</h4>
+          <p>Feinmixing von bis zu 10 gruppierten Stems — Low-End-Struktur, melodische Ebenen, Drum-Kohäsion und räumliches Design — gefolgt von gezieltem Mastering für Dynamik und Lautheit. Geliefert releasefertig.</p>
         </div>
       </div>
-      <h3>提交规范</h3>
+      <h3>Material-Spezifikationen</h3>
       <ul>
-        <li><strong>单轨母带：</strong>提交最终立体声混音，WAV 格式，24-bit 精度，采样率保持工程原始值（44.1 / 48 kHz），不做升频或转码；峰值预留 -6 dB 净空（-6 ~ -3 dBFS 均可），总线不加限制器、压限等全局处理</li>
-        <li><strong>Stem 混音：</strong>WAV 格式，24-bit，采样率与工程一致，最多 10 组；混响、延迟等效果轨单独导出；各轨预留约 -6 dB 净空，严禁削波</li>
-        <li><strong>文件交付：</strong>建议文件名注明曲名与 BPM，打包后通过邮箱或通讯软件发送，云盘链接亦可</li>
+        <li><strong>Stereo-Mastering:</strong> Reichen Sie Ihren fertigen Stereomix als WAV, 24-Bit, in der Original-Samplerate des Projekts (44,1 / 48 kHz) ein — kein Upsampling, keine Transkodierung. Halten Sie -6 dB Headroom frei (alles zwischen -6 und -3 dBFS ist in Ordnung); kein Limiter und keine Bus-Kompression auf dem Masterbus.</li>
+        <li><strong>Stem-Mixing:</strong> WAV, 24-Bit, gleiche Samplerate wie das Projekt, bis zu 10 Stems; Reverb-, Delay- und andere Effektspuren separat exportieren; pro Stem ca. -6 dB Headroom freihalten. Kein Clipping.</li>
+        <li><strong>Dateiübergabe:</strong> Vergeben Sie Dateinamen mit Titel und BPM und senden Sie das Archiv per E-Mail oder Messenger — ein Cloud-Link funktioniert ebenfalls.</li>
       </ul>
-      <h3>交付与加急</h3>
+      <h3>Lieferzeit &amp; Express</h3>
       <ul>
-        <li>标准周期：3–5 个工作日</li>
-        <li>全流程加急 24 小时交付：附加费 ¥200</li>
+        <li>Standard: 3–5 Werktage</li>
+        <li>Komplettes Express-Mixing + Mastering innerhalb von 24 Stunden: +29 €</li>
       </ul>
-      <h3>品质核心</h3>
-      <p>长期专注 Trance 舞曲的总线处理，按每首作品的结构与风格针对性调整，以数字发行规范交付成品。</p>
+      <h3>Das Qualitätsfundament</h3>
+      <p>Jahrelange Fokussierung auf Trance-Busbearbeitung. Jeder Track wird an seine eigene Struktur und seinen eigenen Stil angepasst und nach den Spezifikationen digitaler Distribution geliefert.</p>
       <div class="final-note">
-        <h3>为发行做好准备</h3>
-        <p>无论是快速响度校准，还是深度混音精修，都以发行规范为准绳，交付可直接发布的成品。若已有目标厂牌，可针对其发行作品的音色审美与响度习惯做针对性母带处理，让成品更贴合该厂牌的整体声音取向。</p>
+        <h3>Bereit für den Release</h3>
+        <p>Von der schnellen Lautheitskalibrierung bis zur tiefgehenden Mixing-Arbeit gilt alles den Release-Spezifikationen — geliefert veröffentlichungsbereit. Falls Sie bereits ein Ziel-Label im Blick haben, kann das Master gezielt an die Klangästhetik und Lautheitsgewohnheiten dessen Katalogs angepasst werden, damit der fertige Track nahtlos in den Sound des Labels passt.</p>
       </div>
     </div>
     <div class="service-modal-footer">
-      <a href="../contact/index.html" class="modal-cta-button">开始合作</a>
+      <a href="../contact/index.html" class="modal-cta-button">Projekt starten</a>
     </div>
   </div>
 </div>

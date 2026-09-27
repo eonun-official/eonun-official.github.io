@@ -73,7 +73,7 @@ body_class: "ma0 avenir bg-near-white development is-section is-section page-con
             opacity: 0;
             transform: translateX(40%);
             filter: blur(12px);
-          ">一个年轻人奉献给了Trance艺术的部分人生</p>
+          ">Ein Stück eines jungen Lebens, der Kunst des Trance gewidmet</p>
         </div>
       </div>
     </div>
@@ -154,7 +154,7 @@ window.addEventListener('scroll', function() {
 });
 fetch('/data/trance_mixing_slogans.txt') 
   .then(response => {
-    if (!response.ok) throw new Error('标语文件加载失败');
+    if (!response.ok) throw new Error('Slogan-Datei konnte nicht geladen werden');
     return response.text();
   })
   .then(text => {
@@ -167,8 +167,8 @@ fetch('/data/trance_mixing_slogans.txt')
     }
   })
   .catch(error => {
-    console.log('随机标语加载失败，使用兜底文案：', error);
-    if (indexSlogan) indexSlogan.textContent = '一个年轻人奉献给了Trance艺术的部分人生';
+    console.log('Slogans konnten nicht geladen werden, Fallback-Text wird verwendet:', error);
+    if (indexSlogan) indexSlogan.textContent = 'Ein Stück eines jungen Lebens, der Kunst des Trance gewidmet';
   });
 const aboutHeader = document.querySelector('header.about-header');
 if (aboutHeader) {
@@ -193,9 +193,9 @@ if (aboutHeader) {
 </style>
   <main class="pb7" role="main">
     <div class="contact-container" style="max-width: 800px; margin: 0 auto; padding: 60px 20px; text-align: center;">
-      <h2 style="color: #fff; font-size: 2rem; margin-bottom: 40px;">联系我</h2>
+      <h2 style="color: #fff; font-size: 2rem; margin-bottom: 40px;">Kontakt</h2>
       <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 40px; margin-bottom: 40px;">
-        <p style="color: #d9d9d9; font-size: 1.125rem; margin-bottom: 30px;">如果您有任何问题、合作意向或混音需求，欢迎随时联系我</p>
+        <p style="color: #d9d9d9; font-size: 1.125rem; margin-bottom: 30px;">Fragen, Kooperationsideen oder Mixing-Anfragen — melden Sie sich jederzeit gern</p>
         <div style="margin: 40px 0;">
           <a href="mailto:eonun.official@gmail.com" style="
             color: #f2f2f2;
@@ -220,11 +220,11 @@ if (aboutHeader) {
             display: inline-block;
             transition: all 0.3s ease;
           " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 15px rgba(255, 255, 255, 0.5);'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
-            发送邮件
+            E-Mail senden
           </a>
         </div>
         <div style="margin-top: 50px;">
-          <h3 style="color: #fff; font-size: 1.125rem; margin-bottom: 20px;">Connect With Eonun / 联系我</h3>
+          <h3 style="color: #fff; font-size: 1.125rem; margin-bottom: 20px;">Connect With Eonun</h3>
           <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
             <a href="https://www.facebook.com/profile.php?id=100066102545732" target="_blank" style="color: #d9d9d9; font-size: 1.75rem; transition: all 0.3s ease; text-decoration: none;">➤</a>
             <a href="https://www.instagram.com/eonun_offcial/" target="_blank" style="color: #d9d9d9; font-size: 1.75rem; transition: all 0.3s ease; text-decoration: none;">📷</a>
@@ -232,11 +232,11 @@ if (aboutHeader) {
             <a href="https://space.bilibili.com/329479754" target="_blank" style="color: #d9d9d9; font-size: 1.75rem; transition: all 0.3s ease; text-decoration: none;">📺</a>
             <a href="weixin://" style="color: #d9d9d9; font-size: 1.75rem; transition: all 0.3s ease; text-decoration: none;">💬</a>
           </div>
-          <p style="color: #d9d9d9; font-size: 0.875rem; margin-top: 15px;">微信号：EonunTrance</p>
+          <p style="color: #d9d9d9; font-size: 0.875rem; margin-top: 15px;">WeChat-ID: EonunTrance</p>
         </div>
       </div>
       <div style="color: #d9d9d9; font-size: 0.875rem;">
-        <p>期待与您的合作，共同创造精彩的Trance音乐作品</p>
+        <p>Ich freue mich auf die Zusammenarbeit und darauf, gemeinsam großartige Trance-Musik zu erschaffen</p>
       </div>
     </div>
   </main>
