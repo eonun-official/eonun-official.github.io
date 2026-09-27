@@ -484,7 +484,6 @@ fetch('/data/trance_mixing_slogans.txt')
     .takeover-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; height: auto; }
     .takeover-img { width: 100%; height: auto; aspect-ratio: 1 / 1; }
     /* 统一设计语言 v3 移动端 */
-    .block-subtitle { font-size: 18px; margin-bottom: 26px; }
     .service-wrap, .works-wrap, .collab-block { margin: 30px 0; }
     .service-grid { grid-template-columns: 1fr; gap: 14px; }
     .service-card { padding: 22px 18px; }
@@ -553,9 +552,13 @@ fetch('/data/trance_mixing_slogans.txt')
     #index-slogan { font-size: 16px !important; margin-left: 0 !important; }
     .tc-l h2.fw1 { font-size: 1rem !important; line-height: 1.5 !important; }
     /* 区块标题与正文边距 */
-    article { padding-left: 14px !important; padding-right: 14px !important; }
-    article h2:not(.fw1) { font-size: 1.4em !important; }
-    article h3[style*="font-size: 22px"] { font-size: 17px !important; }
+    article { padding-left: 14px !important; padding-right: 14px !important; font-size: 15px !important; }
+    article h2:not(.fw1) { font-size: 1.3em !important; }
+    div[style*="font-size: 18px"] { font-size: 15px !important; }
+    .block-subtitle { font-size: 16px; margin-bottom: 24px; }
+    .collab-title { font-size: 17px; }
+    .contact-cta h3 { font-size: 18px; }
+    .service-card h4 { font-size: 15px; }
     /* 段落分隔线边距 */
     div[style*="height: 1px"][style*="margin: 40px 0"] { margin: 24px 0 !important; }
     /* 语言切换器与调色盘不挡内容 */
