@@ -384,6 +384,7 @@ fetch('/data/trance_mixing_slogans.txt')
 <p>我提供的东西很朴素：直接与我本人对接；价格与档位完全透明，没有隐藏费用；知识成体系；指导真正落在你的作品上。</p>
 <p>每一项内容都指向实际——让你做出属于自己的、站得住脚的作品。</p>
 <p>无论你是刚开始接触制作的新手，还是想更进一步的制作人或 DJ，这里都有适合你的位置。</p>
+<p style="margin-top: 1.2rem;"><span style="display: inline-block; font-size: 0.85rem; color: #d9d9d9; letter-spacing: 1px; padding: 5px 16px; border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 50px; background: rgba(255, 255, 255, 0.05);">支持中文 / 英语授课</span></p>
 </div>
 </div>
 </div>
