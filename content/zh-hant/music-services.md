@@ -220,7 +220,7 @@ fetch('/data/trance_mixing_slogans.txt')
                 </div>
                 <div class="service-level premium-level">
                   <div class="level-name">精细母带</div>
-                  <div class="level-price">¥985/首</div>
+                  <div class="level-price">¥950/首</div>
                   <div class="level-desc">分轨混音+母带，专业处理方法</div>
                 </div>
               </div>
