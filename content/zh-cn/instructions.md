@@ -793,8 +793,11 @@ event.target.classList.add('active');
 <style>
   /* ===== 移动端字号自适应（仅 ≤768px，桌面零影响；下限=小米14 现值，大屏机等比放大）===== */
   @media (max-width: 768px) {
-    html { font-size: clamp(16px, 4.1vw, 19.5px); }
+    html { font-size: clamp(15px, 3.85vw, 18px); }
     #index-slogan { text-align: center !important; }
+    /* 以下为与主页完全一致的 hero 方案 */
+    #header-logo { display: block !important; margin-left: auto !important; margin-right: auto !important; }
+    .tc-l h2.fw1 { font-size: 1rem !important; line-height: 1.5 !important; }
     /* 页内固定 px 类字号 → 随屏宽等比缩放（下限=现值） */
     .course-benefit { font-size: clamp(14px, 3.6vw, 17px); }
     .discount-btn { font-size: clamp(16px, 4.1vw, 20px); }
