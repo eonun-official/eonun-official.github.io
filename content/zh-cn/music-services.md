@@ -198,7 +198,7 @@ fetch('/data/trance_mixing_slogans.txt')
         <h1 class="hero-title">Music Services</h1>
         <div class="hero-subtitle">
           <p>专业音乐制作服务</p>
-          <p>母带处理 · 音乐工程 · 合作发行</p>
+          <p>母带处理 · 音乐工程 · 商业合作</p>
         </div>
       </div>
     </div>
@@ -211,7 +211,7 @@ fetch('/data/trance_mixing_slogans.txt')
           <div class="product-content">
             <div class="product-content-top">
               <h3>母带服务</h3>
-              <div class="product-description">专业母带处理，让音乐更具商业品质</div>
+              <div class="product-description">专业母带处理，让音乐更具商业规范与音乐性</div>
               <div class="service-levels">
                 <div class="service-level">
                   <div class="level-name">标准母带</div>
