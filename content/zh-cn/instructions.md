@@ -798,6 +798,9 @@ event.target.classList.add('active');
     /* 以下为与主页完全一致的 hero 方案 */
     #header-logo { display: block !important; margin-left: auto !important; margin-right: auto !important; }
     .tc-l h2.fw1 { font-size: 1rem !important; line-height: 1.5 !important; }
+    /* 正文与主页对齐（修复点）：主页 article 基准是 clamp(15,3.85vw,18)，本页缺这条导致正文偏大 */
+    article { font-size: clamp(15px, 3.85vw, 18px) !important; padding-left: 14px !important; padding-right: 14px !important; }
+    .content-section h2 { font-size: 1.3em !important; }
     /* 页内固定 px 类字号 → 随屏宽等比缩放（下限=现值） */
     .course-benefit { font-size: clamp(14px, 3.6vw, 17px); }
     .discount-btn { font-size: clamp(16px, 4.1vw, 20px); }
