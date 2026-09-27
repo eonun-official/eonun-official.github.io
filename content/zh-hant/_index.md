@@ -289,7 +289,7 @@ window.addEventListener('scroll', function() {
   lastScrollTop = scrollDistance;
 });
 // 加載標語文件
-fetch('/data/trance_mixing_slogans.txt')
+fetch('/data/trance_mixing_slogans_hant.txt')
   .then(response => {
     if (!response.ok) throw new Error('標語文件加載失敗: ' + response.status);
     return response.text();

@@ -98,7 +98,7 @@ window.addEventListener('scroll', function() {
     indexSlogan.style.setProperty('filter', `brightness(${brightness}) drop-shadow(0 2px 10px rgba(255,255,255,${shadowIntensity}))`, 'important');
   }
 });
-fetch('/data/trance_mixing_slogans.txt')
+fetch('/data/trance_mixing_slogans_de.txt')
   .then(response => {
     if (!response.ok) throw new Error('Slogan-Datei konnte nicht geladen werden');
     return response.text();

@@ -289,7 +289,7 @@ window.addEventListener('scroll', function() {
   lastScrollTop = scrollDistance;
 });
 // 加载标语文件
-fetch('/data/trance_mixing_slogans.txt')
+fetch('/data/trance_mixing_slogans_en.txt')
   .then(response => {
     if (!response.ok) throw new Error('Slogan file failed to load: ' + response.status);
     return response.text();

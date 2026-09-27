@@ -290,7 +290,7 @@ window.addEventListener('scroll', function() {
   }
   lastScrollTop = scrollDistance;
 });
-fetch('/data/trance_mixing_slogans.txt') 
+fetch('/data/trance_mixing_slogans_en.txt') 
   .then(response => {
     if (!response.ok) throw new Error('Slogan file failed to load');
     return response.text();
