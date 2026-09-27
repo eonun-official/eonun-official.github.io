@@ -433,8 +433,10 @@ fetch('/data/trance_mixing_slogans.txt')
   .service-card p { color: #999999; font-size: 13px; line-height: 1.75; margin: 0; }
   .works-wrap { max-width: 1200px; margin: 60px auto; }
   .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-  .work-card { border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 8px; background: rgba(255, 255, 255, 0.02); }
-  .work-embed { width: 100%; border: none; border-radius: 6px; display: block; background: transparent; }
+  .work-embed { width: 100%; border: none; border-radius: 12px; display: block; background: transparent; }
+  /* 网易云裁切：放大并偏移 iframe，裁掉其自带边距/阴影/白框边，内容贴边呈现 */
+  .work-163-crop { height: 430px; overflow: hidden; border-radius: 12px; background: #ffffff; }
+  .work-embed--163 { width: calc(100% + 14px); height: 464px; margin: -20px 0 0 -10px; }
   .work-embed--spotify { height: 430px; }
   .work-embed--163 { height: 430px; }
   .work-note { color: #999999; text-align: center; margin-top: 14px; font-size: 13px; }
@@ -587,13 +589,11 @@ fetch('/data/trance_mixing_slogans.txt')
   <h3 class="block-subtitle">Listen to the Sound</h3>
   <div class="works-grid">
     <div style="width: 100%;">
-      <div class="work-card">
-        <iframe data-testid="embed-iframe" class="work-embed work-embed--spotify" src="https://open.spotify.com/embed/artist/7ok2w55yMiwbUvrlVn9mBW?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
+      <iframe data-testid="embed-iframe" class="work-embed work-embed--spotify" src="https://open.spotify.com/embed/artist/7ok2w55yMiwbUvrlVn9mBW?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       <p class="work-note">更多作品 → <a href="https://open.spotify.com/artist/7ok2w55yMiwbUvrlVn9mBW" target="_blank" style="color: #ffffff; text-decoration: none;">Spotify</a></p>
     </div>
     <div style="width: 100%;">
-      <div class="work-card">
+      <div class="work-163-crop">
         <iframe id="netease-player" class="work-embed work-embed--163" src="https://music.163.com/outchain/player?type=0&id=17739007625&auto=0&height=430" loading="lazy" frameborder="no" marginwidth="0" marginheight="0"></iframe>
       </div>
       <script>
