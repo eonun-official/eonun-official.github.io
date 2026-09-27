@@ -400,3 +400,17 @@ fetch('/data/trance_mixing_slogans.txt')
     [style*="font-size: 0.9rem"] { font-size: 0.9em !important; }
   }
 </style>
+
+<style>
+  /* ===== en/de 移动端长文适配（≤768px，桌面零影响）===== */
+  @media (max-width: 768px) {
+    article { overflow-wrap: break-word; }
+    article h2:not(.fw1) { font-size: 1.1em !important; letter-spacing: 0.5px !important; }
+    article h3 { font-size: 1.15em !important; overflow-wrap: break-word; }
+    article p, article li { hyphens: auto; }
+    .identity-item h3 { font-size: clamp(12px, 3.2vw, 14px) !important; letter-spacing: 0 !important; overflow-wrap: break-word; }
+    .identity-item p { font-size: 11px !important; line-height: 1.55; overflow-wrap: break-word; }
+    .cred-title { font-size: 13px !important; letter-spacing: 1px !important; }
+    .block-subtitle { font-size: clamp(14px, 3.6vw, 18px); }
+  }
+</style>
