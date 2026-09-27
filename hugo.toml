@@ -1,6 +1,6 @@
 baseURL = 'http://localhost:1313/'
 title = 'Eonun'
-defaultContentLanguage = 'zh-cn'
+defaultContentLanguage = 'zh-hans'
 defaultContentLanguageInSubdir = false
 
 # 原始 HTML 直接写入 Markdown 内容（content/*.md 中为整页 HTML）
@@ -11,18 +11,18 @@ unsafe = true
 disableKinds = ['taxonomy', 'term']
 relativeURLs = true
 
-# 多语言：简体(根目录) / 繁体 / 英语 / 德语
+# 多语言：简体(根目录) / 繁体 / 英语 / 德语（语言码采用 ISO 15924 文字码 zh-hans/zh-hant，不带国家含义）
 [languages]
-  [languages.zh-cn]
+  [languages.zh-hans]
     languageName = '简体中文'
-    languageCode = 'zh-CN'
+    languageCode = 'zh-Hans'
     weight = 1
-    contentDir = 'content/zh-cn'
-  [languages.zh-tw]
+    contentDir = 'content/zh-hans'
+  [languages.zh-hant]
     languageName = '繁體中文'
-    languageCode = 'zh-TW'
+    languageCode = 'zh-Hant'
     weight = 2
-    contentDir = 'content/zh-tw'
+    contentDir = 'content/zh-hant'
   [languages.en]
     languageName = 'English'
     languageCode = 'en'

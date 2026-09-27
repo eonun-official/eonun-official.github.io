@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""从 zh-cn/_index.md 生成 en/de 主页：结构不动，只替换可见文字。"""
+"""从 zh-hans/_index.md 生成 en/de 主页：结构不动，只替换可见文字。"""
 import io, re, os
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-src = io.open(os.path.join(BASE, '..', '..', 'content', 'zh-cn', '_index.md'), encoding='utf-8').read()
+src = io.open(os.path.join(BASE, '..', '..', 'content', 'zh-hans', '_index.md'), encoding='utf-8').read()
 
 EN = [
 ('alt="Eonun | Trance 声波雕刻师"', 'alt="Eonun | Trance Sound Sculptor"'),

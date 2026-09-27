@@ -23,20 +23,20 @@
 #lang-switch button.active { color: #fff; border-color: #fff; }
 </style>
 <div id="lang-switch">
-  <button data-lang="zh-cn" title="简体中文">简</button>
-  <button data-lang="zh-tw" title="繁體中文">繁</button>
+  <button data-lang="zh-hans" title="简体中文">简</button>
+  <button data-lang="zh-hant" title="繁體中文">繁</button>
   <button data-lang="en" title="English">EN</button>
   <button data-lang="de" title="Deutsch">DE</button>
 </div>
 <script>
 (function () {
-  var SUBLANGS = ['zh-tw', 'en', 'de'];
+  var SUBLANGS = ['zh-hant', 'en', 'de'];
   function currentLang() {
     var p = location.pathname;
     for (var i = 0; i < SUBLANGS.length; i++) {
       if (p.indexOf('/' + SUBLANGS[i] + '/') === 0 || p === '/' + SUBLANGS[i]) return SUBLANGS[i];
     }
-    return 'zh-cn';
+    return 'zh-hans';
   }
   function basePath() {
     var p = location.pathname;
@@ -47,7 +47,7 @@
     return p;
   }
   function urlFor(lang) {
-    if (lang === 'zh-cn') return basePath();
+    if (lang === 'zh-hans') return basePath();
     var b = basePath();
     return '/' + lang + (b.charAt(0) === '/' ? b : '/' + b);
   }
@@ -65,7 +65,7 @@
   var stored = null;
   try { stored = localStorage.getItem('eonun-lang'); } catch (e) {}
   if (!stored) {
-    var MAP = { DE: 'de', AT: 'de', CH: 'de', HK: 'zh-tw', TW: 'zh-tw', MO: 'zh-tw', CN: 'zh-cn' };
+    var MAP = { DE: 'de', AT: 'de', CH: 'de', HK: 'zh-hant', TW: 'zh-hant', MO: 'zh-hant', CN: 'zh-hans' };
     fetch('https://www.cloudflare.com/cdn-cgi/trace', { cache: 'no-store' })
       .then(function (r) { return r.text(); })
       .then(function (t) {

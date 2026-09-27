@@ -88,7 +88,7 @@ window.addEventListener('scroll', function() {
       <main class="pb7" role="main">
     <article class="center cf pv5 measure-wide-l">
       <!-- 简 -->
-      <div class="lang-block" data-lang="zh-cn">
+      <div class="lang-block" data-lang="zh-hans">
       <h1>BRO？你找的页面跑了</h1>
       <div class="mb6 max-w-2xl mx-auto">
         <p class="f4 lh-copy text-left">可能是因为你混音太糊了，连页面自己都找不到回家的路。</p>
@@ -105,7 +105,7 @@ window.addEventListener('scroll', function() {
       </div>
       </div>
       <!-- 繁 -->
-      <div class="lang-block" data-lang="zh-tw" style="display:none">
+      <div class="lang-block" data-lang="zh-hant" style="display:none">
       <h1>BRO？你找的頁面跑了</h1>
       <div class="mb6 max-w-2xl mx-auto">
         <p class="f4 lh-copy text-left">可能是因為你混音太糊了，連頁面自己都找不到回家的路。</p>
@@ -118,7 +118,7 @@ window.addEventListener('scroll', function() {
         <p class="f4 lh-copy mt4 text-left">說實話，你先把混音調好再來管鏈接吧。</p>
       </div>
       <div class="mt6 text-center">
-        <a href="{{ "/zh-tw/" | relURL }}" class="f5 link bg-purple white hover-bg-purple-dark no-underline pv2 ph4 br-pill ba b--purple">回去調混音吧 😭</a>
+        <a href="{{ "/zh-hant/" | relURL }}" class="f5 link bg-purple white hover-bg-purple-dark no-underline pv2 ph4 br-pill ba b--purple">回去調混音吧 😭</a>
       </div>
       </div>
       <!-- EN -->
@@ -157,8 +157,8 @@ window.addEventListener('scroll', function() {
       </div>
       <script>
       (function () {
-        var lang = 'zh-cn';
-        try { lang = localStorage.getItem('eonun-lang') || 'zh-cn'; } catch (e) {}
+        var lang = 'zh-hans';
+        try { lang = localStorage.getItem('eonun-lang') || 'zh-hans'; } catch (e) {}
         var blocks = document.querySelectorAll('.lang-block');
         Array.prototype.forEach.call(blocks, function (b) {
           b.style.display = (b.getAttribute('data-lang') === lang) ? '' : 'none';
