@@ -383,7 +383,7 @@ fetch('/data/trance_mixing_slogans.txt')
 <p>既然你已经看到这里，不妨再多了解一步。</p>
 <p>我提供的东西很朴素：直接与我本人对接；价格与档位完全透明，没有隐藏费用；知识成体系；指导真正落在你的作品上。</p>
 <p>每一项内容都指向实际——让你做出属于自己的、站得住脚的作品。</p>
-<p>无论你是刚开始接触制作的新手，还是想更进一步的制作人或 DJ，这里都有适合你的位置。<span style="color: #d9d9d9;">*</span></p>
+<p>无论你是刚开始接触制作的新手，还是想更进一步的制作人或 DJ，这里都有适合你的位置。<span style="color: #d9d9d9;"></span></p>
 <p style="margin-top: 0.6rem; font-size: 0.8rem; color: #888888; letter-spacing: 0.5px;">* 支持中文 / 英语授课</p>
 </div>
 </div>
