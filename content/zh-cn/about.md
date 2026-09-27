@@ -269,7 +269,7 @@ fetch('/data/trance_mixing_slogans.txt')
               核心身份
             </h2>
             <div style="font-size: 1.15rem; line-height: 1.8; color: #ffffff;">
-              <p style="margin-bottom: 1.5rem; font-weight: 600; color: #ffffff;">泛电子音乐制作人 | Trance 艺术家 | 舞曲数字母带工程师 | Cooperation Trance 厂牌联合创始人 | Polar Impact 策划</p>
+              <p style="margin-bottom: 1.5rem; font-weight: 600; color: #ffffff;">泛电子音乐制作人 | Trance 艺术家 | 舞曲数字母带工程师 | Cooperation Trance 厂牌创始成员兼 A&amp;R | Polar Impact 策划</p>
               <p style="margin-bottom: 0;">曾任 Hertz Records（中国）A&amp;R 核心成员；更早曾以艺名“unfairmesseater”在 2088 Records、Hertz Records 等中国电子音乐厂牌发表作品。</p>
             </div>
           </div>
@@ -308,7 +308,7 @@ fetch('/data/trance_mixing_slogans.txt')
               </p>
             </div>
             <p style="font-size: 1.05rem; line-height: 1.7; color: #ffffff; padding: 0 1.5rem 1.5rem 1.5rem;">
-              2025 年，随着厂牌步入稳定运营，本人正式退出 Cooperation Trance，结束这一段从 0 到 1 的共建历程。
+              2025 年起，随着厂牌步入稳定运营，本人逐渐淡出 Cooperation Trance 的日常厂务，转向独立发展。
             </p>
           </div>
           <!-- 2025年 -->
