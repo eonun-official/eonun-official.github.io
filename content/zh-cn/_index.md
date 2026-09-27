@@ -150,7 +150,7 @@ body_class: "ma0 avenir bg-near-white development is-home"
             margin: 20px 0 0 20px;
             padding: 0;
             color: #fff;
-            font-size: 24px !important;
+            font-size: 24px;
             text-align: center;
             animation: slideInFromRight 1.4s ease-out forwards;
             position: relative !important;
@@ -547,18 +547,20 @@ fetch('/data/trance_mixing_slogans.txt')
     #scroll-nav .flex-l { flex-wrap: wrap; row-gap: 2px; }
     #scroll-nav ul { gap: 6px !important; flex-wrap: wrap; justify-content: center; }
     #scroll-nav ul li a { font-size: 12px !important; padding: 3px 5px !important; }
-    /* Hero：收紧上距、标语降字号 */
-    #header-logo { margin-top: 60px !important; }
-    #index-slogan { font-size: 16px !important; margin-left: 0 !important; }
+    /* Hero：收紧上距、logo 与标语水平居中、标语字号随屏宽缩放 */
+    #header-logo { margin-top: 60px !important; margin-left: auto !important; margin-right: auto !important; display: block; }
+    #index-slogan { font-size: clamp(15px, 4vw, 24px) !important; margin-left: 0 !important; text-align: center !important; width: 100%; box-sizing: border-box; }
     .tc-l h2.fw1 { font-size: 1rem !important; line-height: 1.5 !important; }
-    /* 区块标题与正文边距 */
-    article { padding-left: 14px !important; padding-right: 14px !important; font-size: 15px !important; }
+    /* 区块标题与正文边距：正文基准字号随屏宽等比缩放（下限=小米14 现值） */
+    article { padding-left: 14px !important; padding-right: 14px !important; font-size: clamp(15px, 3.85vw, 18px) !important; }
     article h2:not(.fw1) { font-size: 1.3em !important; }
-    div[style*="font-size: 18px"] { font-size: 15px !important; }
-    .block-subtitle { font-size: 16px; margin-bottom: 24px; }
-    .collab-title { font-size: 17px; }
-    .contact-cta h3 { font-size: 18px; }
-    .service-card h4 { font-size: 15px; }
+    div[style*="font-size: 18px"] { font-size: clamp(15px, 3.85vw, 18px) !important; }
+    .block-subtitle { font-size: clamp(16px, 4.1vw, 21px); margin-bottom: 24px; }
+    .collab-title { font-size: clamp(17px, 4.4vw, 20px); }
+    .contact-cta h3 { font-size: clamp(18px, 4.6vw, 22px); }
+    .service-card h4 { font-size: clamp(15px, 4vw, 17px); }
+    .identity-item h3 { font-size: clamp(15px, 4vw, 18px); }
+    .identity-item p { font-size: clamp(12px, 3.2vw, 13px); }
     /* 段落分隔线边距 */
     div[style*="height: 1px"][style*="margin: 40px 0"] { margin: 24px 0 !important; }
     /* 语言切换器与调色盘不挡内容 */
