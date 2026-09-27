@@ -434,7 +434,7 @@ fetch('/data/trance_mixing_slogans.txt')
   .works-wrap { max-width: 1200px; margin: 60px auto; }
   .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
   .work-embed { width: 100%; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12); display: block; background: rgba(255,255,255,0.02); }
-  .work-embed--spotify { height: 352px; }
+  .work-embed--spotify { height: 430px; }
   .work-embed--163 { height: 430px; }
   .work-note { color: #999999; text-align: center; margin-top: 14px; font-size: 13px; }
   .work-note a { color: #ffffff; text-decoration: none; }
@@ -486,6 +486,7 @@ fetch('/data/trance_mixing_slogans.txt')
     .service-grid { grid-template-columns: 1fr; gap: 14px; }
     .service-card { padding: 22px 18px; }
     .works-grid { grid-template-columns: 1fr; gap: 20px; }
+    .work-embed--spotify { height: 352px; }
     .contact-cta { margin: 30px auto 10px; padding-top: 36px; }
     .collab-item { padding: 13px 16px; font-size: 13px; }
     .collab-item em { font-size: 11px; }
