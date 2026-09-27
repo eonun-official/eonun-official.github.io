@@ -392,7 +392,7 @@ fetch('/data/trance_mixing_slogans.txt')
   </div>
   <div class="identity-item">
     <h3>联合创始人</h3>
-    <p>首任 Cooperation Trance A&amp;R</p>
+    <p>兼首任 Cooperation Trance A&amp;R</p>
   </div>
   <div class="identity-item">
     <h3>厂牌 A&amp;R</h3>
