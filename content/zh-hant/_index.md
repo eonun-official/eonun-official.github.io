@@ -1,5 +1,5 @@
 ---
-title: "Eonun | Trance 聲波雕刻師 | Eonun"
+title: "Eonun Music | Eonun"
 description: "歡迎來到 Eonun 領域：Trance 製作、風格設計、母帶工程、美學與概念"
 body_class: "ma0 avenir bg-near-white development is-home"
 ---
@@ -139,7 +139,7 @@ body_class: "ma0 avenir bg-near-white development is-home"
     </style>
       <div class="tc-l pv6 pv8-l ph3 ph4-ns">
         <div class="mb0 lh-title" style="max-width: 800px; margin: 0 auto; position: relative; background: transparent !important; ">
-          <img id="header-logo" src="/images/eonun2www.png" alt="Eonun | Trance 聲波雕刻師" fetchpriority="high" decoding="async"
+          <img id="header-logo" src="/images/eonun2www.png" alt="Eonun Music" fetchpriority="high" decoding="async"
             style="width: 100%; height: auto;
                 margin-top: 100px !important; 
                 opacity: 1 !important;
