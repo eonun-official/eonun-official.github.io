@@ -37,3 +37,18 @@
 
 /* 标题自适应光晕：drop-shadow 作用于渲染后的渐变字，随调色盘 --glow-color 变化 */
 h2{filter:drop-shadow(0 1px 6px var(--glow-color,rgba(255,255,255,0.35)))!important}
+
+/* ===== 超宽屏框架（2026-10-14）：屏幕宽于约 2048px 时整站居中封顶、两侧留深色边 =====
+   仅给整个页面加一个外框约束，内容/排版一字不改。视觉宽度 = 2560px 逻辑宽 × 80% 桌面缩放 ≈ 2048px。 */
+@media (min-width: 2048px) {
+  /* 框架外的留边用深色，避免露出白底 */
+  html { background-color: #0a0a0a !important; }
+  /* 整页（含顶部视频/背景图/页脚）封顶并居中 */
+  body { max-width: 2560px !important; margin-left: auto !important; margin-right: auto !important; }
+  /* 顶部固定导航条：与正文同一框架居中封顶，不再两端拉到屏幕最边 */
+  #scroll-nav { left: 0 !important; right: 0 !important; width: auto !important; max-width: 2560px !important; margin-left: auto !important; margin-right: auto !important; }
+  /* 左下语言切换 / 右下色彩盘：贴到框架边缘，而不是屏幕最角 */
+  #lang-switch { left: calc(50% - 1280px + 20px) !important; }
+  #palette-toggle { right: calc(50% - 1280px + 20px) !important; }
+  #palette-panel { right: calc(50% - 1280px + 20px) !important; }
+}
