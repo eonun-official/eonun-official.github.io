@@ -67,8 +67,11 @@ h2{filter:drop-shadow(0 1px 6px var(--glow-color,rgba(255,255,255,0.35)))!import
     from { transform: translate3d(0, -16px, 0); }
     to   { transform: translate3d(0, 16px, 0); }
   }
-  /* 整页（含顶部视频/背景图/页脚）封顶并居中 */
+  /* 整页封顶并居中（内容约束） */
   body { max-width: 2560px !important; margin-left: auto !important; margin-right: auto !important; }
+  /* 背景延展：页头视频/封面图、页脚底色顶到屏幕两侧，不受 2560 框架约束 */
+  body > header, body > footer { width: auto !important; max-width: none !important; margin-left: calc(1280px - 50vw) !important; margin-right: calc(1280px - 50vw) !important; }
+  html { overflow-x: hidden; }
   /* 顶部固定导航条：与正文同一框架居中封顶，不再两端拉到屏幕最边 */
   #scroll-nav { left: 0 !important; right: 0 !important; width: auto !important; max-width: 2560px !important; margin-left: auto !important; margin-right: auto !important; }
   /* 左下语言切换 / 右下色彩盘：贴到框架边缘，而不是屏幕最角 */
