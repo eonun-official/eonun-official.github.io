@@ -180,7 +180,7 @@ let isScrollDown = false;
 // 移动端：标语降为 16px（内联 24px!important 只有 JS 内联才能覆盖）；回桌面恢复 24px
 function applyMobileSloganSize() {
   if (!indexSlogan) return;
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 1100) {
     indexSlogan.style.setProperty('font-size', '16px', 'important');
   } else {
     indexSlogan.style.setProperty('font-size', '24px', 'important');
@@ -468,9 +468,9 @@ fetch('/data/trance_mixing_slogans_en.txt')
 <style>
   /* ===== 核心身份：署名条设计（2026-09-27 v2，credit strip 取代卡片盒） ===== */
   .identity-strip { max-width: 900px; margin: 50px auto; border-top: 1px solid rgba(255, 255, 255, 0.18); border-bottom: 1px solid rgba(255, 255, 255, 0.18); display: flex; }
-  .identity-item { flex: 1; padding: 30px 18px; text-align: center; }
+  .identity-item { flex: 1; min-width: 0; padding: 30px 18px; text-align: center; }
   .identity-item + .identity-item { border-left: 1px solid rgba(255, 255, 255, 0.12); }
-  .identity-item h3 { color: #fff; margin: 0 0 8px 0; font-size: 18px; font-weight: 600; letter-spacing: 1px; }
+  .identity-item h3 { color: #fff; margin: 0 0 8px 0; font-size: 18px; font-weight: 600; letter-spacing: 1px; overflow-wrap: anywhere; }
   .identity-item p { color: #999999; margin: 0; font-size: 13px; line-height: 1.7; }
   /* ===== 认可背书：桌面双栏与旧版视觉一致（300 + 600） ===== */
   .cred-wrap { max-width: 940px; margin: 60px auto; display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: stretch; }
@@ -478,8 +478,8 @@ fetch('/data/trance_mixing_slogans_en.txt')
   .cred-frame { position: relative; width: 100%; height: 300px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.15); box-sizing: border-box; transition: border-color 0.3s ease; }
   .cred-frame:hover { border-color: rgba(255, 255, 255, 0.4); }
   .takeover-strip { display: flex; height: 100%; gap: 0; margin: 0; padding: 0; align-items: stretch; }
-  .takeover-img { height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 0; transition: transform 0.3s ease; }
-  @media (max-width: 768px) {
+  .takeover-img { height: 100%; object-fit: cover; display: block; margin: 0; padding: 0; border: none; flex-shrink: 1; min-width: 0; transition: transform 0.3s ease; }
+  @media (max-width: 1100px) {
     /* 核心身份：2×2 井字分隔，任何屏宽下稳定对称 */
     .identity-strip { display: grid; grid-template-columns: 1fr 1fr; margin: 30px 0; }
     .identity-item { padding: 22px 10px; }
@@ -552,7 +552,7 @@ fetch('/data/trance_mixing_slogans_en.txt')
     color: #ffffff !important;
   }
   /* ===== 移动端适配（≤768px 生效，桌面排版不变） ===== */
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     /* 顶部导航：压缩间距、允许换行 */
     #scroll-nav { padding: 10px 20px !important; }
     #scroll-nav .flex-l { flex-wrap: wrap; row-gap: 2px; }
@@ -582,7 +582,7 @@ fetch('/data/trance_mixing_slogans_en.txt')
 </style>
 <style>
   /* ===== 移动端专属居中（仅 ≤768px 生效，桌面端零影响）===== */
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     /* 大 logo：主题 img{display:inline-block!important} 会顶掉块级，必须同样 !important 才能居中 */
     #header-logo { display: block !important; margin-left: auto !important; margin-right: auto !important; }
     /* 标语：全局 p{text-align:left!important} 会抢走居中，用 ID 优先级压回 */
@@ -655,7 +655,7 @@ fetch('/data/trance_mixing_slogans_en.txt')
 
 <style>
   /* ===== en/de 移动端长文适配（≤768px，桌面零影响）===== */
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     article { overflow-wrap: break-word; }
     article h2:not(.fw1) { font-size: 1.1em !important; letter-spacing: 0.5px !important; }
     article h3 { font-size: 1.15em !important; overflow-wrap: break-word; }

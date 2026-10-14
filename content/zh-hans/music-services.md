@@ -320,7 +320,7 @@ let isScrollDown = false;
 // 移动端：标语降为 16px（内联 24px!important 只有 JS 内联才能覆盖）；回桌面恢复 24px
 function applyMobileSloganSize() {
   if (!indexSlogan) return;
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 1100) {
     indexSlogan.style.setProperty('font-size', '16px', 'important');
   } else {
     indexSlogan.style.setProperty('font-size', '24px', 'important');
@@ -1018,7 +1018,7 @@ window.onclick = function(event) {
     .service-modal-content::-webkit-scrollbar-thumb:hover {
       background: rgba(255, 255, 255, 0.8);
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1100px) {
       .shop-grid {
         grid-template-columns: 1fr;
       }
@@ -1070,7 +1070,7 @@ window.onclick = function(event) {
 
 <style>
   /* ===== 移动端字号自适应（仅 ≤768px，桌面零影响；下限=小米14 现值，大屏机等比放大）===== */
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     #index-slogan { text-align: center !important; }
     /* 以下为与主页完全一致的 hero 方案 */
     #header-logo { display: block !important; margin-left: auto !important; margin-right: auto !important; }

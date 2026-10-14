@@ -87,7 +87,7 @@ let isScrollDown = false;
 // 移動端：標語降爲 16px（內聯 24px!important 只有 JS 內聯才能覆蓋）；回桌面恢復 24px
 function applyMobileSloganSize() {
   if (!indexSlogan) return;
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 1100) {
     indexSlogan.style.setProperty('font-size', '16px', 'important');
   } else {
     indexSlogan.style.setProperty('font-size', '24px', 'important');
@@ -386,7 +386,7 @@ fetch('/data/trance_mixing_slogans_hant.txt')
 
 <style>
   /* ===== 移動端字號自適應（僅 ≤768px，桌面零影響；下限=小米14 現值，大屏機等比放大）===== */
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     #index-slogan { text-align: center !important; }
     /* 以下爲與主頁完全一致的 hero 方案 */
     #header-logo { display: block !important; margin-left: auto !important; margin-right: auto !important; }

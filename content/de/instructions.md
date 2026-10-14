@@ -182,7 +182,7 @@ let isScrollDown = false;
 // 移动端：标语降为 16px（内联 24px!important 只有 JS 内联才能覆盖）；回桌面恢复 24px
 function applyMobileSloganSize() {
   if (!indexSlogan) return;
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 1100) {
     indexSlogan.style.setProperty('font-size', '16px', 'important');
   } else {
     indexSlogan.style.setProperty('font-size', '24px', 'important');
@@ -708,7 +708,7 @@ left: 0;
 .discount-col li strong {
 color: #f2f2f2;
 }
-@media (max-width: 860px) {
+@media (max-width: 1100px) {
 .discount-columns {
 grid-template-columns: 1fr;
 }
@@ -791,7 +791,7 @@ event.target.classList.add('active');
 
 <style>
   /* ===== 移动端字号自适应（仅 ≤768px，桌面零影响；下限=小米14 现值，大屏机等比放大）===== */
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     #index-slogan { text-align: center !important; }
     /* 以下为与主页完全一致的 hero 方案 */
     #header-logo { display: block !important; margin-left: auto !important; margin-right: auto !important; }
@@ -816,7 +816,7 @@ event.target.classList.add('active');
 
 <style>
   /* ===== en/de 移动端长文适配（≤768px，桌面零影响）===== */
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     article { overflow-wrap: break-word; }
     article h2:not(.fw1) { font-size: 1.1em !important; letter-spacing: 0.5px !important; }
     article h3 { font-size: 1.15em !important; overflow-wrap: break-word; }

@@ -304,7 +304,7 @@
 }
 
 /* 响应式设计 */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .course-nav {
     padding: 20px;
   }
