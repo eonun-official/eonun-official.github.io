@@ -39,39 +39,12 @@
 h2{filter:drop-shadow(0 1px 6px var(--glow-color,rgba(255,255,255,0.35)))!important}
 
 /* ===== 超宽屏框架（2026-10-14）：屏幕宽于约 2048px 时整站居中封顶 =====
-   仅给整个页面加一个外框约束，内容/排版一字不改。视觉宽度 = 2560px 逻辑宽 × 80% 桌面缩放 ≈ 2048px。
-   两侧不做生硬黑底，改为跟随页面取色的毛玻璃背板（Glassmorphism）：半透明 + 模糊 + 滚动轻微视差。 */
+   仅约束内容，背景（页面底色）向两侧延展铺满整屏。视觉宽度 = 2560px 逻辑宽 × 80% 桌面缩放 ≈ 2048px。 */
 @media (min-width: 2048px) {
-  /* 画布底色（框架外区域的兜底） */
-  html { background-color: #0a0a0a !important; }
-  /* 毛玻璃背板：垫在正文之下（z-index:-1），只在两侧露出；颜色取自调色盘 --trance-*，与页面融为一体 */
-  html::before {
-    content: "";
-    position: fixed;
-    inset: -8%;                       /* 外扩，视差位移时四周不露边 */
-    z-index: -1;                      /* 位于正文之下：中间被 body 盖住，两侧露出玻璃 */
-    pointer-events: none;
-    background:
-      radial-gradient(130% 100% at 16% 12%, color-mix(in srgb, var(--trance-purple, #0a0a0a) 16%, transparent), transparent 62%),
-      radial-gradient(130% 100% at 84% 88%, color-mix(in srgb, var(--trance-blue, #0a0a0a) 16%, transparent), transparent 62%);
-    -webkit-backdrop-filter: blur(50px) saturate(130%);
-    backdrop-filter: blur(50px) saturate(130%);
-    animation-name: eonunGlassParallax;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-    animation-timeline: scroll(root block);
-    animation-range: 0% 100%;
-    will-change: transform;
-  }
-  @keyframes eonunGlassParallax {
-    from { transform: translate3d(0, -16px, 0); }
-    to   { transform: translate3d(0, 16px, 0); }
-  }
-  /* 整页封顶并居中（内容约束） */
+  /* 页面原本的底色（--dark-bg 同值 #121212）铺满整个屏幕，框架外不再是玻璃/黑边 */
+  html { background-color: #121212 !important; }
+  /* 内容（含页头视频/图片/页脚）封顶并居中 */
   body { max-width: 2560px !important; margin-left: auto !important; margin-right: auto !important; }
-  /* 背景延展：页头视频/封面图、页脚底色顶到屏幕两侧，不受 2560 框架约束 */
-  body > header, body > footer { width: auto !important; max-width: none !important; margin-left: calc(1280px - 50vw) !important; margin-right: calc(1280px - 50vw) !important; }
-  html { overflow-x: hidden; }
   /* 顶部固定导航条：与正文同一框架居中封顶，不再两端拉到屏幕最边 */
   #scroll-nav { left: 0 !important; right: 0 !important; width: auto !important; max-width: 2560px !important; margin-left: auto !important; margin-right: auto !important; }
   /* 左下语言切换 / 右下色彩盘：贴到框架边缘，而不是屏幕最角 */
