@@ -171,17 +171,13 @@
     }
     requestAnimationFrame(frame);
   }
-  /* 主页：视频真正开始播放时，从灰渐变到随机色（饱和度/明度取参考紫 #7637c3 的 HSL：54%/49%，浓度 50%，4 秒） */
-  function randomHomeHex() {
-    return hslToHex(Math.random() * 360, 54, 49);
-  }
   var picker = document.getElementById('pp-picker');
   var slider = document.getElementById('pp-intensity');
   var saved = null;
   try { saved = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
   if (document.body.classList.contains('is-home')) {
-    /* 主页：所有组件加载完毕后，从灰渐变到目标色（已存配色优先，否则随机色），4 秒 */
-    var target = (saved && saved.hex) ? { hex: saved.hex, i: saved.i || 25 } : { hex: randomHomeHex(), i: 50 };
+    /* 主页：所有组件加载完毕后，从灰渐变到目标色（已存配色优先，否则默认白色 50%），4 秒 */
+    var target = (saved && saved.hex) ? { hex: saved.hex, i: saved.i || 25 } : { hex: '#ffffff', i: 50 };
     picker.value = target.hex;
     slider.value = target.i;
     function startHomeTint() {
